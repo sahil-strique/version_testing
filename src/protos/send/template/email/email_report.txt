@@ -2,3 +2,4 @@
 {{start_date}}
 {{end_date}} 
 {{filelink}}
+{{today_date}}

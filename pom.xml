@@ -6,7 +6,7 @@
     
     <groupId>com.strique</groupId>
     <artifactId>strique-proto-schema</artifactId>
-    <version>18.3.7</version>
+    <version>18.3.8</version>
     <name>${project.artifactId}</name>
     <description>API contracts and  Data Transfer Objects(DTO) in the form of Protocol Buffers for Strique binaries.</description>
 	

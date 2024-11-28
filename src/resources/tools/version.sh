@@ -125,12 +125,15 @@ function ValidatePackageJson() {
 
 function ValidatePyprojectToml() {
   local cur_version=$1
-  # Get the version from pyproject.toml, strip 'version = "..."' and quotes
-  local pyproject_version=$(grep -oP '^\s*version\s*=\s*"\K[^"]+' pyproject.toml)
+
+  # Get the version from pyproject.toml using awk
+  local pyproject_version=$(awk -F'=' '/version/ {gsub(/[[:space:]"]/,"",$2); print $2}' pyproject.toml | xargs)
+
   # Check if pyproject_version is empty
   if [[ -z "$pyproject_version" ]]; then
     ExitWithMessage "Failed to retrieve version from pyproject.toml. Please ensure the version is defined correctly."
   fi
+  
   # Assert
   if [[ "$cur_version" != "$pyproject_version" ]]; then
     ExitWithMessage "Incorrect pyproject.toml version. Now: $pyproject_version Expected: $cur_version!! Revert all version-related changes and regenerate version."

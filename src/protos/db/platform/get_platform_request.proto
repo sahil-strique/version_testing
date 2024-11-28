@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strique.model.db.platform;
+
+import "db/platform/platform.proto";
+import "db/platform/platform_type.proto";
+
+option java_outer_classname = "GetPlatformRequestProto";
+option java_package = "com.strique.model.db.platform";
+
+// Next Id: 5
+// A protobuf for request platform.
+message GetPlatformRequest {
+  // Type of the Platforms
+  repeated PlatformType platform_type = 1;
+
+  // Status of the Platforms
+  repeated Platform.PlatformStatus status = 2;
+
+  // list of platform ids
+  repeated string platform_id = 3;
+
+  // list of store ids
+  repeated string store_id = 4;
+}

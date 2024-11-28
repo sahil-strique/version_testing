@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package strique.model.db.schedule;
+
+import "types/phone_number/phone_number.proto";
+
+option java_outer_classname = "RecipientProto";
+option java_package = "com.strique.model.db.schedule";
+
+// Next Id: 4
+// Proto definition of Recipient.
+message Recipient {
+  // recipient details
+  oneof recipient {
+    EmailRecipient email_recipient = 1;
+    WhatsAppSmsRecipient whatsapp_sms_recipient = 2;
+    SlackRecipient slack_recipient = 3;
+  }
+}
+
+// Next Id: 5
+// Proto definition of whatsApp and sms recipient.
+message WhatsAppSmsRecipient {
+  repeated types.PhoneNumber phone_number = 1;
+}
+
+// Next Id: 5
+// Proto definition of EmailRecipient.
+message EmailRecipient {
+  // email id for the to field
+  repeated string to = 1;
+
+  // email id for the cc field
+  repeated string cc = 2;
+
+  // email id for bcc to field
+  repeated string bcc = 3;
+
+  // subject of the email
+  optional string subject = 4;
+}
+
+// Next Id: 2
+// Proto definition of SlackRecipient.
+message SlackRecipient {
+  // url for the slack of user
+  repeated string slack_url = 1;
+}

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "db/google_ads/advertising_channel_type.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "CampaignProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id: 2
+// Proto definition of Campaign List.
+message CampaignList {
+  repeated Campaign CampaignResponse = 1;
+}
+
+// Next Id : 10
+// A protobuf to store Campaign data object.
+message Campaign {
+  // Store composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // The ID of the campaign.
+  uint64 campaign_id = 2;
+
+  // The name of the campaign.
+  string campaign_name = 3;
+
+  // The primary serving target for ads within the campaign.
+  AdvertisingChannelType campaign_advertising_channel_type = 4;
+
+  // No. of impressions for campaign  and advertising channel type.
+  uint64 impressions = 5;
+
+  // The number of clicks.
+  uint64 clicks = 6;
+
+  // The sum of CPC and CPM costs during this period.
+  uint64 cost_micros = 7;
+
+  // The number of conversions.
+  double conversions = 8;
+
+  // The value of conversions.
+  double conversions_value = 9;
+}

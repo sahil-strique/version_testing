@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package strique.model.demo;
+
+option java_outer_classname = "DemoProto";
+option java_package = "com.strique.model.demo";
+
+// A Demo protobuf.
+message Demo {
+  // A demo proto message.
+  string message = 1;
+  // A demo id field.
+  optional int32 id = 2;
+}

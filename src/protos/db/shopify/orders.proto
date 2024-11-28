@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package strique.model.db.shopify;
+
+import "db/shopify/line_item.proto";
+import "db/shopify/refund.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "OrdersProto";
+option java_package = "com.strique.model.db.shopify";
+
+// Next Id: 2
+// Proto definition of Order List.
+message OrdersList {
+  repeated Orders OrdersResponse = 1;
+}
+
+//Next Id : 16
+// Aprotocol buffer for storing data of shopify orders.
+message Orders {
+  uint64 order_id = 1;
+
+  string platform_id = 2;
+
+  google.protobuf.Timestamp date = 3;
+
+  optional string source_name = 4;
+
+  optional string billing_address_city = 5;
+
+  optional string billing_address_province = 6;
+
+  optional string shipping_address_city = 7;
+
+  optional string shipping_address_province = 8;
+
+  double sub_total_price = 9;
+
+  double total_discount = 10;
+
+  repeated Discount discount = 11;
+
+  optional google.protobuf.Timestamp updated_date = 12;
+
+  repeated LineItem line_items = 13;
+
+  repeated Refund refunds = 14;
+
+  double shipping_line_price = 15;
+}
+
+// Next Id: 4
+// Proto definition to store Discount object.
+message Discount {
+  // Coupon Code.
+  string coupon_code = 1;
+
+  // Discount Amount.
+  double discount_amount = 2;
+
+  // Order ID
+  uint64 order_id = 3;
+}
+
+// Next Id: 5
+// Proto definition to store Top Regions Returns And Cancellations.
+message TopRegionsReturnsAndCancellations {
+  // Region name.
+  string region = 1;
+
+  // Number of total orders placed per region.
+  uint64 total_orders = 2;
+
+  // Number of orders returned per region.
+  uint64 total_items_returned = 3;
+
+  // Revenue accounting to number of returned orders.
+  double return_item_revenue = 4;
+
+  // total number of items per region.
+  uint64 total_items = 5;
+}
+
+// Next Id: 5
+// Proto definition to store Top Coupon Codes.
+message TopCouponCodes {
+  // Coupon Code
+  string coupon_code = 1;
+
+  // Number of times this code was used.
+  uint64 code_usage_number = 2;
+
+  // Total discount.
+  double total_discount = 3;
+
+  // Total amount.
+  double total_amount = 4;
+}
+
+// Next Id: 3
+// a protocol buffer to store Top Returned Products.
+message TopReturnedProducts {
+  // Product name.
+  string product_name = 1;
+
+  // Product Quantity.
+  uint64 product_quantity = 2;
+}

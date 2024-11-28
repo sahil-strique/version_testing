@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "SpeedAnalysisProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of SpeedAnalysis List.
+message SpeedAnalysisList {
+  repeated SpeedAnalysis speedAnalysisResponse = 1;
+}
+
+//Next Id : 9
+// A protobuf to store speed analysis data object.
+message SpeedAnalysis {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Name of landing pade.
+  string landing_page = 2;
+
+  // URL of tested page.
+  string page_tested_url = 3;
+
+  // FCP score.
+  float fcp_score = 4;
+
+  // SI score.
+  float si_score = 5;
+
+  // LCP score.
+  float lcp_score = 6;
+
+  // TBT score.
+  float tbt_score = 7;
+
+  // CLS score.
+  float cls_score = 8;
+}

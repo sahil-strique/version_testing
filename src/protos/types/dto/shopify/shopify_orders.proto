@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package strique.types.dto.shopify;
+
+option java_outer_classname = "ShopifyProto";
+option java_package = "com.strique.types.dto.shopify";
+
+// Next Id: 2
+// A protobuf for Shopify Order Data.
+message ShopifyOrders {
+  repeated Order orders = 1 [json_name = "orders"];
+}
+
+// Next Id: 13
+message Order {
+  int64 id = 1 [json_name = "id"];
+  string processed_at = 2 [json_name = "processed_at"];
+  repeated DiscountCode discount_codes = 3 [json_name = "discount_codes"];
+  string source_name = 4 [json_name = "source_name"];
+  string subtotal_price = 5 [json_name = "subtotal_price"];
+  string total_discounts = 6 [json_name = "total_discounts"];
+  string updated_at = 7 [json_name = "updated_at"];
+  Address billing_address = 8 [json_name = "billing_address"];
+  repeated LineItem line_items = 9 [json_name = "line_items"];
+  repeated Refund refunds = 10 [json_name = "refunds"];
+  Address shipping_address = 11 [json_name = "shipping_address"];
+  repeated ShippingLines shipping_lines = 12 [json_name = "shipping_lines"];
+}
+
+// Next Id: 2
+message ShippingLines {
+  string price = 1 [json_name = "price"];
+}
+
+// Next Id: 3
+message DiscountCode {
+  string code = 1 [json_name = "code"];
+  string amount = 2 [json_name = "amount"];
+}
+
+// Next Id: 3
+message Address {
+  string province = 1 [json_name = "province"];
+  string city = 2 [json_name = "city"];
+}
+
+// Next Id: 9
+message LineItem {
+  int64 id = 1 [json_name = "id"];
+  string price = 2 [json_name = "price"];
+  int32 quantity = 3 [json_name = "quantity"];
+  bool taxable = 4 [json_name = "taxable"];
+  bool gift_card = 5 [json_name = "gift_card"];
+  string name = 6 [json_name = "name"];
+  repeated DiscountAllocation discount_allocations = 7 [json_name = "discount_allocations"];
+  repeated TaxLine tax_lines = 8 [json_name = "tax_lines"];
+}
+
+// Next Id: 2
+message DiscountAllocation {
+  string amount = 1 [json_name = "amount"];
+}
+
+// Next Id: 4
+message TaxLine {
+  string price = 1 [json_name = "price"];
+  float rate = 2 [json_name = "rate"];
+  string title = 3 [json_name = "title"];
+}
+
+// Next Id: 6
+message Refund {
+  int64 id = 1 [json_name = "id"];
+  string created_at = 2 [json_name = "created_at"];
+  string processed_at = 3 [json_name = "processed_at"];
+  repeated OrderAdjustment order_adjustments = 4 [json_name = "order_adjustments"];
+  repeated RefundLineItem refund_line_items = 5 [json_name = "refund_line_items"];
+}
+
+// Next Id: 3
+message OrderAdjustment {
+  string amount = 1 [json_name = "amount"];
+  string tax_amount = 2 [json_name = "tax_amount"];
+}
+
+// Next Id: 7
+message RefundLineItem {
+  int64 id = 1 [json_name = "id"];
+  int64 line_item_id = 2 [json_name = "line_item_id"];
+  int32 quantity = 3 [json_name = "quantity"];
+  string subtotal = 4 [json_name = "subtotal"];
+  string total_tax = 5 [json_name = "total_tax"];
+  LineItem line_item = 6 [json_name = "line_item"];
+}

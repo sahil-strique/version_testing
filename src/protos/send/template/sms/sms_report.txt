@@ -1,0 +1,1 @@
+Hi {{name}}, Your report from {{start_date}} to {{end_date}} is ready. Click to download: {{filelink}} Team Strique

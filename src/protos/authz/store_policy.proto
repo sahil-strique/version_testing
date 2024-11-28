@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package strique.authz;
+
+option java_outer_classname = "StorePolicyProto";
+option java_package = "com.strique.authz";
+
+// Next Id: 2
+// A Policies protobuf.
+message Policies {
+  // Mapping of the plan to policy details
+  map<string, StorePolicy> plan_to_policy_details = 1;
+}
+
+// Next Id: 22
+// A StorePolicy protobuf.
+message StorePolicy {
+  // Maximum number of members allowed in the store
+  int32 store_max_members = 1;
+  // Number of reports that can be created
+  int32 create_report = 2;
+
+  // Whether to show watermark on reports document
+  bool report_watermark = 4;
+  // Whether to show AI summary feature
+  bool ai_summary = 5;
+  enum Widgets {
+    WIDGETS_UNKNOWN = 0;
+    BASIC_WIDGETS = 1;
+    ALL_WIDGETS = 2;
+    CUSTOM_WIDGETS = 3;
+  }
+  // Widgets available
+  Widgets widgets = 6;
+  // Whether to show live dashboard data for store & user
+  bool live_dashboard_data = 7;
+  // Maximum date range allowed for reports
+  int32 max_date_range = 8;
+  enum CustomerSupport {
+    CUSTOMERSUPPORT_UNKNOWN = 0;
+    BASIC_SUPPORT = 1;
+    PRO_SUPPORT = 2;
+    ADVANCED_SUPPORT = 3;
+  }
+  // Customer support level
+  CustomerSupport customer_support = 9;
+  // Whether to show whatsapp schedule feature
+  bool whatsapp_schedule = 10;
+  // Whether to show email schedule feature
+  bool email_schedule = 11;
+  // Whether to show sms schedule feature
+  bool sms_schedule = 12;
+  // Whether to show slack schedule feature
+  bool slack_schedule = 13;
+  // Whether to show shopify integration feature
+  bool shopify_integration = 14;
+  // Maximum number of meta ads accounts allowed
+  int32 max_meta_ads_accounts = 15;
+  // Maximum number of google ads accounts allowed
+  int32 max_google_ads_accounts = 16;
+  // Whether to show google analytics integration feature
+  bool google_analytics_integration = 17;
+  // Whether to show amazon ads integration feature
+  bool amazon_ads_integration = 18;
+  // Whether to show amazon seller integration feature
+  bool amazon_seller_integration = 19;
+  // Maximum number of whatsapp schedules allowed
+  int32 max_whatsapp_schedule = 20;
+  // Maximum number of email schedules allowed
+  int32 max_email_schedule = 21;
+  // Maximum number of sms schedules allowed
+  int32 max_sms_schedule = 3;
+}
+
+// Next Id: 22
+// A protobuf to store store features
+enum StoreFeatures {
+  STOREFEATURES_UNKNOWN = 0;
+  STROE_MAX_MEMBERS = 1;
+  CREATE_REPORT = 2;
+  REPORT_WATERMARK = 4;
+  AI_SUMMARY = 5;
+  WIDGETS = 6;
+  LIVE_DASHBOARD_DATA = 7;
+  MAX_DATE_RANGE = 8;
+  CUSTOMER_SUPPORT = 9;
+  WHATSAPP_SCHEDULE = 10;
+  EMAIL_SCHEDULE = 11;
+  SMS_SCHEDULE = 12;
+  SLACK_SCHEDULE = 13;
+  SHOPIFY_INTEGRATION = 14;
+  MAX_META_ADS_ACCOUNTS = 15;
+  MAX_GOOGLE_ADS_ACCOUNTS = 16;
+  GOOGLE_ANALYTICS_INTEGRATION = 17;
+  AMAZON_ADS_INTEGRATION = 18;
+  AMAZON_SELLER_INTEGRATION = 19;
+  MAX_WHATSAPP_SCHEDULE = 20;
+  MAX_EMAIL_SCHEDULE = 21;
+  MAX_SMS_SCHEDULE = 3;
+}

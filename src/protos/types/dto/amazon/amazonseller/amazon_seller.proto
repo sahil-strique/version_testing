@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "AmazonSellerProto";
+option java_package = "com.strique.types.dto.amazon";
+
+// Next Id: 6
+// A protobuf to store report request.
+message AmazonReportRequest {
+  repeated string marketplace_ids = 1;
+  string data_start_time = 2;
+  string data_end_time = 3;
+  string report_type = 4;
+  AmazonReportOptions report_options = 5;
+}
+
+// Next Id: 3
+// A protobuf to store report options.
+message AmazonReportOptions {
+  string date_granularity = 1;
+  string asin_granularity = 2;
+}
+
+// Next Id: 2
+// A protobuf to store report id.
+message ReportId {
+  string report_id = 1 [json_name = "reportId"];
+}
+
+// Next Id: 3
+// A protobuf to store report details.
+message ReportDetails {
+  // processing status of report.
+  string processing_status = 1 [json_name = "processingStatus"];
+
+  // document id of generated report.
+  string report_document_id = 2 [json_name = "reportDocumentId"];
+}
+
+// Next Id: 2
+// A protobuf to store url.
+message ReportUrl {
+  // final url of generated report.
+  string url = 1 [json_name = "url"];
+}

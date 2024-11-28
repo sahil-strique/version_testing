@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "constants/gender/gender.proto";
+import "db/google_analytics/age_bracket.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "AgeGroupGenderAnalysisProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of AgeGroupGenderAnalysis List.
+message AgeGroupGenderAnalysisList {
+  repeated AgeGroupGenderAnalysis ageGroupGenderAnalysisResponse = 1;
+}
+
+//Next Id : 5
+// A protobuf to store age gender analysis data object.
+message AgeGroupGenderAnalysis {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Range of age.
+  constants.AgeBracket user_age_bracket = 2;
+
+  // User gender.
+  constants.Gender user_gender = 3;
+
+  // Total revenue generated for a day by user age and gender.
+  double total_revenue = 4;
+}

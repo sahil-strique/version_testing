@@ -1,0 +1,336 @@
+{{report_name}} - {{today_date}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>Email</title>
+    <style>
+      /* General resets */
+      body,
+      table,
+      td,
+      a {
+        text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: inherit;
+      }
+      img {
+        border: 0;
+        height: auto;
+        line-height: inherit;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 0 auto;
+        width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      } /* Ensure full width responsiveness */
+      @media screen and (max-width: 640px) {
+        .responsive {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .stack {
+          display: block !important;
+          width: 100% !important;
+        }
+      }
+    </style>
+    <!-- Fallback Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: #0f172a;
+    "
+  >
+    <!-- Container -->
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      role="presentation"
+      style="background-color: #f9fafb; width: 100%"
+    >
+      <tr>
+        <td align="center" style="padding: 16px">
+          <!-- Main Wrapper -->
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            class="responsive"
+            style="max-width: 640px; width: 100%; overflow: hidden"
+          >
+            <!-- Header -->
+            <tr>
+              <td align="left" style="padding: 32px 16px">
+                <table
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  role="presentation"
+                >
+                  <tr>
+                    <td style="display: flex; align-items: center">
+                      <img
+                        src="https://imagedelivery.net/sf5WIWp3WnjgrTkzEhJPlg/20ac8a8b-df78-4cda-d661-6dcd46722800/public"
+                        alt="Logo"
+                        width="24"
+                        height="24"
+                        style="margin-right: 8px"
+                      />
+                      <span
+                        style="
+                          font-size: 26px;
+                          font-weight: 500;
+                          color: #0f172a;
+                        "
+                        >Strique</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Content Section -->
+            <tr>
+              <td
+                align="left"
+                style="
+                  border-radius: 8px;
+                  padding: 40px;
+                  background-color: #542cc2;
+                  color: white;
+                  text-align: left;
+                  vertical-align: top;
+                "
+              >
+                <h1 style="font-size: 32px; font-weight: 700; margin: 0 0 24px">
+                  Hey there,
+                </h1>
+                <p style="font-size: 30px; font-weight: 500; margin: 0 0 24px">
+                  Your
+                  <a
+                    href="{{filelink}}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                      color: white;
+                      text-decoration: underline;
+                      font-weight: 600;
+                    "
+                  >
+                    {{report_name}}
+                  </a>
+                  from {{start_date}} to {{end_date}} is ready.
+                </p>
+                <a
+                  href="{{filelink}}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="
+                    display: inline-block;
+                    background-color: white;
+                    color: #542cc2;
+                    padding: 12px 32px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    border-radius: 24px;
+                    text-decoration: none;
+                  "
+                >
+                  Download now
+                </a>
+              </td>
+            </tr>
+            <!-- Footer -->
+            <tr>
+              <td style="padding: 60px 0px; background-color: #f9fafb">
+                <table
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  role="presentation"
+                  style="border-collapse: collapse"
+                >
+                  <!-- Divider -->
+                  <tr>
+                    <td colspan="2" style="border-top: 1px solid #542cc2">
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <!-- Content -->
+                  <tr>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        font-size: 14px;
+                        color: #0f172a;
+                        text-align: left;
+                        vertical-align: top;
+                        font-family: DM Sans, Arial, sans-serif;
+                        line-height: 20px;
+                      "
+                    >
+                      Get deep marketing insights
+                    </td>
+                    <td
+                      style="
+                        padding: 8px 0;
+                        font-size: 14px;
+                        color: #0f172a;
+                        text-align: right;
+                        vertical-align: top;
+                        font-family: DM Sans, Arial, sans-serif;
+                        line-height: 20px;
+                      "
+                    >
+                      Follow our news
+                    </td>
+                  </tr>
+                  <!-- Links Section -->
+                  <tr>
+                    <td colspan="2" style="padding: 12px 0">
+                      <table
+                        cellpadding="0"
+                        cellspacing="0"
+                        role="presentation"
+                        width="100%"
+                      >
+                        <tr>
+                          <!-- Left Links -->
+                          <td
+                            style="
+                              font-size: 14px;
+                              text-align: left;
+                              vertical-align: top;
+                              font-family: Arial, sans-serif;
+                              width: 50%;
+                            "
+                          >
+                            <a
+                              href="https://www.strique.io/"
+                              target="_blank"
+                              style="
+                                color: #542cc2;
+                                margin-right: 16px;
+                                text-decoration: underline;
+                              "
+                              >Our website</a
+                            >
+                            <a
+                              href="https://dash.strique.io/"
+                              target="_blank"
+                              style="color: #542cc2; text-decoration: underline"
+                              >Our webapp</a
+                            >
+                          </td>
+                          <!-- Social Media Icons -->
+                          <td
+                            style="
+                              text-align: right;
+                              vertical-align: top;
+                              width: 50%;
+                              font-size: 0;
+                              white-space: nowrap;
+                            "
+                          >
+                            <a
+                              href="https://www.facebook.com/Strique.analytics"
+                              target="_blank"
+                              style="margin: 0 4px"
+                              ><img
+                                src="https://imagedelivery.net/sf5WIWp3WnjgrTkzEhJPlg/a5b96f90-8d48-444c-76ca-28e3302ddd00/public"
+                                alt="Facebook"
+                                width="30"
+                                height="30"
+                            /></a>
+                            <a
+                              href="https://in.linkedin.com/company/strique"
+                              target="_blank"
+                              style="margin: 0 4px"
+                              ><img
+                                src="https://imagedelivery.net/sf5WIWp3WnjgrTkzEhJPlg/92b93946-a0a4-4e51-4afe-dbf32e93dd00/public"
+                                alt="LinkedIn"
+                                width="30"
+                                height="30"
+                            /></a>
+                            <a
+                              href="https://www.instagram.com/strique.io/"
+                              target="_blank"
+                              style="margin: 0 4px"
+                              ><img
+                                src="https://imagedelivery.net/sf5WIWp3WnjgrTkzEhJPlg/649a7389-cca0-47d9-06f8-6e36c11d7200/public"
+                                alt="Instagram"
+                                width="30"
+                                height="30"
+                            /></a>
+                            <a
+                              href="https://www.youtube.com/@strique_io"
+                              target="_blank"
+                              style="margin: 0 4px"
+                              ><img
+                                src="https://imagedelivery.net/sf5WIWp3WnjgrTkzEhJPlg/f61579ea-2a78-45a5-dcf4-4d7252998a00/public"
+                                alt="Instagram"
+                                width="30"
+                                height="30"
+                            /></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- Footer Section -->
+                  <tr>
+                    <td
+                      style="
+                        font-size: 14px;
+                        color: #9ca3af;
+                        text-align: left;
+                        font-family: Arial, sans-serif;
+                      "
+                    >
+                      © 2024 Digistrique Solutions Pvt Ltd. All rights reserved.
+                    </td>
+                    <td
+                      style="
+                        font-size: 14px;
+                        text-align: right;
+                        font-family: Arial, sans-serif;
+                      "
+                    >
+                      <a
+                        href="mailto:support@strique.io"
+                        target="_blank"
+                        style="color: #9ca3af; text-decoration: none"
+                        >support@strique.io</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

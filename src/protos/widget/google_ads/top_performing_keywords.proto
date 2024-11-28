@@ -1,0 +1,183 @@
+syntax = "proto3";
+
+package strique.model.widget.google_ads;
+
+import "constants/ui/render_type.proto";
+import "constants/ui/sorting_direction.proto";
+import "db/google_ads/google_ads_status.proto";
+import "db/google_ads/top_performing_keywords.proto";
+import "options/strique_enum_options.proto";
+import "types/currency/currency.proto";
+
+option java_outer_classname = "TopPerformingKeywordsProto";
+option java_package = "com.strique.model.widget.googleads";
+
+// Next Id: 5
+// Proto definition for Top Performing Keywords Data.
+message TopPerformingKeywordsData {
+  // Title for this widget.
+  string widget_title = 1;
+
+  // List of records for this widget.
+  repeated TopPerformingKeywordsRecord records = 2;
+
+  // Total record.
+  optional TopPerformingKeywordsRecord total = 3;
+
+  // Summary data for a subset of records.
+  optional TopPerformingKeywordsRecord subtotal = 4;
+}
+
+// Next Id: 14
+// Proto definition for a single record of Top Performing Keywords.
+message TopPerformingKeywordsRecord {
+  // Keyword.
+  string keyword = 1 [json_name = "keyword"];
+
+  // Match type of the keyword.
+  db.google_ads.TopPerformingKeywords.KeyWordMatchType match_type = 2 [json_name = "matchType"];
+
+  // Status of the keyword.
+  db.google_ads.GoogleAdsStatus status = 3 [json_name = "status"];
+
+  // Cost incurred for the keyword.
+  types.Currency cost = 4 [json_name = "cost"];
+
+  // Number of impressions.
+  // Number of times the ad was viewed.
+  uint64 impressions = 5 [json_name = "impressions"];
+
+  // Number of clicks.
+  uint64 clicks = 6 [json_name = "clicks"];
+
+  // Number of conversions.
+  // Number of completed conversions.
+  double conversions = 7 [json_name = "conversions"];
+
+  // Total conversion value.
+  types.Currency conversions_value = 8 [json_name = "conversionsValue"];
+
+  // Conversion value per cost.
+  types.Currency conversions_value_per_cost = 9 [json_name = "conversionsValuePerCost"];
+
+  // Conversion rate.
+  // Percentage of clicks that resulted in a conversion.
+  float conversion_rate = 10 [json_name = "conversionRate"];
+
+  // Cost per conversion.
+  types.Currency cost_per_conversion = 11 [json_name = "costPerConversion"];
+
+  // Click-through rate (CTR).
+  // Percentage of impressions that resulted in a click.
+  float click_through_rate = 12 [json_name = "clickThroughRate"];
+
+  // Average cost per click.
+  types.Currency average_cost_per_click = 13 [json_name = "averageCostPerClick"];
+}
+
+// Next Id: 3
+// Proto definition for Top Performing Keywords Configuration.
+message TopPerformingKeywordsConfig {
+  // Next Id: 14
+  // Enumeration of possible columns in the Top Performing Keywords table.
+  enum Column {
+    COLUMN_UNKNOWN = 0 [
+      (options.label) = 'Unknown',
+      (options.accessor_key) = '',
+      (options.is_sortable) = false
+    ];
+    COLUMN_KEYWORD = 1 [
+      (options.label) = 'Keyword',
+      (options.accessor_key) = 'keyword',
+      (options.is_sortable) = false
+    ];
+    COLUMN_MATCH_TYPE = 2 [
+      (options.label) = 'Match type',
+      (options.accessor_key) = 'matchType',
+      (options.is_sortable) = false
+    ];
+    COLUMN_STATUS = 3 [
+      (options.label) = 'Status',
+      (options.accessor_key) = 'status',
+      (options.is_sortable) = false
+    ];
+    COLUMN_COST = 4 [
+      (options.label) = 'Cost',
+      (options.accessor_key) = 'cost',
+      (options.is_sortable) = true
+    ];
+    COLUMN_IMPRESSIONS = 5 [
+      (options.label) = 'Impressions',
+      (options.accessor_key) = 'impressions',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CLICKS = 6 [
+      (options.label) = 'Clicks',
+      (options.accessor_key) = 'clicks',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSIONS = 7 [
+      (options.label) = 'Conversions',
+      (options.accessor_key) = 'conversions',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSION_VALUE = 8 [
+      (options.label) = 'Conversion value',
+      (options.accessor_key) = 'conversionsValue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSION_VALUE_PER_COST = 9 [
+      (options.label) = 'ROAS',
+      (options.accessor_key) = 'conversionsValuePerCost',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSION_RATE = 10 [
+      (options.label) = 'Conversion rate',
+      (options.accessor_key) = 'conversionRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_CONVERSION = 11 [
+      (options.label) = 'Cost per conversion',
+      (options.accessor_key) = 'costPerConversion',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CLICK_THROUGH_RATE = 12 [
+      (options.label) = 'Click through rate',
+      (options.accessor_key) = 'clickThroughRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_AVERAGE_COST_PER_CLICK = 13 [
+      (options.label) = 'Avg. CPC',
+      (options.accessor_key) = 'averageCostPerClick',
+      (options.is_sortable) = true
+    ];
+  }
+
+  // Next Id: 7
+  // Configuration for the table displayed in the Top Performing Keywords.
+  message TableConfig {
+    // Specifies the order of columns in the table.
+    repeated Column column_order = 1;
+
+    // Specifies columns to be hidden in the table.
+    repeated Column column_hidden = 2;
+
+    // Specifies the default column used for sorting.
+    Column default_sorted_column = 3;
+
+    // Specifies the sorting direction.
+    constants.ui.SortingDirection sorting_direction = 4;
+
+    // Indicates whether to display the total row in the table.
+    bool show_total = 5;
+
+    // Indicates whether to display the subtotal row in the table.
+    bool show_subtotal = 6;
+  }
+
+  // Specifies the type of rendering for the widget.
+  constants.ui.RenderType render_type = 1;
+
+  // Configuration for the table displayed in the widget.
+  TableConfig table_config = 2;
+}

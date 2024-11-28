@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strique.model.widget.user_dashboard;
+
+option java_outer_classname = "UserDashboardRequestProto";
+option java_package = "com.strique.model.widget.userdashboard";
+
+// Next Id: 3
+// Proto definition for User Dashboard Request.
+message UserDashboardRequest {
+  // List of store ids to fetch data for.
+  repeated string store_list = 1;
+
+  // User ID
+  string user_id = 2;
+}

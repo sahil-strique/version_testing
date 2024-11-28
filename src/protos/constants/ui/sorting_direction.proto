@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package strique.constants.ui;
+
+option java_outer_classname = "SortingDirectionProto";
+option java_package = "com.strique.constants.ui";
+
+// Next Id: 3
+// Enumeration of possible sorting options for Table widgets.
+enum SortingDirection {
+  SORTINGDIRECTION_UNKNOWN = 0;
+  ASCENDING = 1;
+  DESCENDING = 2;
+}

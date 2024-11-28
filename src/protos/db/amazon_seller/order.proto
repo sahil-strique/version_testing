@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package strique.model.db.amazon_seller;
+
+import "constants/countries/country_short_code.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "OrderProto";
+option java_package = "com.strique.model.db.amazonseller";
+
+// Next Id: 2
+// Proto definition for Order list.
+message OrderList {
+  repeated Order order_list = 1;
+}
+
+// Next Id: 11
+// Proto definition for Orders.
+message Order {
+  // Composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Amazon standard identification number
+  string asin = 2;
+
+  // Price of order
+  double item_price = 3;
+
+  // Number of quantity
+  uint64 quantity = 4;
+
+  enum OrderStatus {
+    ORDER_UNKNOWN = 0;
+    SHIPPED_DELIVERED_TO_BUYER = 1;
+    SHIPPED_RETURNED_TO_SELLER = 2;
+    SHIPPED_RETURNING_TO_SELLER = 3;
+    SHIPPED_REJECTED_BY_BUYER = 4;
+    SHIPPED_UNDELIVERABLE = 5;
+  }
+
+  // Status of order
+  OrderStatus order_status = 5;
+
+  // Name of product
+  string product_name = 6;
+
+  // Name of city
+  string ship_city = 7;
+
+  // Name of state
+  string ship_state = 8;
+
+  // Short code of country
+  constants.CountryShortCodes ship_country = 9;
+
+  // Order id
+  string amazon_order_id = 10;
+}

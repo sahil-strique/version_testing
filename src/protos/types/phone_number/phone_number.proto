@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strique.types;
+
+option java_outer_classname = "PhoneNumberProto";
+option java_package = "com.strique.constants.phonenumber";
+
+// Next Id: 3
+// A protobuf to store Phone Number of the User
+message PhoneNumber {
+  // Country code for the phone number
+  int32 prefix_code = 1;
+
+  // Phone number of the user
+  string phone_number = 2;
+}

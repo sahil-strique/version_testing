@@ -1,0 +1,1990 @@
+# proto-file: src/protos/constants/countries/countries.proto
+# proto-message: Countries
+
+country_to_country_details {
+	key: "AF"
+	value {
+		country: AFGHANISTAN
+		short_code: AF
+		phone_code_prefix: 93
+	}
+}
+country_to_country_details {
+	key: "AX"
+	value {
+		country: ALAND_ISLANDS
+		short_code: AX
+		phone_code_prefix: 358
+	}
+}
+country_to_country_details {
+	key: "AL"
+	value {
+		country: ALBANIA
+		short_code: AL
+		phone_code_prefix: 355
+	}
+}
+country_to_country_details {
+	key: "DZ"
+	value {
+		country: ALGERIA
+		short_code: DZ
+		phone_code_prefix: 213
+	}
+}
+country_to_country_details {
+	key: "AS"
+	value {
+		country: AMERICAN_SAMOA
+		short_code: AS
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "AD"
+	value {
+		country: ANDORRA
+		short_code: AD
+		phone_code_prefix: 376
+	}
+}
+country_to_country_details {
+	key: "AO"
+	value {
+		country: ANGOLA
+		short_code: AO
+		phone_code_prefix: 244
+	}
+}
+country_to_country_details {
+	key: "AI"
+	value {
+		country: ANGUILLA
+		short_code: AI
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "AQ"
+	value {
+		country: ANTARCTICA
+		short_code: AQ
+		phone_code_prefix: 672
+	}
+}
+country_to_country_details {
+	key: "AG"
+	value {
+		country: ANTIGUA_AND_BARBUDA
+		short_code: AG
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "AR"
+	value {
+		country: ARGENTINA
+		short_code: AR
+		phone_code_prefix: 54
+	}
+}
+country_to_country_details {
+	key: "AM"
+	value {
+		country: ARMENIA
+		short_code: AM
+		phone_code_prefix: 374
+	}
+}
+country_to_country_details {
+	key: "AW"
+	value {
+		country: ARUBA
+		short_code: AW
+		phone_code_prefix: 297
+	}
+}
+country_to_country_details {
+	key: "AU"
+	value {
+		country: AUSTRALIA
+		short_code: AU
+		phone_code_prefix: 61
+	}
+}
+country_to_country_details {
+	key: "AT"
+	value {
+		country: AUSTRIA
+		short_code: AT
+		phone_code_prefix: 43
+	}
+}
+country_to_country_details {
+	key: "AZ"
+	value {
+		country: AZERBAIJAN
+		short_code: AZ
+		phone_code_prefix: 994
+	}
+}
+country_to_country_details {
+	key: "BS"
+	value {
+		country: BAHAMAS
+		short_code: BS
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "BH"
+	value {
+		country: BAHRAIN
+		short_code: BH
+		phone_code_prefix: 973
+	}
+}
+country_to_country_details {
+	key: "BD"
+	value {
+		country: BANGLADESH
+		short_code: BD
+		phone_code_prefix: 880
+	}
+}
+country_to_country_details {
+	key: "BB"
+	value {
+		country: BARBADOS
+		short_code: BB
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "BY"
+	value {
+		country: BELARUS
+		short_code: BY
+		phone_code_prefix: 375
+	}
+}
+country_to_country_details {
+	key: "BE"
+	value {
+		country: BELGIUM
+		short_code: BE
+		phone_code_prefix: 32
+	}
+}
+country_to_country_details {
+	key: "BZ"
+	value {
+		country: BELIZE
+		short_code: BZ
+		phone_code_prefix: 501
+	}
+}
+country_to_country_details {
+	key: "BJ"
+	value {
+		country: BENIN
+		short_code: BJ
+		phone_code_prefix: 229
+	}
+}
+country_to_country_details {
+	key: "BM"
+	value {
+		country: BERMUDA
+		short_code: BM
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "BT"
+	value {
+		country: BHUTAN
+		short_code: BT
+		phone_code_prefix: 975
+	}
+}
+country_to_country_details {
+	key: "BO"
+	value {
+		country: PLURINATIONAL_STATE_OF_BOLIVIA
+		short_code: BO
+		phone_code_prefix: 591
+	}
+}
+country_to_country_details {
+	key: "BQ"
+	value {
+		country: SINT_EUSTATIUS_AND_SABA_BONAIRE
+		short_code: BQ
+		phone_code_prefix: 599
+	}
+}
+country_to_country_details {
+	key: "BA"
+	value {
+		country: BOSNIA_AND_HERZEGOVINA
+		short_code: BA
+		phone_code_prefix: 387
+	}
+}
+country_to_country_details {
+	key: "BW"
+	value {
+		country: BOTSWANA
+		short_code: BW
+		phone_code_prefix: 267
+	}
+}
+country_to_country_details {
+	key: "BV"
+	value {
+		country: BOUVET_ISLAND
+		short_code: BV    }
+}
+country_to_country_details {
+	key: "BR"
+	value {
+		country: BRAZIL
+		short_code: BR
+		phone_code_prefix: 55
+	}
+}
+country_to_country_details {
+	key: "IO"
+	value {
+		country: BRITISH_INDIAN_OCEAN_TERRITORY
+		short_code: IO
+		phone_code_prefix: 246
+	}
+}
+country_to_country_details {
+	key: "BN"
+	value {
+		country: BRUNEI_DARUSSALAM
+		short_code: BN
+		phone_code_prefix: 673
+	}
+}
+country_to_country_details {
+	key: "BG"
+	value {
+		country: BULGARIA
+		short_code: BG
+		phone_code_prefix: 359
+	}
+}
+country_to_country_details {
+	key: "BF"
+	value {
+		country: BURKINA_FASO
+		short_code: BF
+		phone_code_prefix: 226
+	}
+}
+country_to_country_details {
+	key: "BI"
+	value {
+		country: BURUNDI
+		short_code: BI
+		phone_code_prefix: 257
+	}
+}
+country_to_country_details {
+	key: "CV"
+	value {
+		country: CABO_VERDE
+		short_code: CV
+		phone_code_prefix: 238
+	}
+}
+country_to_country_details {
+	key: "KH"
+	value {
+		country: CAMBODIA
+		short_code: KH
+		phone_code_prefix: 855
+	}
+}
+country_to_country_details {
+	key: "CM"
+	value {
+		country: CAMEROON
+		short_code: CM
+		phone_code_prefix: 237
+	}
+}
+country_to_country_details {
+	key: "CA"
+	value {
+		country: CANADA
+		short_code: CA
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "KY"
+	value {
+		country: CAYMAN_ISLANDS
+		short_code: KY
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "CF"
+	value {
+		country: CENTRAL_AFRICAN_REPUBLIC
+		short_code: CF
+		phone_code_prefix: 236
+	}
+}
+country_to_country_details {
+	key: "TD"
+	value {
+		country: CHAD
+		short_code: TD
+		phone_code_prefix: 235
+	}
+}
+country_to_country_details {
+	key: "CL"
+	value {
+		country: CHILE
+		short_code: CL
+		phone_code_prefix: 56
+	}
+}
+country_to_country_details {
+	key: "CN"
+	value {
+		country: CHINA
+		short_code: CN
+		phone_code_prefix: 86
+	}
+}
+country_to_country_details {
+	key: "CX"
+	value {
+		country: CHRISTMAS_ISLAND
+		short_code: CX
+		phone_code_prefix: 61
+	}
+}
+country_to_country_details {
+	key: "CC"
+	value {
+		country: COCOS_ISLANDS
+		short_code: CC
+		phone_code_prefix: 61
+	}
+}
+country_to_country_details {
+	key: "CO"
+	value {
+		country: COLOMBIA
+		short_code: CO
+		phone_code_prefix: 57
+	}
+}
+country_to_country_details {
+	key: "KM"
+	value {
+		country: COMOROS
+		short_code: KM
+		phone_code_prefix: 269
+	}
+}
+country_to_country_details {
+	key: "CG"
+	value {
+		country: CONGO
+		short_code: CG
+		phone_code_prefix: 242
+	}
+}
+country_to_country_details {
+	key: "CD"
+	value {
+		country: DEMOCRATIC_REPUBLIC_OF_THE_CONGO
+		short_code: CD
+		phone_code_prefix: 243
+	}
+}
+country_to_country_details {
+	key: "CK"
+	value {
+		country: COOK_ISLANDS
+		short_code: CK
+		phone_code_prefix: 682
+	}
+}
+country_to_country_details {
+	key: "CR"
+	value {
+		country: COSTA_RICA
+		short_code: CR
+		phone_code_prefix: 506
+	}
+}
+country_to_country_details {
+	key: "CI"
+	value {
+		country: COTE_D_IVOIRE
+		short_code: CI
+		phone_code_prefix: 225
+	}
+}
+country_to_country_details {
+	key: "HR"
+	value {
+		country: CROATIA
+		short_code: HR
+		phone_code_prefix: 385
+	}
+}
+country_to_country_details {
+	key: "CU"
+	value {
+		country: CUBA
+		short_code: CU
+		phone_code_prefix: 53
+	}
+}
+country_to_country_details {
+	key: "CW"
+	value {
+		country: CURACAO
+		short_code: CW
+		phone_code_prefix: 599
+	}
+}
+country_to_country_details {
+	key: "CY"
+	value {
+		country: CYPRUS
+		short_code: CY
+		phone_code_prefix: 357
+	}
+}
+country_to_country_details {
+	key: "CZ"
+	value {
+		country: CZECHIA
+		short_code: CZ
+		phone_code_prefix: 420
+	}
+}
+country_to_country_details {
+	key: "DK"
+	value {
+		country: DENMARK
+		short_code: DK
+		phone_code_prefix: 45
+	}
+}
+country_to_country_details {
+	key: "DJ"
+	value {
+		country: DJIBOUTI
+		short_code: DJ
+		phone_code_prefix: 253
+	}
+}
+country_to_country_details {
+	key: "DM"
+	value {
+		country: DOMINICA
+		short_code: DM
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "DO"
+	value {
+		country: DOMINICAN_REPUBLIC
+		short_code: DO
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "EC"
+	value {
+		country: ECUADOR
+		short_code: EC
+		phone_code_prefix: 593
+	}
+}
+country_to_country_details {
+	key: "EG"
+	value {
+		country: EGYPT
+		short_code: EG
+		phone_code_prefix: 20
+	}
+}
+country_to_country_details {
+	key: "SV"
+	value {
+		country: EL_SALVADOR
+		short_code: SV
+		phone_code_prefix: 503
+	}
+}
+country_to_country_details {
+	key: "GQ"
+	value {
+		country: EQUATORIAL_GUINEA
+		short_code: GQ
+		phone_code_prefix: 240
+	}
+}
+country_to_country_details {
+	key: "ER"
+	value {
+		country: ERITREA
+		short_code: ER
+		phone_code_prefix: 291
+	}
+}
+country_to_country_details {
+	key: "EE"
+	value {
+		country: ESTONIA
+		short_code: EE
+		phone_code_prefix: 372
+	}
+}
+country_to_country_details {
+	key: "SZ"
+	value {
+		country: ESWATINI
+		short_code: SZ
+		phone_code_prefix: 268
+	}
+}
+country_to_country_details {
+	key: "ET"
+	value {
+		country: ETHIOPIA
+		short_code: ET
+		phone_code_prefix: 251
+	}
+}
+country_to_country_details {
+	key: "FK"
+	value {
+		country: FALKLAND_ISLANDS_MALVINAS
+		short_code: FK
+		phone_code_prefix: 500
+	}
+}
+country_to_country_details {
+	key: "FO"
+	value {
+		country: FAROE_ISLANDS
+		short_code: FO
+		phone_code_prefix: 298
+	}
+}
+country_to_country_details {
+	key: "FJ"
+	value {
+		country: FIJI
+		short_code: FJ
+		phone_code_prefix: 679
+	}
+}
+country_to_country_details {
+	key: "FI"
+	value {
+		country: FINLAND
+		short_code: FI
+		phone_code_prefix: 358
+	}
+}
+country_to_country_details {
+	key: "FR"
+	value {
+		country: FRANCE
+		short_code: FR
+		phone_code_prefix: 33
+	}
+}
+country_to_country_details {
+	key: "GF"
+	value {
+		country: FRENCH_GUIANA
+		short_code: GF
+		phone_code_prefix: 594
+	}
+}
+country_to_country_details {
+	key: "PF"
+	value {
+		country: FRENCH_POLYNESIA
+		short_code: PF
+		phone_code_prefix: 689
+	}
+}
+country_to_country_details {
+	key: "TF"
+	value {
+		country: FRENCH_SOUTHERN_TERRITORIES
+		short_code: TF
+		phone_code_prefix: 262
+	}
+}
+country_to_country_details {
+	key: "GA"
+	value {
+		country: GABON
+		short_code: GA
+		phone_code_prefix: 241
+	}
+}
+country_to_country_details {
+	key: "GM"
+	value {
+		country: GAMBIA
+		short_code: GM
+		phone_code_prefix: 220
+	}
+}
+country_to_country_details {
+	key: "GE"
+	value {
+		country: GEORGIA
+		short_code: GE
+		phone_code_prefix: 995
+	}
+}
+country_to_country_details {
+	key: "DE"
+	value {
+		country: GERMANY
+		short_code: DE
+		phone_code_prefix: 49
+	}
+}
+country_to_country_details {
+	key: "GH"
+	value {
+		country: GHANA
+		short_code: GH
+		phone_code_prefix: 233
+	}
+}
+country_to_country_details {
+	key: "GI"
+	value {
+		country: GIBRALTAR
+		short_code: GI
+		phone_code_prefix: 350
+	}
+}
+country_to_country_details {
+	key: "GR"
+	value {
+		country: GREECE
+		short_code: GR
+		phone_code_prefix: 30
+	}
+}
+country_to_country_details {
+	key: "GL"
+	value {
+		country: GREENLAND
+		short_code: GL
+		phone_code_prefix: 299
+	}
+}
+country_to_country_details {
+	key: "GD"
+	value {
+		country: GRENADA
+		short_code: GD
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "GP"
+	value {
+		country: GUADELOUPE
+		short_code: GP
+		phone_code_prefix: 590
+	}
+}
+country_to_country_details {
+	key: "GU"
+	value {
+		country: GUAM
+		short_code: GU
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "GT"
+	value {
+		country: GUATEMALA
+		short_code: GT
+		phone_code_prefix: 502
+	}
+}
+country_to_country_details {
+	key: "GG"
+	value {
+		country: GUERNSEY
+		short_code: GG
+		phone_code_prefix: 44
+	}
+}
+country_to_country_details {
+	key: "GN"
+	value {
+		country: GUINEA
+		short_code: GN
+		phone_code_prefix: 224
+	}
+}
+country_to_country_details {
+	key: "GW"
+	value {
+		country: GUINEA_BISSAU
+		short_code: GW
+		phone_code_prefix: 245
+	}
+}
+country_to_country_details {
+	key: "GY"
+	value {
+		country: GUYANA
+		short_code: GY
+		phone_code_prefix: 592
+	}
+}
+country_to_country_details {
+	key: "HT"
+	value {
+		country: HAITI
+		short_code: HT
+		phone_code_prefix: 509
+	}
+}
+country_to_country_details {
+	key: "HM"
+	value {
+		country: HEARD_ISLAND_AND_MCDONALD_ISLANDS
+		short_code: HM
+	}
+}
+country_to_country_details {
+	key: "VA"
+	value {
+		country: HOLY_SEE
+		short_code: VA
+		phone_code_prefix: 39
+	}
+}
+country_to_country_details {
+	key: "HN"
+	value {
+		country: HONDURAS
+		short_code: HN
+		phone_code_prefix: 504
+	}
+}
+country_to_country_details {
+	key: "HK"
+	value {
+		country: HONG_KONG
+		short_code: HK
+		phone_code_prefix: 852
+	}
+}
+country_to_country_details {
+	key: "HU"
+	value {
+		country: HUNGARY
+		short_code: HU
+		phone_code_prefix: 36
+	}
+}
+country_to_country_details {
+	key: "IS"
+	value {
+		country: ICELAND
+		short_code: IS
+		phone_code_prefix: 354
+	}
+}
+country_to_country_details {
+	key: "IN"
+	value {
+		country: INDIA
+		short_code: IN
+		phone_code_prefix: 91
+	}
+}
+country_to_country_details {
+	key: "ID"
+	value {
+		country: INDONESIA
+		short_code: ID
+		phone_code_prefix: 62
+	}
+}
+country_to_country_details {
+	key: "IR"
+	value {
+		country: ISLAMIC_REPUBLIC_OF_IRAN
+		short_code: IR
+		phone_code_prefix: 98
+	}
+}
+country_to_country_details {
+	key: "IQ"
+	value {
+		country: IRAQ
+		short_code: IQ
+		phone_code_prefix: 964
+	}
+}
+country_to_country_details {
+	key: "IE"
+	value {
+		country: IRELAND
+		short_code: IE
+		phone_code_prefix: 353
+	}
+}
+country_to_country_details {
+	key: "IM"
+	value {
+		country: ISLE_OF_MAN
+		short_code: IM
+		phone_code_prefix: 44
+	}
+}
+country_to_country_details {
+	key: "IL"
+	value {
+		country: ISRAEL
+		short_code: IL
+		phone_code_prefix: 972
+	}
+}
+country_to_country_details {
+	key: "IT"
+	value {
+		country: ITALY
+		short_code: IT
+		phone_code_prefix: 39
+	}
+}
+country_to_country_details {
+	key: "JM"
+	value {
+		country: JAMAICA
+		short_code: JM
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "JP"
+	value {
+		country: JAPAN
+		short_code: JP
+		phone_code_prefix: 81
+	}
+}
+country_to_country_details {
+	key: "JE"
+	value {
+		country: JERSEY
+		short_code: JE
+		phone_code_prefix: 44
+	}
+}
+country_to_country_details {
+	key: "JO"
+	value {
+		country: JORDAN
+		short_code: JO
+		phone_code_prefix: 962
+	}
+}
+country_to_country_details {
+	key: "KZ"
+	value {
+		country: KAZAKHSTAN
+		short_code: KZ
+		phone_code_prefix: 7
+	}
+}
+country_to_country_details {
+	key: "KE"
+	value {
+		country: KENYA
+		short_code: KE
+		phone_code_prefix: 254
+	}
+}
+country_to_country_details {
+	key: "KI"
+	value {
+		country: KIRIBATI
+		short_code: KI
+		phone_code_prefix: 686
+	}
+}
+country_to_country_details {
+	key: "KP"
+	value {
+		country: DEMOCRATIC_PEOPLES_REPUBLIC_OF_KOREA
+		short_code: KP
+		phone_code_prefix: 850
+	}
+}
+country_to_country_details {
+	key: "KR"
+	value {
+		country: REPUBLIC_OF_KOREA
+		short_code: KR
+		phone_code_prefix: 82
+	}
+}
+country_to_country_details {
+	key: "KW"
+	value {
+		country: KUWAIT
+		short_code: KW
+		phone_code_prefix: 965
+	}
+}
+country_to_country_details {
+	key: "KG"
+	value {
+		country: KYRGYZSTAN
+		short_code: KG
+		phone_code_prefix: 996
+	}
+}
+country_to_country_details {
+	key: "LA"
+	value {
+		country: LAO_PEOPLES_DEMOCRATIC_REPUBLIC
+		short_code: LA
+		phone_code_prefix: 856
+	}
+}
+country_to_country_details {
+	key: "LV"
+	value {
+		country: LATVIA
+		short_code: LV
+		phone_code_prefix: 371
+	}
+}
+country_to_country_details {
+	key: "LB"
+	value {
+		country: LEBANON
+		short_code: LB
+		phone_code_prefix: 961
+	}
+}
+country_to_country_details {
+	key: "LS"
+	value {
+		country: LESOTHO
+		short_code: LS
+		phone_code_prefix: 266
+	}
+}
+country_to_country_details {
+	key: "LR"
+	value {
+		country: LIBERIA
+		short_code: LR
+		phone_code_prefix: 231
+	}
+}
+country_to_country_details {
+	key: "LY"
+	value {
+		country: LIBYA
+		short_code: LY
+		phone_code_prefix: 218
+	}
+}
+country_to_country_details {
+	key: "LI"
+	value {
+		country: LIECHTENSTEIN
+		short_code: LI
+		phone_code_prefix: 423
+	}
+}
+country_to_country_details {
+	key: "LT"
+	value {
+		country: LITHUANIA
+		short_code: LT
+		phone_code_prefix: 370
+	}
+}
+country_to_country_details {
+	key: "LU"
+	value {
+		country: LUXEMBOURG
+		short_code: LU
+		phone_code_prefix: 352
+	}
+}
+country_to_country_details {
+	key: "MO"
+	value {
+		country: MACAO
+		short_code: MO
+		phone_code_prefix: 853
+	}
+}
+country_to_country_details {
+	key: "MG"
+	value {
+		country: MADAGASCAR
+		short_code: MG
+		phone_code_prefix: 261
+	}
+}
+country_to_country_details {
+	key: "MW"
+	value {
+		country: MALAWI
+		short_code: MW
+		phone_code_prefix: 265
+	}
+}
+country_to_country_details {
+	key: "MY"
+	value {
+		country: MALAYSIA
+		short_code: MY
+		phone_code_prefix: 60
+	}
+}
+country_to_country_details {
+	key: "MV"
+	value {
+		country: MALDIVES
+		short_code: MV
+		phone_code_prefix: 960
+	}
+}
+country_to_country_details {
+	key: "ML"
+	value {
+		country: MALI
+		short_code: ML
+		phone_code_prefix: 223
+	}
+}
+country_to_country_details {
+	key: "MT"
+	value {
+		country: MALTA
+		short_code: MT
+		phone_code_prefix: 356
+	}
+}
+country_to_country_details {
+	key: "MH"
+	value {
+		country: MARSHALL_ISLANDS
+		short_code: MH
+		phone_code_prefix: 692
+	}
+}
+country_to_country_details {
+	key: "MQ"
+	value {
+		country: MARTINIQUE
+		short_code: MQ
+		phone_code_prefix: 596
+	}
+}
+country_to_country_details {
+	key: "MR"
+	value {
+		country: MAURITANIA
+		short_code: MR
+		phone_code_prefix: 222
+	}
+}
+country_to_country_details {
+	key: "MU"
+	value {
+		country: MAURITIUS
+		short_code: MU
+		phone_code_prefix: 230
+	}
+}
+country_to_country_details {
+	key: "YT"
+	value {
+		country: MAYOTTE
+		short_code: YT
+		phone_code_prefix: 262
+	}
+}
+country_to_country_details {
+	key: "MX"
+	value {
+		country: MEXICO
+		short_code: MX
+		phone_code_prefix: 52
+	}
+}
+country_to_country_details {
+	key: "FM"
+	value {
+		country: FEDERATED_STATES_OF_MICRONESIA
+		short_code: FM
+		phone_code_prefix: 691
+	}
+}
+country_to_country_details {
+	key: "MD"
+	value {
+		country: REPUBLIC_OF_MOLDOVA
+		short_code: MD
+		phone_code_prefix: 373
+	}
+}
+country_to_country_details {
+	key: "MC"
+	value {
+		country: MONACO
+		short_code: MC
+		phone_code_prefix: 377
+	}
+}
+country_to_country_details {
+	key: "MN"
+	value {
+		country: MONGOLIA
+		short_code: MN
+		phone_code_prefix: 976
+	}
+}
+country_to_country_details {
+	key: "ME"
+	value {
+		country: MONTENEGRO
+		short_code: ME
+		phone_code_prefix: 382
+	}
+}
+country_to_country_details {
+	key: "MS"
+	value {
+		country: MONTSERRAT
+		short_code: MS
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "MA"
+	value {
+		country: MOROCCO
+		short_code: MA
+		phone_code_prefix: 212
+	}
+}
+country_to_country_details {
+	key: "MZ"
+	value {
+		country: MOZAMBIQUE
+		short_code: MZ
+		phone_code_prefix: 258
+	}
+}
+country_to_country_details {
+	key: "MM"
+	value {
+		country: MYANMAR
+		short_code: MM
+		phone_code_prefix: 95
+	}
+}
+country_to_country_details {
+	key: "NA"
+	value {
+		country: NAMIBIA
+		short_code: NA
+		phone_code_prefix: 264
+	}
+}
+country_to_country_details {
+	key: "NR"
+	value {
+		country: NAURU
+		short_code: NR
+		phone_code_prefix: 674
+	}
+}
+country_to_country_details {
+	key: "NP"
+	value {
+		country: NEPAL
+		short_code: NP
+		phone_code_prefix: 977
+	}
+}
+country_to_country_details {
+	key: "NL"
+	value {
+		country: KINGDOM_OF_THE_NETHERLANDS
+		short_code: NL
+		phone_code_prefix: 31
+	}
+}
+country_to_country_details {
+	key: "NC"
+	value {
+		country: NEW_CALEDONIA
+		short_code: NC
+		phone_code_prefix: 687
+	}
+}
+country_to_country_details {
+	key: "NZ"
+	value {
+		country: NEW_ZEALAND
+		short_code: NZ
+		phone_code_prefix: 64
+	}
+}
+country_to_country_details {
+	key: "NI"
+	value {
+		country: NICARAGUA
+		short_code: NI
+		phone_code_prefix: 505
+	}
+}
+country_to_country_details {
+	key: "NE"
+	value {
+		country: NIGER
+		short_code: NE
+		phone_code_prefix: 227
+	}
+}
+country_to_country_details {
+	key: "NG"
+	value {
+		country: NIGERIA
+		short_code: NG
+		phone_code_prefix: 234
+	}
+}
+country_to_country_details {
+	key: "NU"
+	value {
+		country: NIUE
+		short_code: NU
+		phone_code_prefix: 683
+	}
+}
+country_to_country_details {
+	key: "NF"
+	value {
+		country: NORFOLK_ISLAND
+		short_code: NF
+		phone_code_prefix: 672
+	}
+}
+country_to_country_details {
+	key: "MK"
+	value {
+		country: NORTH_MACEDONIA
+		short_code: MK
+		phone_code_prefix: 389
+	}
+}
+country_to_country_details {
+	key: "MP"
+	value {
+		country: NORTHERN_MARIANA_ISLANDS
+		short_code: MP
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "NO"
+	value {
+		country: NORWAY
+		short_code: NO
+		phone_code_prefix: 47
+	}
+}
+country_to_country_details {
+	key: "OM"
+	value {
+		country: OMAN
+		short_code: OM
+		phone_code_prefix: 968
+	}
+}
+country_to_country_details {
+	key: "PK"
+	value {
+		country: PAKISTAN
+		short_code: PK
+		phone_code_prefix: 92
+	}
+}
+country_to_country_details {
+	key: "PW"
+	value {
+		country: PALAU
+		short_code: PW
+		phone_code_prefix: 680
+	}
+}
+country_to_country_details {
+	key: "PS"
+	value {
+		country: STATE_OF_PALESTINE
+		short_code: PS    }
+}
+country_to_country_details {
+	key: "PA"
+	value {
+		country: PANAMA
+		short_code: PA
+		phone_code_prefix: 507
+	}
+}
+country_to_country_details {
+	key: "PG"
+	value {
+		country: PAPUA_NEW_GUINEA
+		short_code: PG
+		phone_code_prefix: 675
+	}
+}
+country_to_country_details {
+	key: "PY"
+	value {
+		country: PARAGUAY
+		short_code: PY
+		phone_code_prefix: 595
+	}
+}
+country_to_country_details {
+	key: "PE"
+	value {
+		country: PERU
+		short_code: PE
+		phone_code_prefix: 51
+	}
+}
+country_to_country_details {
+	key: "PH"
+	value {
+		country: PHILIPPINES
+		short_code: PH
+		phone_code_prefix: 63
+	}
+}
+country_to_country_details {
+	key: "PN"
+	value {
+		country: PITCAIRN
+		short_code: PN
+		phone_code_prefix: 870
+	}
+}
+country_to_country_details {
+	key: "PL"
+	value {
+		country: POLAND
+		short_code: PL
+		phone_code_prefix: 48
+	}
+}
+country_to_country_details {
+	key: "PT"
+	value {
+		country: PORTUGAL
+		short_code: PT
+		phone_code_prefix: 351
+	}
+}
+country_to_country_details {
+	key: "PR"
+	value {
+		country: PUERTO_RICO
+		short_code: PR
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "QA"
+	value {
+		country: QATAR
+		short_code: QA
+		phone_code_prefix: 974
+	}
+}
+country_to_country_details {
+	key: "RE"
+	value {
+		country: REUNION
+		short_code: RE
+		phone_code_prefix: 262
+	}
+}
+country_to_country_details {
+	key: "RO"
+	value {
+		country: ROMANIA
+		short_code: RO
+		phone_code_prefix: 40
+	}
+}
+country_to_country_details {
+	key: "RU"
+	value {
+		country: RUSSIAN_FEDERATION
+		short_code: RU
+		phone_code_prefix: 7
+	}
+}
+country_to_country_details {
+	key: "RW"
+	value {
+		country: RWANDA
+		short_code: RW
+		phone_code_prefix: 250
+	}
+}
+country_to_country_details {
+	key: "BL"
+	value {
+		country: SAINT_BARTHELEMY
+		short_code: BL
+		phone_code_prefix: 590
+	}
+}
+country_to_country_details {
+	key: "SH"
+	value {
+		country: SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA
+		short_code: SH
+		phone_code_prefix: 290
+	}
+}
+country_to_country_details {
+	key: "KN"
+	value {
+		country: SAINT_KITTS_AND_NEVIS
+		short_code: KN
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "LC"
+	value {
+		country: SAINT_LUCIA
+		short_code: LC
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "MF"
+	value {
+		country: SAINT_MARTIN_FRENCH_PART
+		short_code: MF
+		phone_code_prefix: 590
+	}
+}
+country_to_country_details {
+	key: "PM"
+	value {
+		country: SAINT_PIERRE_AND_MIQUELON
+		short_code: PM
+		phone_code_prefix: 508
+	}
+}
+country_to_country_details {
+	key: "VC"
+	value {
+		country: SAINT_VINCENT_AND_THE_GRENADINES
+		short_code: VC
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "WS"
+	value {
+		country: SAMOA
+		short_code: WS
+		phone_code_prefix: 685
+	}
+}
+country_to_country_details {
+	key: "SM"
+	value {
+		country: SAN_MARINO
+		short_code: SM
+		phone_code_prefix: 378
+	}
+}
+country_to_country_details {
+	key: "ST"
+	value {
+		country: SAO_TOME_AND_PRINCIPE
+		short_code: ST
+		phone_code_prefix: 239
+	}
+}
+country_to_country_details {
+	key: "SA"
+	value {
+		country: SAUDI_ARABIA
+		short_code: SA
+		phone_code_prefix: 966
+	}
+}
+country_to_country_details {
+	key: "SN"
+	value {
+		country: SENEGAL
+		short_code: SN
+		phone_code_prefix: 221
+	}
+}
+country_to_country_details {
+	key: "RS"
+	value {
+		country: SERBIA
+		short_code: RS
+		phone_code_prefix: 381
+	}
+}
+country_to_country_details {
+	key: "SC"
+	value {
+		country: SEYCHELLES
+		short_code: SC
+		phone_code_prefix: 248
+	}
+}
+country_to_country_details {
+	key: "SL"
+	value {
+		country: SIERRA_LEONE
+		short_code: SL
+		phone_code_prefix: 232
+	}
+}
+country_to_country_details {
+	key: "SG"
+	value {
+		country: SINGAPORE
+		short_code: SG
+		phone_code_prefix: 65
+	}
+}
+country_to_country_details {
+	key: "SX"
+	value {
+		country: SINT_MAARTEN_DUTCH_PART
+		short_code: SX
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "SK"
+	value {
+		country: SLOVAKIA
+		short_code: SK
+		phone_code_prefix: 421
+	}
+}
+country_to_country_details {
+	key: "SI"
+	value {
+		country: SLOVENIA
+		short_code: SI
+		phone_code_prefix: 386
+	}
+}
+country_to_country_details {
+	key: "SB"
+	value {
+		country: SOLOMON_ISLANDS
+		short_code: SB
+		phone_code_prefix: 677
+	}
+}
+country_to_country_details {
+	key: "SO"
+	value {
+		country: SOMALIA
+		short_code: SO
+		phone_code_prefix: 252
+	}
+}
+country_to_country_details {
+	key: "ZA"
+	value {
+		country: SOUTH_AFRICA
+		short_code: ZA
+		phone_code_prefix: 27
+	}
+}
+country_to_country_details {
+	key: "GS"
+	value {
+		country: SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS
+		short_code: GS
+		phone_code_prefix: 500
+	}
+}
+country_to_country_details {
+	key: "SS"
+	value {
+		country: SOUTH_SUDAN
+		short_code: SS
+		phone_code_prefix: 211
+	}
+}
+country_to_country_details {
+	key: "ES"
+	value {
+		country: SPAIN
+		short_code: ES
+		phone_code_prefix: 34
+	}
+}
+country_to_country_details {
+	key: "LK"
+	value {
+		country: SRI_LANKA
+		short_code: LK
+		phone_code_prefix: 94
+	}
+}
+country_to_country_details {
+	key: "SD"
+	value {
+		country: SUDAN
+		short_code: SD
+		phone_code_prefix: 249
+	}
+}
+country_to_country_details {
+	key: "SR"
+	value {
+		country: SURINAME
+		short_code: SR
+		phone_code_prefix: 597
+	}
+}
+country_to_country_details {
+	key: "SJ"
+	value {
+		country: SVALBARD_AND_JAN_MAYEN
+		short_code: SJ
+		phone_code_prefix: 47
+	}
+}
+country_to_country_details {
+	key: "SE"
+	value {
+		country: SWEDEN
+		short_code: SE
+		phone_code_prefix: 46
+	}
+}
+country_to_country_details {
+	key: "CH"
+	value {
+		country: SWITZERLAND
+		short_code: CH
+		phone_code_prefix: 41
+	}
+}
+country_to_country_details {
+	key: "SY"
+	value {
+		country: SYRIAN_ARAB_REPUBLIC
+		short_code: SY
+		phone_code_prefix: 963
+	}
+}
+country_to_country_details {
+	key: "TW"
+	value {
+		country: PROVINCE_OF_CHINA_TAIWAN
+		short_code: TW
+		phone_code_prefix: 886
+	}
+}
+country_to_country_details {
+	key: "TJ"
+	value {
+		country: TAJIKISTAN
+		short_code: TJ
+		phone_code_prefix: 992
+	}
+}
+country_to_country_details {
+	key: "TZ"
+	value {
+		country: UNITED_REPUBLIC_OF_TANZANIA
+		short_code: TZ
+		phone_code_prefix: 255
+	}
+}
+country_to_country_details {
+	key: "TH"
+	value {
+		country: THAILAND
+		short_code: TH
+		phone_code_prefix: 66
+	}
+}
+country_to_country_details {
+	key: "TL"
+	value {
+		country: TIMOR_LESTE
+		short_code: TL
+		phone_code_prefix: 670
+	}
+}
+country_to_country_details {
+	key: "TG"
+	value {
+		country: TOGO
+		short_code: TG
+		phone_code_prefix: 228
+	}
+}
+country_to_country_details {
+	key: "TK"
+	value {
+		country: TOKELAU
+		short_code: TK
+		phone_code_prefix: 690
+	}
+}
+country_to_country_details {
+	key: "TO"
+	value {
+		country: TONGA
+		short_code: TO
+		phone_code_prefix: 676
+	}
+}
+country_to_country_details {
+	key: "TT"
+	value {
+		country: TRINIDAD_AND_TOBAGO
+		short_code: TT
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "TN"
+	value {
+		country: TUNISIA
+		short_code: TN
+		phone_code_prefix: 216
+	}
+}
+country_to_country_details {
+	key: "TR"
+	value {
+		country: TURKIYE
+		short_code: TR
+		phone_code_prefix: 90
+	}
+}
+country_to_country_details {
+	key: "TM"
+	value {
+		country: TURKMENISTAN
+		short_code: TM
+		phone_code_prefix: 993
+	}
+}
+country_to_country_details {
+	key: "TC"
+	value {
+		country: TURKS_AND_CAICOS_ISLANDS
+		short_code: TC
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "TV"
+	value {
+		country: TUVALU
+		short_code: TV
+		phone_code_prefix: 688
+	}
+}
+country_to_country_details {
+	key: "UG"
+	value {
+		country: UGANDA
+		short_code: UG
+		phone_code_prefix: 256
+	}
+}
+country_to_country_details {
+	key: "UA"
+	value {
+		country: UKRAINE
+		short_code: UA
+		phone_code_prefix: 380
+	}
+}
+country_to_country_details {
+	key: "AE"
+	value {
+		country: UNITED_ARAB_EMIRATES
+		short_code: AE
+		phone_code_prefix: 971
+	}
+}
+country_to_country_details {
+	key: "GB"
+	value {
+		country: UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND
+		short_code: GB
+		phone_code_prefix: 44
+	}
+}
+country_to_country_details {
+	key: "US"
+	value {
+		country: UNITED_STATES_OF_AMERICA
+		short_code: US
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "UM"
+	value {
+		country: UNITED_STATES_MINOR_OUTLYING_ISLANDS
+		short_code: UM
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "UY"
+	value {
+		country: URUGUAY
+		short_code: UY
+		phone_code_prefix: 598
+	}
+}
+country_to_country_details {
+	key: "UZ"
+	value {
+		country: UZBEKISTAN
+		short_code: UZ
+		phone_code_prefix: 998
+	}
+}
+country_to_country_details {
+	key: "VU"
+	value {
+		country: VANUATU
+		short_code: VU
+		phone_code_prefix: 678
+	}
+}
+country_to_country_details {
+	key: "VE"
+	value {
+		country: REPUBLIC_OF_VENEZUELA_BOLIVARIAN
+		short_code: VE
+		phone_code_prefix: 58
+	}
+}
+country_to_country_details {
+	key: "VN"
+	value {
+		country: VIET_NAM
+		short_code: VN
+		phone_code_prefix: 84
+	}
+}
+country_to_country_details {
+	key: "VG"
+	value {
+		country: VIRGIN_ISLANDS_BRITISH
+		short_code: VG
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "VI"
+	value {
+		country: VIRGIN_ISLANDS_US
+		short_code: VI
+		phone_code_prefix: 1
+	}
+}
+country_to_country_details {
+	key: "WF"
+	value {
+		country: WALLIS_AND_FUTUNA
+		short_code: WF
+		phone_code_prefix: 681
+	}
+}
+country_to_country_details {
+	key: "EH"
+	value {
+		country: WESTERN_SAHARA
+		short_code: EH
+		phone_code_prefix: 212
+	}
+}
+country_to_country_details {
+	key: "YE"
+	value {
+		country: YEMEN
+		short_code: YE
+		phone_code_prefix: 967
+	}
+}
+country_to_country_details {
+	key: "ZM"
+	value {
+		country: ZAMBIA
+		short_code: ZM
+		phone_code_prefix: 260
+	}
+}
+country_to_country_details {
+	key: "ZW"
+	value {
+		country: ZIMBABWE
+		short_code: ZW
+		phone_code_prefix: 263
+	}
+}

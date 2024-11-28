@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package strique.constants.ui;
+
+option java_outer_classname = "ChartOrientationProto";
+option java_package = "com.strique.constants.ui";
+
+// Next Id: 2
+// Enumeration of Orientations allowed for a specific chart.
+enum ChartOrientation {
+  CHARTORIENTATION_UNKNOWN = 0;
+  HORIZONTAL = 1;
+  VERTICAL = 2;
+}

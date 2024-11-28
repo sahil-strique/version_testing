@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "TopLandingPagesBySessionsProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of TopLandingPagesBySessions List.
+message TopLandingPagesBySessionsList {
+  repeated TopLandingPagesBySessions topLandingPagesBySessionsResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store top landing page by sessions's data object.
+message TopLandingPagesBySessions {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Name of landing page.
+  string landing_page = 2;
+
+  // Number of session created on top landing page.
+  uint64 sessions = 3;
+
+  // Number of add to cart done on top landing page.
+  uint64 add_to_carts = 4;
+
+  // Number of checkouts done on top landing page.
+  uint64 checkouts = 5;
+
+  // Number of purchase done on top landing page.
+  uint64 ecommerce_purchases = 6;
+
+  // Total revenue generated on top landing page.
+  double purchases_revenue = 7;
+}

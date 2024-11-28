@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package strique.constants;
+
+import "options/strique_enum_options.proto";
+
+option java_outer_classname = "HourProto";
+option java_package = "com.strique.constants.datetime";
+
+//Next ID : 25
+// Enum for hours of day.
+enum Hour {
+  HOURS_UNKNWON = 0 [
+      (options.label) = 'Unknown'
+    ];
+  HOUR_01 = 1 [
+      (options.label) = '1'
+    ];
+  HOUR_02 = 2 [
+      (options.label) = '2'
+    ];
+  HOUR_03 = 3 [
+      (options.label) = '3'
+    ];
+  HOUR_04 = 4 [
+      (options.label) = '4'
+    ];
+  HOUR_05 = 5 [
+      (options.label) = '5'
+    ];
+  HOUR_06 = 6 [
+      (options.label) = '6'
+    ];
+  HOUR_07 = 7 [
+      (options.label) = '7'
+    ];
+  HOUR_08 = 8 [
+      (options.label) = '8'
+    ];
+  HOUR_09 = 9 [
+      (options.label) = '9'
+    ];
+  HOUR_10 = 10 [
+      (options.label) = '10'
+    ];
+  HOUR_11 = 11 [
+      (options.label) = '11'
+    ];
+  HOUR_12 = 12 [
+      (options.label) = '12'
+    ];
+  HOUR_13 = 13 [
+      (options.label) = '13'
+    ];
+  HOUR_14 = 14 [
+      (options.label) = '14'
+    ];
+  HOUR_15 = 15 [
+      (options.label) = '15'
+    ];
+  HOUR_16 = 16 [
+      (options.label) = '16'
+    ];
+  HOUR_17 = 17 [
+      (options.label) = '17'
+    ];
+  HOUR_18 = 18 [
+      (options.label) = '18'
+    ];
+  HOUR_19 = 19 [
+      (options.label) = '19'
+    ];
+  HOUR_20 = 20 [
+      (options.label) = '20'
+    ];
+  HOUR_21 = 21 [
+      (options.label) = '21'
+    ];
+  HOUR_22 = 22 [
+      (options.label) = '22'
+    ];
+  HOUR_23 = 23 [
+      (options.label) = '23'
+    ];
+  HOUR_24 = 24 [
+      (options.label) = '24'
+    ];
+}

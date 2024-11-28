@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package strique.types.dto.meta;
+
+import "types/dto/meta/meta_ads_error.proto";
+
+option java_outer_classname = "MetaAdsStatusProto";
+option java_package = "com.strique.types.dto.meta";
+
+// Next Id: 4
+// A protobuf to store meta status object.
+message MetaAdsStatus {
+  enum PlatformStatus {
+    PLATFORMSTATUS_UNKNOWN = 0;
+    ACTIVE = 1;
+    DISABLED = 2;
+    UNSETTLED = 3;
+    PENDING_RISK_REVIEW = 7;
+    PENDING_SETTLEMENT = 8;
+    IN_GRACE_PERIOD = 9;
+    PENDING_CLOSURE = 100;
+    CLOSED = 101;
+    ANY_ACTIVE = 201;
+    ANY_CLOSED = 202;
+  }
+  // Status of the meta Ads Ad account
+  optional PlatformStatus account_status = 1 [json_name = "account_status"];
+
+  // ID of the meta Ads Ad account
+  optional string id = 2 [json_name = "id"];
+
+  optional MetaAdsError error = 3 [json_name = "error"];
+}

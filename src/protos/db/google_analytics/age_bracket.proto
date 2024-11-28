@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package strique.constants;
+
+import "options/strique_enum_options.proto";
+
+option java_outer_classname = "AgeBracketProto";
+option java_package = "com.strique.constants.agebracket";
+
+// Next Id : 7
+// Proto enum for age brackets.
+enum AgeBracket {
+  AGEBRACKET_UNKNWON = 0 [
+      (options.label) = 'Unknown'
+    ];
+  AGEBRACKET_18_24 = 1 [
+      (options.label) = '18-24'
+    ];
+  AGEBRACKET_25_34 = 2 [
+      (options.label) = '25-34'
+    ];
+  AGEBRACKET_35_44 = 3 [
+      (options.label) = '35-44'
+    ];
+  AGEBRACKET_45_54 = 4 [
+      (options.label) = '45-54'
+    ];
+  AGEBRACKET_55_64 = 5 [
+      (options.label) = '55-64'
+    ];
+  AGEBRACKET_65_ABOVE = 6 [
+      (options.label) = '65+'
+    ];
+}

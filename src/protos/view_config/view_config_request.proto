@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strique.model.view_config;
+
+option java_outer_classname = "ViewConfigRequestProto";
+option java_package = "com.strique.model.viewconfig";
+
+// Next Id: 3
+// Proto definition of View configuration request.
+message ViewConfigRequest {
+  // Specifies the user id for which the View Config needs to be fetched.
+  string user_id = 1;
+
+  // Specifies the store id for which the View Config needs to be fetched.
+  string store_id = 2;
+}

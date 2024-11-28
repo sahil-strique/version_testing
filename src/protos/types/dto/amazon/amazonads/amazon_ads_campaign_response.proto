@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "AmazonAdsReportsProto";
+option java_package = "com.strique.types.dto.amazon";
+
+// Next Id: 2
+message CampaignReports {
+  repeated CampaignReport reports = 1;
+}
+
+// Next Id: 11
+message CampaignReport {
+  string date = 1 [json_name = "date"];
+  double sales = 2 [json_name = "sales14d"];
+  uint64 campaign_id = 3 [json_name = "campaignId"];
+  double top_of_search_impression_share = 4 [json_name = "topOfSearchImpressionShare"];
+  uint64 impressions = 5 [json_name = "impressions"];
+  uint64 purchases = 6 [json_name = "purchases14d"];
+  double spend = 7 [json_name = "spend"];
+  string campaign_status = 8 [json_name = "campaignStatus"];
+  uint64 clicks = 9 [json_name = "clicks"];
+  string campaign_name = 10 [json_name = "campaignName"];
+}
+
+// Next Id: 2
+message SearchTermReports {
+  repeated SearchTermReport reports = 1;
+}
+
+// Next Id: 12
+message SearchTermReport {
+  string date = 1 [json_name = "date"];
+  double cost = 2 [json_name = "cost"];
+  string search_term = 3 [json_name = "searchTerm"];
+  string ad_group_name = 4 [json_name = "adGroupName"];
+  uint64 campaign_id = 5 [json_name = "campaignId"];
+  uint64 clicks = 6 [json_name = "clicks"];
+  uint64 purchases = 7 [json_name = "purchases14d"];
+  double sales = 8 [json_name = "sales14d"];
+  uint64 impressions = 9 [json_name = "impressions"];
+  string campaign_name = 10 [json_name = "campaignName"];
+  uint64 ad_group_id = 11 [json_name = "adGroupId"];
+  string keyword = 12 [json_name = "keyword"];
+}
+
+// Next Id: 2
+message SponsoredBrandsCampaingReports {
+  repeated SponsoredBrandsCampaingReport reports = 1;
+}
+
+// Next Id: 11
+message SponsoredBrandsCampaingReport {
+  string date = 1 [json_name = "date"];
+  uint64 campaign_id = 2 [json_name = "campaignId"];
+  string campaign_name = 3 [json_name = "campaignName"];
+  double top_of_search_impression_share = 4 [json_name = "topOfSearchImpressionShare"];
+  uint64 impressions = 5 [json_name = "impressions"];
+  uint64 clicks = 6 [json_name = "clicks"];
+  double sales = 7 [json_name = "sales"];
+  double cost = 8 [json_name = "cost"];
+  uint64 purchases = 9 [json_name = "purchases"];
+  string campaign_status = 10 [json_name = "campaignStatus"];
+}

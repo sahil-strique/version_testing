@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "UserBySourceAndMediumProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of UserBySourceAndMedium List.
+message UserBySourceAndMediumList {
+  repeated UserBySourceAndMedium userBySourceAndMediumResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store user by source and medium data object.
+message UserBySourceAndMedium {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Indicate from where and how user came to website.
+  string first_user_source_medium = 2;
+
+  // Number of session created for a day by source/medium.
+  uint64 sessions = 3;
+
+  // Number of add o cart done for a day by source/medium.
+  uint64 add_to_carts = 4;
+
+  // Number of checkouts done for a day by source/medium.
+  uint64 checkouts = 5;
+
+  // Number of purchase done for a day by source/medium.
+  uint64 ecommerce_purchases = 6;
+
+  // Total revenue generated for a day by source/medium.
+  double total_revenue = 7;
+}

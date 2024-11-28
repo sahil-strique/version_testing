@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package strique.model.db.store;
+
+import "constants/countries/country.proto";
+import "db/store/plan_details.proto";
+
+option java_outer_classname = "StoreProto";
+option java_package = "com.strique.model.db.store";
+
+// Next Id : 20
+// A protobuf to store Store object.
+message Store {
+  string id = 1;
+
+  // Name of the store.
+  string name = 2;
+
+  // Url of the store.
+  string website = 3;
+
+  // Email of the store
+  string email = 4;
+
+  enum StoreStatus {
+    STATUS_UNKNOWN = 0;
+    STATUS_INACTIVE = 1;
+    STATUS_ACTIVE = 2;
+    GRACE_PERIOD = 3;
+    DOWNGRADED = 4;
+    DELETED = 5;
+  }
+  // Status of the store.
+  StoreStatus status = 5;
+
+  // Logo url of store.
+  optional string logo_url = 6;
+
+  //Address line 1 of store's address.
+  optional string address_line_1 = 7;
+
+  //Address line 2 of store's address.
+  optional string address_line_2 = 8;
+
+  // City of store's address
+  optional string city = 9;
+
+  // State of store's address
+  string state = 10;
+
+  // Country name of store.
+  constants.Country country = 11;
+
+  // Zipcode of store's address.
+  string zip_code = 12;
+
+  enum StoreThemeColor {
+    DEFAULT = 0;
+    SKY = 1;
+    AMBER = 2;
+    LIME = 3;
+    ROSE = 4;
+  }
+  // Store theme
+  StoreThemeColor store_theme_color = 13;
+
+  bool survey_done = 14;
+
+  optional string description = 15;
+
+  enum StorePlan {
+    STOREPLAN_UNKNOWN = 0;
+    FREE = 1;
+    GROWTH = 2;
+    ENTERPRISE = 3;
+  }
+
+  StorePlan store_plan = 16;
+
+  optional string stripe_customer_id = 18;
+
+  optional PlanDetails plan_details = 17;
+
+  string store_dashboard_view_config_id = 19;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package strique.model.report.download;
+
+import "report/report_request.proto";
+import "report/report_response.proto";
+import "ai/reporting/summary.proto";
+
+option java_outer_classname = "ReportDownloadRequestProto";
+option java_package = "com.strique.model.report.download";
+
+// Next Id: 7
+// Proto definition for the download report request.
+message ReportDownloadRequest {
+  ReportRequest report_request = 1;
+
+  bool with_ai_summary = 2;
+
+  optional ai.reporting.SummaryRequest ai_summaryRequest = 3;
+
+  enum FileType {
+    FILE_TYPE_UNKNOWN = 0;
+    PDF = 1;
+    PPT = 2;
+  }
+
+  FileType file_type = 4;  
+
+  optional ReportResponse report_response = 5;
+
+  bool isDownload = 6;
+}

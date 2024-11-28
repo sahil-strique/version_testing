@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "constants/datetime/day_of_week.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "BestPerformingDayOfTheWeekProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of BestPerformingDayOfTheWeek List.
+message BestPerformingDayOfTheWeekList {
+  repeated BestPerformingDayOfTheWeek bestPerformingDayOfTheWeekResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store week day's data object.
+message BestPerformingDayOfTheWeek {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // best performing day of week
+  constants.DayOfWeek day_of_week_name = 2;
+
+  // Number of session created on week's day.
+  uint64 sessions = 3;
+
+  // Number of add to cart done on week's day.
+  uint64 add_to_carts = 4;
+
+  // Number of checkouts done on week's day.
+  uint64 checkouts = 5;
+
+  // Number of purchase done on week's day.
+  uint64 ecommerce_purchases = 6;
+
+  // Total revenue generated on week's day.
+  double purchases_revenue = 7;
+}

@@ -1,0 +1,41 @@
+name: Init release to GitHub Packages
+on:
+  push:
+    branches: [release]
+    
+jobs:
+  init-release:
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: write
+      packages: write 
+    steps:
+      - name: Checkout release branch from GitHub 
+        uses: actions/checkout@v4
+        with:
+          ref: release
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Init release of the package
+        run: |
+          TAG=$(cat ./src/resources/VERSION)
+          # Check if the release with this tag already exists
+          if $(git show-ref --tags "${TAG}" --quiet); then
+            # Edit release
+            echo "FATAL!! Bad push. Already found a release with version ${TAG}."
+            exit 1
+          fi
+          # Initiating release.
+          gh release create "${TAG}" \
+            --latest \
+            --draft=false \
+            --title "v${TAG}" \
+            --notes "${{ github.event.head_commit.message }}"
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}

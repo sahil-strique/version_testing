@@ -1,0 +1,6 @@
+Hello, 
+ 
+Your *{{report_name}}* report from *{{start_date}}* to *{{end_date}}* is ready. 
+ 
+Click link to download:
+<{{filelink}}|{{report_name}}_{{start_date}}_{{end_date}}>

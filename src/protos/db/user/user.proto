@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package strique.model.db.user;
+
+import "types/phone_number/phone_number.proto";
+
+option java_outer_classname = "UserProto";
+option java_package = "com.strique.model.db.user";
+
+// Next Id: 9
+// A protobuf to store User object.
+message User {
+  // Id of the User
+  string id = 1;
+
+  // First name of the User
+  string first_name = 2;
+
+  // Last name of the User.
+  optional string last_name = 8;
+
+  // Email of the User
+  string email = 3;
+
+  // Phone Number of the User. It is optional because we have email as required field.
+  optional types.PhoneNumber phone_number = 4;
+
+  enum Status {
+    STATUS_UNKNOWN = 0;
+    STATUS_INACTIVE = 1;
+    STATUS_ACTIVE = 2;
+  }
+  // Status of the User
+  Status status = 5;
+
+  bool survey_done = 6;
+
+  // URL of the profile image of the User
+  optional string profile_image_url = 7;
+}

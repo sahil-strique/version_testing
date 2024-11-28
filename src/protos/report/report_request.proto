@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package strique.model.report;
+
+import "widget/widget.proto";
+
+option java_outer_classname = "ReportRequestProto";
+option java_package = "com.strique.model.report";
+
+// Next Id: 7
+// Proto definition for the Reporting Request.
+message ReportRequest {
+  // Specifies the start date for fetching the report.
+  // date format is yyyy-mm-dd
+  string start_date = 1;
+
+  // Specifies the end date for fetching the report.
+  // date format is yyyy-mm-dd
+  string end_date = 2;
+
+  // List of widget metadata.
+  // Data & Config should be fetched per widget.
+  // Each entry corresponds to a specific widget.
+  repeated widget.WidgetMetadata widgets_metadata = 3;
+
+  // Indicates whether to append Config for each widget or not.
+  // If true, widget specific configuration details will be included.
+  // If false, only widget specific Data will be included in the response.
+  // E.g. useful when being called for pdf
+  bool allow_widget_config = 4;
+
+  // Will be sent only when updating the widget configuration.
+  optional string view_config_id = 5;
+
+  // store id.
+  string store_id = 6;
+}

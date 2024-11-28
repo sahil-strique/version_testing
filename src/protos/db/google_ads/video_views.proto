@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "VideoViewsProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id: 2
+// Proto definition of VideoViews List.
+message VideoViewsList {
+  repeated VideoViews videoViewsResponse = 1;
+}
+
+// Next Id : 15
+// A protobuf to store VideoViews data object.
+message VideoViews {
+  // Store composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // The ID of the video.
+  string video_id = 2;
+
+  // The title of the video.
+  string video_title = 3;
+
+  // Percentage of impressions where the viewer watched all of video.
+  double video_quartile_p100_rate = 4;
+
+  // Percentage of impressions where the viewer watched 75% of video.
+  double video_quartile_p75_rate = 5;
+
+  // Percentage of impressions where the viewer watched 50% of video.
+  double video_quartile_p50_rate = 6;
+
+  // Percentage of impressions where the viewer watched 25% of video.
+  double video_quartile_p25_rate = 7;
+
+  // The number of times video ads were viewed.
+  uint64 video_views = 8;
+
+  // The name of the ad.
+  string ad_group_ad_ad_name = 9;
+
+  // No. of impressions.
+  uint64 impressions = 10;
+
+  // The name of the ad group.
+  string ad_group_name = 11;
+
+  // The sum of CPC and CPM costs during this period.
+  uint64 cost_micros = 12;
+
+  // The id of the ad.
+  uint64 ad_group_ad_ad_id = 13;
+
+  // Video view rate.
+  // Percentage of impressions that resulted in a view.
+  double video_view_rate = 14;
+}

@@ -1,0 +1,155 @@
+syntax = "proto3";
+
+package strique.model.db.tiktok;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "TikTokAdsProto";
+option java_package = "com.strique.model.db.tiktok";
+
+// Next Id: 2
+// Proto definition of TikTok Ads List.
+message TikTokAdsList {
+  repeated TikTokAds TikTokAdsResponse = 1;
+}
+
+// Next Id: 45
+// Proto definition for TikTok ads.
+message TikTokAds {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Amount spent on advertising.
+  double spend = 2;
+
+  // Number of destination clicks.
+  int64 clicks = 3;
+
+  // Clicks (all)
+  int64 engagements = 4;
+
+  // No. of impressions.
+  int64 impressions = 5;
+
+  // Total reach.
+  int64 reach = 6;
+
+  // Total conversions.
+  int64 conversion = 7;
+
+  // Real-time conversions.
+  int64 real_time_conversion = 8;
+
+  // Video views.
+  int64 video_play_actions = 9;
+
+  // Video views at 2 seconds.
+  int64 video_watched_2s = 10;
+
+  // Video views at 6 seconds.
+  int64 video_watched_6s = 11;
+
+  // 6-second focused views
+  int64 engaged_view = 12;
+
+  // Video views at 25% completion.
+  int64 video_views_p25 = 13;
+
+  // Video views at 50% completion.
+  int64 video_views_p50 = 14;
+
+  // Video views at 75% completion.
+  int64 video_views_p75 = 15;
+
+  // Video views at 100% completion.
+  int64 video_views_p100 = 16;
+
+  // Number of shares.
+  int64 shares = 17;
+
+  // Number of comments.
+  int64 comments = 18;
+
+  // Number of likes.
+  int64 likes = 19;
+
+  // Number of follows.
+  int64 follows = 20;
+
+  // Number of completed payments.
+  int64 complete_payment = 21;
+
+  // value of completed payments.
+  double total_complete_payment_rate = 22;
+
+  // Number of total landing page views.
+  int64 total_landing_page_view = 23;
+
+  // Number of total page views.
+  int64 total_pageview = 24;
+
+  // Total value per page view.
+  double total_value_per_pageview = 25;
+
+  // Number of web events for add to cart.
+  int64 web_event_add_to_cart = 26;
+
+  // Total value corresponding to web event add to cart.
+  double total_web_event_add_to_cart_value = 27;
+
+  // Number of initiated checkouts.
+  int64 initiate_checkout = 28;
+
+  // Total value corresponding to initiated checkouts.
+  double total_initiate_checkout_value = 29;
+
+  // Number of subscriptions on web.
+  int64 on_web_subscribe = 30;
+
+  // Total value corresponding to web subscriptions.
+  double total_on_web_subscribe_value = 31;
+
+  // Number of form submissions.
+  int64 form = 32;
+
+  // Total value corresponding to form submissions.
+  double total_form_value = 33;
+
+  // Campaign name.
+  string campaign_name = 34;
+
+  // Campaign ID.
+  string campaign_id = 35;
+
+  enum CampaignType {
+    TYPE_UNKNOWN = 0;
+    REGULAR_CAMPAIGN = 1;
+    IOS14_CAMPAIGN = 2;
+  }
+  // Campaign type.
+  CampaignType campaign_type = 36;
+
+  // Ad group name.
+  string adgroup_name = 37;
+
+  // Ad group ID.
+  string adgroup_id = 38;
+
+  // Ad name.
+  string ad_name = 39;
+
+  // Ad ID.
+  string ad_id = 40;
+
+  // Optimization goal.
+  string smart_target = 41;
+
+  // formate.
+  string image_mode = 42;
+
+  // Average time video was played per single video view.
+  float average_video_play = 43;
+
+  // Average time your video was played per user.
+  float average_video_play_per_user = 44;
+}

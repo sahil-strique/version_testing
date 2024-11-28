@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strique.model.type.send;
+
+import "db/schedule/recipient.proto";
+import "report/download/report_download_request.proto";
+import "db/schedule/channel_type.proto";
+
+option java_outer_classname = "SendRequestProto";
+option java_package = "com.strique.model.send";
+
+// Next Id: 7
+message SendRequest {
+  db.schedule.Recipient recipient = 1;
+
+  optional string attachmentUrl = 2;
+
+  optional report.download.ReportDownloadRequest.FileType file_type = 3;
+
+  db.schedule.Channel channel = 4;
+
+  optional int64 send_at = 5;
+
+  string payload = 6;
+}

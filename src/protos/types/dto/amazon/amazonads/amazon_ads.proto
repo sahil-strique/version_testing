@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "AmazonAdsProto";
+option java_package = "com.strique.types.dto.amazon";
+
+// Next Id: 5
+// A protobuf to store report request.
+message Report {
+  string name = 1;
+  string start_date = 2;
+  string end_date = 3;
+  ReportConfiguration configuration = 4;
+}
+
+// Next Id: 7
+message ReportConfiguration {
+  string ad_product = 1;
+  repeated string group_by = 2;
+  repeated string columns = 3;
+  string report_type_id = 4;
+  string time_unit = 5;
+  string format = 6;
+}
+
+// Next Id: 2
+message AmazonAdsReportId {
+  string report_id = 1 [json_name = "reportId"];
+}
+
+// Next Id: 2
+message AmazonAdsReportUrl {
+  string url = 1 [json_name = "url"];
+}

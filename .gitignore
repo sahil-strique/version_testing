@@ -1,0 +1,10 @@
+.idea/
+target/
+.vscode/
+node_modules/
+gen/
+release.properties
+package-lock.json
+app.log
+*.rtf
+.DS_Store

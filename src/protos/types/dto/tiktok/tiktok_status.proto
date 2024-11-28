@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strique.types.dto.tiktokStatus;
+
+option java_outer_classname = "TiktokAdsStatusProto";
+option java_package = "com.strique.types.dto.tiktokStatus";
+
+// Next Id: 14
+// Status of tiktok ad accounts.
+enum TiktokAccountStatus {
+  TIKTOK_ACCOUNT_STATUS_UNKNOWN = 0;
+  STATUS_DISABLE = 1;
+  STATUS_PENDING_CONFIRM = 2;
+  STATUS_PENDING_VERIFIED = 3;
+  STATUS_CONFIRM_FAIL = 4;
+  STATUS_ENABLE = 5;
+  STATUS_CONFIRM_FAIL_END = 6;
+  STATUS_PENDING_CONFIRM_MODIFY = 7;
+  STATUS_CONFIRM_MODIFY_FAIL = 8;
+  STATUS_LIMIT = 9;
+  STATUS_WAIT_FOR_BPM_AUDIT = 10;
+  STATUS_WAIT_FOR_PUBLIC_AUTH = 11;
+  STATUS_SELF_SERVICE_UNAUDITED = 12;
+  STATUS_CONTRACT_PENDING = 13;
+}

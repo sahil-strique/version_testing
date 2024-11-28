@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "SessionsByDeviceCategoryProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of SessionsByDeviceCategory List.
+message SessionsByDeviceCategoryList {
+  repeated SessionsByDeviceCategory sessionsByDeviceCategoryResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store device wise sesssions data object.
+message SessionsByDeviceCategory {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  enum DeviceCategory {
+    DEVICECATEGORY_UNKNWON = 0;
+    DESKTOP = 1;
+    MOBILE = 2;
+    TABLET = 3;
+    SMART_TV = 4;
+  }
+  // device category.
+  DeviceCategory device_category = 2;
+
+  // Number of session created for a day by device category.
+  uint64 sessions = 3;
+
+  // Number of add to cart done for a day by device category.
+  uint64 add_to_carts = 4;
+
+  // Number of checkouts done for a day by device category.
+  uint64 checkouts = 5;
+
+  // Number of purchase done for a day by device category.
+  uint64 ecommerce_purchases = 6;
+
+  // Total revenue generated for a day by device category.
+  double total_revenue = 7;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package strique.model.report.share;
+
+import "report/download/report_download_request.proto";
+import "db/schedule/channel_type.proto";
+import "db/schedule/recipient.proto";
+
+option java_outer_classname = "ReportShareRequestProto";
+option java_package = "com.strique.model.report.share";
+
+// Next Id: 4
+// Proto definition for the share report request.
+message ReportShareRequest {
+  // report download request details
+  report.download.ReportDownloadRequest report_download_request = 1;
+
+  // channel type
+  db.schedule.Channel channel = 2;
+
+  // recipient details
+  db.schedule.Recipient recipient = 3;
+}

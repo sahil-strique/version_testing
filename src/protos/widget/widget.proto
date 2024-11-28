@@ -1,0 +1,243 @@
+syntax = "proto3";
+
+package strique.model.widget;
+
+import "db/platform/platform_type.proto";
+import "widget/amazon_ads/sponsored_brands_campaigns.proto";
+import "widget/amazon_ads/sponsored_products_campaigns.proto";
+import "widget/amazon_ads/sponsored_products_keywords.proto";
+import "widget/amazon_seller/top_cities_cancellations.proto";
+import "widget/amazon_seller/top_performing_cities.proto";
+import "widget/amazon_seller/top_performing_products.proto";
+import "widget/amazon_seller/top_performing_regions.proto";
+import "widget/amazon_seller/top_returned_products.proto";
+import "widget/google_ads/ad_quality.proto";
+import "widget/google_ads/google_ads_overview.proto";
+import "widget/google_ads/performance_max_listing_group.proto";
+import "widget/google_ads/performance_max_overview.proto";
+import "widget/google_ads/search_overview.proto";
+import "widget/google_ads/shopping_listing_group.proto";
+import "widget/google_ads/shopping_overview.proto";
+import "widget/google_ads/top_performing_keywords.proto";
+import "widget/google_ads/video_overview.proto";
+import "widget/google_ads/video_views.proto";
+import "widget/google_analytics/age_group_and_gender_analysis.proto";
+import "widget/google_analytics/best_performing_days_of_the_week.proto";
+import "widget/google_analytics/new_vs_returning_users.proto";
+import "widget/google_analytics/sessions_by_device_category.proto";
+import "widget/google_analytics/speed_analysis.proto";
+import "widget/google_analytics/time_wise_bifurcation.proto";
+import "widget/google_analytics/top_browsers.proto";
+import "widget/google_analytics/top_landing_pages_by_sessions.proto";
+import "widget/google_analytics/top_performing_categories.proto";
+import "widget/google_analytics/top_performing_cities.proto";
+import "widget/google_analytics/top_performing_products.proto";
+import "widget/google_analytics/top_performing_regions.proto";
+import "widget/google_analytics/users_by_source_and_medium.proto";
+import "widget/meta/meta_ads.proto";
+import "widget/meta/meta_ads_overview.proto";
+import "widget/meta/meta_adsets.proto";
+import "widget/meta/meta_campaigns.proto";
+import "widget/tiktok/tiktok_adgroup.proto";
+import "widget/tiktok/tiktok_ads_overview.proto";
+import "widget/tiktok/tiktok_ads.proto";
+import "widget/tiktok/tiktok_campaigns.proto";
+import "widget/scorecard.proto";
+import "widget/shopify/top_cities_returns_and_cancellations.proto";
+import "widget/shopify/top_coupon_codes.proto";
+import "widget/shopify/top_regions_returns_and_cancellations.proto";
+import "widget/shopify/top_returned_products.proto";
+import "widget/widget_types.proto";
+
+option java_outer_classname = "WidgetProto";
+option java_package = "com.strique.model.widget";
+
+// Next Id: 5
+// Proto definition for Widget.
+message Widget {
+  // Data related to the widget.
+  WidgetData data = 1;
+
+  // Configuration of the widget.
+  optional WidgetConfig config = 2;
+
+  // Metadata of the widget.
+  WidgetMetadata metadata = 3;
+
+  optional WidgetMessage message = 4;
+}
+
+// Next Id: 2
+//  Proto definition for Widget message.
+message WidgetMessage {
+  // Message related to the widget.
+  string widget_message = 1;
+}
+
+// Next Id: 74
+// Proto definition for Widget Data.
+message WidgetData {
+  // Union of possible widget data types.
+  oneof widget_data {
+    meta.MetaAdsOverviewData meta_ads_overview_data = 1;
+    meta.MetaCampaignsData meta_campaigns_data = 2;
+    meta.MetaAdsetsData meta_adsets_data = 3;
+    meta.MetaAdsData meta_ads_data = 4;
+    google_analytics.TopPerformingProductsData google_analytics_top_performing_products_data = 5;
+    google_analytics.TopPerformingCategoriesData top_performing_categories_data = 6;
+    google_analytics.TopPerformingCitiesData google_analytics_top_performing_cities_data = 7;
+    google_analytics.TopPerformingRegionsData google_analytics_top_performing_regions_data = 8;
+    google_analytics.UsersBySourceAndMediumData users_by_source_and_medium_data = 9;
+    google_analytics.SessionsByDeviceCategoryData sessions_by_device_category_data = 10;
+    google_analytics.TopLandingPagesBySessionsData top_landing_pages_by_sessions_data = 11;
+    google_analytics.SpeedAnalysisData speed_analysis_data = 12;
+    google_analytics.TopBrowsersData top_browsers_data = 13;
+    google_analytics.BestPerformingDaysOfTheWeekData best_performing_days_of_the_week_data = 14;
+    google_analytics.TimeWiseBifurcationData time_wise_bifurcation_data = 15;
+    google_analytics.NewVsReturningUsersData new_vs_returning_users_data = 38;
+    google_analytics.AgeGroupAndGenderAnalysisData age_group_and_gender_analysis_data = 39;
+    google_ads.GoogleAdsOverviewData google_ads_overview_data = 16;
+    google_ads.SearchOverviewData search_overview_data = 17;
+    google_ads.TopPerformingKeywordsData google_ads_top_performing_keywords_data = 18;
+    google_ads.AdQualityData ad_quality_data = 19;
+    google_ads.PerformanceMaxOverviewData performance_max_overview_data = 20;
+    google_ads.PerformanceMaxListingGroupData performance_max_listing_group_data = 21;
+    google_ads.ShoppingOverviewData shopping_overview_data = 22;
+    google_ads.ShoppingListingGroupData shopping_listing_group_data = 23;
+    google_ads.VideoOverviewData video_overview_data = 24;
+    google_ads.VideoViewsData video_views_data = 25;
+    amazon_seller.TopPerformingProductsData amazon_seller_top_selling_products_data = 26;
+    amazon_seller.TopPerformingCitiesData amazon_seller_top_performing_cities_data = 27;
+    amazon_seller.TopPerformingRegionsData amazon_seller_top_performing_regions_data = 28;
+    amazon_seller.TopCitiesCancellationsData top_cities_cancellations_data = 29;
+    amazon_seller.TopReturnedProductsData amazon_seller_top_returned_products_data = 30;
+    amazon_ads.SponsoredProductsCampaignsData sponsored_products_campaigns_data = 31;
+    amazon_ads.SponsoredProductsKeywordsData sponsored_products_keywords_data = 32;
+    amazon_ads.SponsoredBrandsCampaignsData sponsored_brands_campaigns_data = 33;
+    shopify.TopCouponCodesData top_coupon_codes_data = 34;
+    shopify.TopCitiesReturnsAndCancellationsData top_cities_returns_and_cancellations_data = 35;
+    shopify.TopRegionsReturnsAndCancellationsData top_regions_returns_and_cancellations_data = 36;
+    shopify.TopReturnedProductsData shopify_top_returned_products_data = 37;
+    tiktok.TikTokAdsOverviewData tiktok_ads_overview_data = 70;
+    tiktok.TikTokAdsData tiktok_ads_data = 71;
+    tiktok.TikTokAdGroupsData tiktok_adgroups_data = 72;
+    tiktok.TikTokCampaignsData tiktok_campaign_data = 73;
+    scorecard.ScorecardData shopify_gross_sales_data = 41;
+    scorecard.ScorecardData shopify_total_number_of_orders_data = 42;
+    scorecard.ScorecardData shopify_average_order_value_data = 43;
+    scorecard.ScorecardData shopify_net_return_value_data = 44;
+    scorecard.ScorecardData strique_custom_blended_ad_spend_data = 45;
+    scorecard.ScorecardData strique_custom_cost_per_click_data = 46;
+    scorecard.ScorecardData strique_custom_click_through_rate_data = 47;
+    scorecard.ScorecardData strique_custom_blended_roas_data = 48;
+    scorecard.ScorecardData strique_custom_return_on_investment_data = 49;
+    scorecard.ScorecardData strique_custom_cost_per_purchase_data = 50;
+    scorecard.ScorecardData strique_custom_average_order_value_data = 66;
+    scorecard.ScorecardData strique_custom_blended_revenue_data = 67;
+    scorecard.ScorecardData amazon_seller_total_orders_data = 51;
+    scorecard.ScorecardData amazon_seller_units_ordered_data = 52;
+    scorecard.ScorecardData amazon_seller_ordered_product_sales_data = 53;
+    scorecard.ScorecardData amazon_seller_average_units_per_order_item_data = 54;
+    scorecard.ScorecardData amazon_seller_average_sales_per_order_item_data = 55;
+    scorecard.ScorecardData amazon_seller_conversion_rate_data = 61;
+    scorecard.ScorecardData amazon_ads_advertising_cost_of_sale_data = 56;
+    scorecard.ScorecardData amazon_ads_return_on_ad_spend_data = 57;
+    scorecard.ScorecardData amazon_ads_click_through_rate_data = 58;
+    scorecard.ScorecardData amazon_ads_cost_per_click_data = 59;
+    scorecard.ScorecardData amazon_ads_total_advertising_cost_of_sale_data = 60;
+    scorecard.ScorecardData amazon_ads_clicks_data = 62;
+    scorecard.ScorecardData amazon_ads_impressions_data = 63;
+    scorecard.ScorecardData amazon_ads_ad_sales_data = 64;
+    scorecard.ScorecardData amazon_ads_ad_spend_data = 65;
+    scorecard.ScorecardData google_analytics_conversion_rate_data = 40;
+    scorecard.ScorecardData google_analytics_total_add_to_carts_data = 68;
+    scorecard.ScorecardData google_analytics_total_checkouts_data = 69;
+  }
+}
+
+// Next Id: 40
+// Proto definition for Widget Configuration.
+// Will only be included if allow_widget_config is true in ReportRequest.
+message WidgetConfig {
+  // Union of possible widget configuration types.
+  oneof widget_config {
+    meta.MetaAdsOverviewConfig meta_ads_overview_config = 1;
+    meta.MetaCampaignsConfig meta_campaigns_config = 2;
+    meta.MetaAdsetsConfig meta_adsets_config = 3;
+    meta.MetaAdsConfig meta_ads_config = 4;
+    google_analytics.TopPerformingProductsConfig google_analytics_top_performing_products_config = 5;
+    google_analytics.TopPerformingCategoriesConfig top_performing_categories_config = 6;
+    google_analytics.TopPerformingCitiesConfig google_analytics_top_performing_cities_config = 7;
+    google_analytics.TopPerformingRegionsConfig google_analytics_top_performing_regions_config = 8;
+    google_analytics.UsersBySourceAndMediumConfig users_by_source_and_medium_config = 9;
+    google_analytics.SessionsByDeviceCategoryConfig sessions_by_device_category_config = 10;
+    google_analytics.TopLandingPagesBySessionsConfig top_landing_pages_by_sessions_config = 11;
+    google_analytics.SpeedAnalysisConfig speed_analysis_config = 12;
+    google_analytics.TopBrowsersConfig top_browsers_config = 13;
+    google_analytics.BestPerformingDaysOfTheWeekConfig best_performing_days_of_the_week_config = 14;
+    google_analytics.TimeWiseBifurcationConfig time_wise_bifurcation_config = 15;
+    google_analytics.NewVsReturningUsersConfig new_vs_returning_users_config = 38;
+    google_analytics.AgeGroupAndGenderAnalysisConfig age_group_and_gender_analysis_config = 39;
+    google_ads.GoogleAdsOverviewConfig google_ads_overview_config = 16;
+    google_ads.SearchOverviewConfig search_overview_config = 17;
+    google_ads.TopPerformingKeywordsConfig google_ads_top_performing_keywords_config = 18;
+    google_ads.AdQualityConfig ad_quality_config = 19;
+    google_ads.PerformanceMaxOverviewConfig performance_max_overview_config = 20;
+    google_ads.PerformanceMaxListingGroupConfig performance_max_listing_group_config = 21;
+    google_ads.ShoppingOverviewConfig shopping_overview_config = 22;
+    google_ads.ShoppingListingGroupConfig shopping_listing_group_config = 23;
+    google_ads.VideoOverviewConfig video_overview_config = 24;
+    google_ads.VideoViewsConfig video_views_config = 25;
+    amazon_seller.TopPerformingProductsConfig amazon_seller_top_selling_products_config = 26;
+    amazon_seller.TopPerformingCitiesConfig amazon_seller_top_performing_cities_config = 27;
+    amazon_seller.TopPerformingRegionsConfig amazon_seller_top_performing_regions_config = 28;
+    amazon_seller.TopCitiesCancellationsConfig top_cities_cancellations_config = 29;
+    amazon_seller.TopReturnedProductsConfig amazon_seller_top_returned_products_config = 30;
+    amazon_ads.SponsoredProductsCampaignsConfig sponsored_products_campaigns_config = 31;
+    amazon_ads.SponsoredProductsKeywordsConfig sponsored_products_keywords_config = 32;
+    amazon_ads.SponsoredBrandsCampaignsConfig sponsored_brands_campaigns_config = 33;
+    shopify.TopCouponCodesConfig top_coupon_codes_config = 34;
+    shopify.TopCitiesReturnsAndCancellationsConfig top_cities_returns_and_cancellations_config = 35;
+    shopify.TopRegionsReturnsAndCancellationsConfig top_regions_returns_and_cancellations_config = 36;
+    shopify.TopReturnedProductsConfig shopify_top_returned_products_config = 37;
+    tiktok.TikTokAdsOverviewConfig tiktok_ads_overview_config = 40;
+    tiktok.TikTokAdsConfig tiktok_ads_config = 41;
+    tiktok.TikTokAdGroupsConfig tiktok_adgroups_config = 42;
+    tiktok.TikTokCampaignsConfig tiktok_campaign_config = 43;
+  }
+}
+
+// Next Id: 4
+// Proto definition for Widget Metadata.
+message WidgetMetadata {
+  // Specifies the type of widget.
+  WidgetType widget_type = 1;
+
+  // Specifies the ID of the platform.
+  optional string widget_platform_id = 2;
+
+  // Specifies the type of platform.
+  optional db.platform.PlatformType platform_type = 3;
+
+  // name of the platform
+  optional string widget_platform_name = 4;
+}
+
+//Next Id: 6
+//Proto definition for Widget Layout
+message WidgetLayout {
+  //x-coordinate
+  int32 x = 1;
+
+  //y-coordinate
+  int32 y = 2;
+
+  //width of the widget
+  int32 width = 3;
+
+  //height of the widget
+  int32 height = 4;
+
+  //unique identifier for the widget
+  string id = 5;
+}

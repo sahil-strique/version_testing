@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package strique.types;
+
+import "constants/currencies/currency.proto";
+
+option java_outer_classname = "CurrencyProto";
+option java_package = "com.strique.types.currency";
+
+// Next Id: 3
+// Proto definition to handle currency values
+message Currency {
+  // Specifies the amount value
+  double value = 1;
+
+  // Specifies the currency to be used
+  constants.Currency currency = 2;
+}

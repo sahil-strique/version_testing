@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package strique.model.widget;
+
+import "widget/widget_types.proto";
+
+option java_outer_classname = "TableColumnStaticConfigProto";
+option java_package = "com.strique.model.widget";
+
+// Next Id: 2
+// Proto Definition for Table Column Static Config Response
+message TableColumnStaticConfigResponse {
+  // Map of widget type to Widget specific Table Column Static Config
+  map<string, WidgetTableColumnStaticConfig> table_column_static_config = 1;
+}
+
+// Next Id: 4
+// Proto Definition for Table Column Static Config per Widget
+message WidgetTableColumnStaticConfig {
+  // Widget type
+  WidgetType widget_type = 1;
+
+  // Map of widget column to Table Column Static Config
+  map<string, TableColumnStaticConfig> widget_table_column_static_config = 2;
+
+  // Widget info
+  optional WidgetInfo widget_info = 3;
+}
+
+// Next Id: 3
+// Proto Definition for Table Column Static Config
+message TableColumnStaticConfig {
+  // Label for a column in a human-readable format.
+  string label = 1;
+
+  // Accessor key (i.e. the data variable name) from which the column will access data for display.
+  // will have to add camel case fields [add from json_name] as generated in ts files.
+  string accessor_key = 2;
+
+  // Defines whether the column is sortable or not.
+  bool is_sortable = 3;
+}
+
+// Next Id: 4
+// Proto Definition for Widget Info
+message WidgetInfo {
+  // Description of the widget.
+  string description = 1;
+
+  // Formula used by the widget.
+  string formula = 2;
+
+  // Source link of the widget data.
+  string source = 3;
+}

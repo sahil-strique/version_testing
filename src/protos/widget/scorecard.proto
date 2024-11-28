@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package strique.model.widget.scorecard;
+
+import "db/platform/platform_type.proto";
+import "types/currency/currency.proto";
+
+option java_outer_classname = "ScorecardProto";
+option java_package = "com.strique.model.widget.scorecard";
+
+// Next Id: 3
+// Proto definition for Scorecard Data.
+message ScorecardData {
+  // Scorecard title
+  string widget_title = 1;
+
+  // List of available scorecard variants (based on currency)
+  repeated ScorecardVariant variants = 2;
+}
+
+// Next Id: 7
+// Proto definition for a variant of Scorecard.
+message ScorecardVariant {
+  // Enum for Trend Type
+  enum TrendType {
+    TRENDTYPE_UNKNOWN = 0;
+    INCREASING = 1;
+    DECREASING = 2;
+    NEUTRAL = 3;
+  }
+
+  // Scorecard value
+  ScorecardValue value = 1;
+
+  // Percent change for value
+  optional float percent_change = 2;
+
+  // Trend type for scorecard value
+  optional TrendType trend_type = 3;
+
+  // Description for scorecard value
+  optional string description = 4;
+
+  // Map of Scorecard Source <string = platform type in string, ScorecardSource>
+  map<string, ScorecardSource> scorecard_source = 5;
+
+  // Title of the variant
+  optional string title = 6;
+}
+
+// Next Id: 4
+// Proto definition for Scorecard Value
+message ScorecardValue {
+  oneof scorecard_value {
+    // Currency value
+    types.Currency currency_value = 1;
+
+    // String value
+    string string_value = 2;
+
+    // Number value
+    int64 number_value = 3;
+  }
+}
+
+// Next Id: 3
+// Proto definition for Scorecard Source
+message ScorecardSource {
+  // Platform type
+  db.platform.PlatformType platform_type = 1;
+
+  // Account list associated with specific platform
+  repeated ScorecardAccountList account_list = 2;
+}
+
+// Next Id: 3
+// Proto definition for Scorecard Account List
+message ScorecardAccountList {
+  // Account name
+  string account_name = 1;
+
+  // Account ID
+  string account_id = 2;
+}

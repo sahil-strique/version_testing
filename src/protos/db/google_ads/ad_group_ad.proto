@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "db/google_ads/advertising_channel_type.proto";
+import "db/google_ads/google_ads_status.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "AdGroupAdProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id: 2
+// Proto definition of AdGroupAd List.
+message AdGroupAdList {
+  repeated AdGroupAd adGroupAdResponse = 1;
+}
+
+// Next Id : 23
+// A protobuf to store AdGroupAd data object.
+message AdGroupAd {
+  // Store composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // The ID of the campaign.
+  uint64 campaign_id = 2;
+
+  // The name of the campaign.
+  string campaign_name = 3;
+
+  // The status of the campaign.
+  GoogleAdsStatus campaign_status = 4;
+
+  // The ID of the ad group.
+  uint64 ad_group_id = 5;
+
+  // The status of the ad.
+  GoogleAdsStatus ad_group_ad_status = 6;
+
+  // The ID of the ad.
+  uint64 ad_group_ad_ad_id = 7;
+
+  // The primary serving target for ads within the campaign.
+  AdvertisingChannelType campaign_advertising_channel_type = 8;
+
+  // List of text assets for headlines.
+  repeated string ad_group_ad_ad_responsive_search_ad_headlines = 9;
+
+  enum AdStrength {
+    ADSTRENGTH_UNKNOWN = 0;
+    AVERAGE = 1;
+    EXCELLENT = 2;
+    GOOD = 3;
+    NO_ADS = 4;
+    PENDING = 5;
+    POOR = 6;
+    UNSPECIFIED = 7;
+  }
+  // Overall ad strength for this ad group ad.
+  optional AdStrength ad_group_ad_ad_strength = 10;
+
+  // List of text assets for descriptions.
+  repeated string ad_group_ad_ad_responsive_search_ad_descriptions = 11;
+
+  // First part of text that can be appended to the URL in the ad.
+  optional string ad_group_ad_ad_responsive_search_ad_path1 = 12;
+
+  // Second part of text that can be appended to the URL in the ad.
+  optional string ad_group_ad_ad_responsive_search_ad_path2 = 13;
+
+  // The Internet domain name that this setting represents, eg."www.google.com".
+  optional string campaign_dynamic_search_ads_setting_domain_name = 14;
+
+  // The description of the ad.
+  optional string ad_group_ad_ad_expanded_dynamic_search_ad_description = 15;
+
+  // The second description of the ad.
+  optional string ad_group_ad_ad_expanded_dynamic_search_ad_description2 = 16;
+
+  // No. of impressions.
+  uint64 impressions = 17;
+
+  // The sum of CPC and CPM costs during this period.
+  uint64 cost_micros = 18;
+
+  // The number of times video ads were viewed.
+  uint64 video_views = 19;
+
+  // The number of clicks.
+  uint64 clicks = 20;
+
+  // The total number of conversions.
+  double all_conversions = 21;
+
+  // The value of all conversions.
+  double all_conversions_value = 22;
+}

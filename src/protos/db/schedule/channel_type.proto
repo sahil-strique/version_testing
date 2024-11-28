@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strique.model.db.schedule;
+
+option java_outer_classname = "ChannelProto";
+option java_package = "com.strique.model.db.schedule";
+
+// Next Id: 5
+// Enumeration for channel types
+enum Channel {
+  CHANNEL_UNKNOWN = 0;
+  SMS = 1;
+  SLACK = 2;
+  WHATSAPP = 3;
+  EMAIL = 4;
+}

@@ -1,0 +1,2 @@
+recursive-include src/protos *.proto *.textproto
+include __init__.py

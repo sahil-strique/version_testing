@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "FunnleAnalyticsProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of FunnleAnalytics List.
+message FunnleAnalyticsList {
+  repeated FunnleAnalytics funnleAnalyticsResponse = 1;
+}
+
+//Next Id : 5
+// A protobuf to store funnel analysis data object.
+message FunnleAnalytics {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Device type.
+  string device_category = 2;
+
+  // Active users for a day on device type.
+  uint64 active_user = 3;
+
+  enum FunnleSteps {
+    FUNNLE_SATGE_UNKNWON = 0;
+    SESSION_START = 1;
+    VIEW_PRODUCT = 2;
+    ADD_TO_CART = 3;
+    BEGIN_CHECKOUT = 4;
+    PURCHASE = 5;
+  }
+  // Step name.
+  FunnleSteps funnel_step_name = 4;
+}

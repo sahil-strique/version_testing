@@ -1,0 +1,14 @@
+package strique.model.type.send;
+
+
+option java_outer_classname = "SendTemplateTypeProto";
+option java_package = "com.strique.model.send";
+
+// Next Id: 5
+enum SendTemplateType {
+  SEND_TEMPLATE_TYPE_UNKNOWN = 0;
+  EMAIL_REPORT_TEMPLATE = 1;
+  SLACK_REPORT_TEMPLATE = 2;
+  SMS_REPORT_TEMPLATE = 3;
+  WHATSAPP_REPORT_TEMPLATE = 4;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strique.model.db.survey;
+
+option java_outer_classname = "SurveyResponseProto";
+option java_package = "com.strique.model.db.survey";
+
+// Next Id: 2
+message SurveyResponses {
+  repeated SurveyResponse survey_response_list = 1;
+}
+
+// Next Id: 6
+// A protobuf to survey Q&A response for entity.
+message SurveyResponse {
+  string question_id = 1;
+
+  string answer = 2;
+
+  string user_id = 3;
+
+  optional string store_id = 4;
+
+  string entity_id = 5;
+}

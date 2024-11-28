@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package strique.model.report.download;
+
+option java_outer_classname = "ReportDownloadResponseProto";
+option java_package = "com.strique.model.report.download";
+
+// Next Id: 2
+// Proto definition for the downalod Report Response.
+message ReportDownloadResponse {
+  string report_file_url = 1;
+}

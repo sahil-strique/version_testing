@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package strique.model.db.platform;
+
+import "constants/currencies/currency.proto";
+import "db/platform/platform_type.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "PlatformProto";
+option java_package = "com.strique.model.db.platform";
+
+// Next Id: 17
+// A protobuf to store Platform object.
+message Platform {
+  // Unique id of the Ad account
+  string ad_account_id = 1;
+
+  // Name of the Ad account
+  string ad_account_name = 2;
+
+  // Type of the Platform
+  PlatformType platform_type = 3;
+
+  enum PlatformStatus {
+    STATUS_UNKNOWN = 0;
+    STATUS_INACTIVE = 1;
+    STATUS_ACTIVE = 2;
+    STATUS_AUTH_REQUIRED = 3;
+    STATUS_AUTH_COMPLETED = 4;
+    STATUS_BACK_FILL_INITIATED = 5;
+    STATUS_DATA_LAGGING = 6;
+    STATUS_PLATFORM_ACCOUNT_ERROR = 7;
+    STATUS_ACTIVE_WITH_WARNING = 8;
+    STATUS_STORE_DELETED = 9;
+  }
+  // Status of the Platform
+  PlatformStatus status = 4;
+
+  // Store id for the given platform. It is a foreign key from the Store table.
+  string store_id = 5;
+
+  // Access Token for the Platform
+  string access_token = 6;
+
+  // Refresh Token for the Platform
+  optional string refresh_token = 7;
+
+  // Access token validity in epoch
+  uint64 access_token_validity = 8;
+
+  // Refresh token validity in epoch
+  optional uint64 refresh_token_validity = 9;
+
+  // Connection ID for the Platform. This could be email id or phone number etc of the person who has connected the Ad account.
+  string connection_id = 10;
+
+  // Currency selected for the Platform
+  constants.Currency currency = 11;
+
+  // timezone for the platform
+  string timezone = 12;
+
+  // date for last successful data fetching
+  google.protobuf.Timestamp last_successful_data_fetch = 13;
+
+  // date for first data fetching
+  google.protobuf.Timestamp first_data_fetch = 14;
+
+  // web property for google analytics
+  optional string ga_web_property = 15;
+
+  optional string google_ads_manager_id = 16;
+}

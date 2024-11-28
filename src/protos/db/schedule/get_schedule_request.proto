@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package strique.model.db.schedule;
+
+import "db/schedule/channel_type.proto";
+import "db/schedule/frequency_type.proto";
+
+option java_outer_classname = "GetScheduleRequestProto";
+option java_package = "com.strique.model.db.schedule";
+
+// Next Id: 5
+// A protobuf for request schedules.
+message GetScheduleRequest {
+  // channel type for the schedule
+  repeated Channel channel = 1;
+
+  // frequency of the schedule
+  repeated Frequency frequency = 2;
+
+  // list of store ids
+  repeated string store_id = 3;
+
+  // schedule time in utc
+  repeated string utc_time = 4;
+
+}

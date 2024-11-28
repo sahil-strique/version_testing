@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package strique.model.db.shopify;
+
+import "db/shopify/line_item_tax_line_item.proto";
+
+option java_outer_classname = "LineItemProto";
+option java_package = "com.strique.model.db.shopify";
+
+//Next id : 10
+// A protocol buffer for storing line items for order.
+message LineItem {
+  uint64 line_item_id = 1;
+
+  uint64 order_id = 2;
+
+  double price = 3;
+
+  uint64 quantity = 4;
+
+  bool taxable = 5;
+
+  bool gift_card = 6;
+
+  string name = 7;
+
+  double discount_allocations_amount = 8;
+
+  repeated LineItemTaxLineItem line_item_tax_lines_items = 9;
+}

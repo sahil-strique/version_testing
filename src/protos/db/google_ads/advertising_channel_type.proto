@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+option java_outer_classname = "AdvertisingChannelTypeProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id : 15
+// Proto enum for advertising channel type.
+enum AdvertisingChannelType {
+  ADVERTISINGCHANNELTYPE_UNKNOWN = 0;
+  DISCOVERY = 1;
+  DISPLAY = 2;
+  HOTEL = 3;
+  LOCAL = 4;
+  LOCAL_SERVICES = 5;
+  MULTI_CHANNEL = 6;
+  PERFORMANCE_MAX = 7;
+  SEARCH = 8;
+  SHOPPING = 9;
+  SMART = 10;
+  TRAVEL = 11;
+  UNSPECIFIED = 12;
+  VIDEO = 13;
+  DEMAND_GEN = 14;
+}

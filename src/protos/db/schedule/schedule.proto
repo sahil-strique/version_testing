@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package strique.model.db.schedule;
+
+import "db/schedule/channel_type.proto";
+import "db/schedule/frequency_type.proto";
+import "db/schedule/recipient.proto";
+import "db/schedule/date_range_type.proto";
+import "report/download/report_download_request.proto";
+
+option java_outer_classname = "ScheduleProto";
+option java_package = "com.strique.model.db.schedule";
+
+// Next Id: 2
+// proto definition of schedule list
+message Schedules {
+  repeated Schedule schedules = 1;
+}
+
+// Next Id: 12
+// Proto definition of Schedule.
+message Schedule {
+  // recipient details
+  Recipient recipient = 1;
+
+  // channel type for the schedule
+  Channel channel = 2;
+
+  // frequency of the schedule
+  Frequency frequency = 3;
+
+  // time of the schedule
+  string time = 4;
+
+  // timezone of the schedule
+  string timezone = 5;
+
+  // format of the schedule
+  report.download.ReportDownloadRequest.FileType file_type = 6;
+
+  //  view config id
+  string viewconfig_id = 7;
+
+  // store id for the schedule
+  string store_id = 8;
+
+  // boolean to include ai summary
+  bool include_ai_summary = 9;
+
+  // date range of the report
+  DateRange date_range = 10;
+
+  // start date of the schedule
+  string start_date = 11;
+
+  // unique id for the schedule
+  string id = 12;
+
+  // schedule time in utc
+  string utc_time = 13;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package strique.model.db.user_store_mapping;
+
+option java_outer_classname = "UserStoreMappingProto";
+option java_package = "com.strique.model.db.userstoremapping";
+
+// Netx Id : 3
+// A protobuf object for storing user and store id
+message UserStoreMapping {
+  string user_id = 1;
+
+  string store_id = 2;
+}

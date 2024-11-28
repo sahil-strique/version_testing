@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package strique.types.dto.meta;
+
+import "types/dto/meta/meta_ads_error.proto";
+
+option java_outer_classname = "MetaAdsProto";
+option java_package = "com.strique.types.dto.meta";
+
+// Next Id: 5
+// A protobuf to Meta Ads.
+message MetaAds {
+  repeated MetaData data = 1 [json_name = "data"];
+  optional Paging paging = 2 [json_name = "paging"];
+  optional string platform = 3 [json_name = "platform"];
+  optional MetaAdsError error = 4 [json_name = "error"];
+}
+
+// Next Id: 17
+message MetaData {
+  string account_currency = 1 [json_name = "account_currency"];
+  string account_id = 2 [json_name = "account_id"];
+  string account_name = 3 [json_name = "account_name"];
+  string spend = 4 [json_name = "spend"];
+  string impressions = 5 [json_name = "impressions"];
+  string clicks = 6 [json_name = "clicks"];
+  string inline_link_clicks = 7 [json_name = "inline_link_clicks"];
+  string reach = 8 [json_name = "reach"];
+  repeated Action action_values = 9 [json_name = "action_values"];
+  repeated Action actions = 10 [json_name = "actions"];
+  repeated Action purchase_roas = 11 [json_name = "purchase_roas"];
+  string date_start = 12 [json_name = "date_start"];
+  string date_stop = 13 [json_name = "date_stop"];
+  repeated Action outbound_clicks = 14 [json_name = "outbound_clicks"];
+  repeated Action unique_outbound_clicks = 15 [json_name = "unique_outbound_clicks"];
+  string publisher_platform = 16 [json_name = "publisher_platform"];
+}
+
+// Next Id: 3
+message Action {
+  string action_type = 1 [json_name = "action_type"];
+  string value = 2 [json_name = "value"];
+}
+
+// Next Id: 2
+message Paging {
+  Cursors cursors = 1 [json_name = "cursors"];
+}
+
+// Next Id: 3
+message Cursors {
+  string before = 1 [json_name = "before"];
+  string after = 2 [json_name = "after"];
+}

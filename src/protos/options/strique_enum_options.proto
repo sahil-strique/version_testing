@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package strique.options;
+
+import "google/protobuf/descriptor.proto";
+
+// Extend EnumValueOptions to include custom options
+extend google.protobuf.EnumValueOptions {
+  // COLUMN ENUM OPTIONS
+  // Defines the label of the enum value (usually a string)
+  // Label will be used for display purposes only
+  optional string label = 10001;
+
+  // Used in the context of widgets
+  // Used for mapping a Column Enum to a valid record field/key
+  // Eg.
+  // message UserRecord {
+  //   string first_name = 1 [json_name = "firstName"];
+  // }
+  // message UserConfig {
+  //   enum Column {
+  //     COLUMN_FIRST_NAME = 1 [
+  //       (options.label) = 'First Name',
+  //       (options.accessor_key) = 'firstName'
+  //     ];
+  //   }
+  // }
+  // This maps the COLUMN_FIRST_NAME to firstName key
+  // (which is accessed in js-ts).
+  optional string accessor_key = 10002;
+
+  // Defines whether the column is sortable or not.
+  optional bool is_sortable = 10003;
+
+  // WIDGET ENUM OPTIONS
+  // Defines the description text to be shown for a specific Widget when clicked on 'i' icon
+  optional string description = 10004;
+
+  // Defines the formula text to be shown for a specific Widget when clicked on 'i' icon
+  optional string formula = 10005;
+
+  // Defines the source link to be used for a specific Widget when clicked on 'i' icon
+  optional string source = 10006;
+}

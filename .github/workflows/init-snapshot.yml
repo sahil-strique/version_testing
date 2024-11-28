@@ -1,0 +1,35 @@
+name: Init snapshot to GitHub Packages
+on:
+  push:
+    branches: [main]
+    
+jobs:
+  init-snapshot:
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: write
+      packages: write 
+    steps:
+      - name: Checkout main branch from GitHub 
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Init prerelease of the package
+        run: |
+          TAG=$(cat ./src/resources/VERSION)
+          TAG="${TAG}-rc.${{ github.run_number }}"
+          # Initiating pre-release.
+          gh release create "${TAG}" \
+            --prerelease \
+            --draft=false \
+            --title "LATEST-SNAPSHOT" \
+            --notes "This is a SNAPSHOT pre-release and can be unstable/broken. ${{ github.event.head_commit.message }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}

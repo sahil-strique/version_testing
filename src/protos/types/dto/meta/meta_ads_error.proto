@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package strique.types.dto.meta;
+
+option java_outer_classname = "MetaAdsErrorProto";
+option java_package = "com.strique.types.dto.meta";
+
+// Next Id: 6
+// A protobuf to store meta error object.
+message MetaAdsError {
+  // error message
+  string message = 1 [json_name = "message"];
+
+  // error type
+  string type = 2 [json_name = "type"];
+
+  enum MetaErrorCode {
+    METAERRORCODE_UNKNOWN = 0;
+    INVALID_PARAMETER = 100;
+    INVALID_OAUTH = 190;
+    PERMISSION_ERROR = 200;
+    UNKNOWN_ERROR = 1150;
+    ERROR_PARSING_GRAPH_QUERY = 2500;
+    API_DEPRECATED_VERSION = 2635;
+    INVALID_CURSORS = 2642;
+    INVALID_QUERY = 3001;
+    START_DATE_BEYOND_37MONTHS = 3018;
+    RATE_LIMIT_FOR_INSIGHTS = 80000;
+    RATE_LIMIT_FOR_STATUS = 80004;
+  }
+
+  // erro code
+  MetaErrorCode code = 3 [json_name = "code"];
+
+  //erro sub code
+  int32 error_subcode = 4 [json_name = "error_subcode"];
+
+  // fb trace id
+  string fbtrace_id = 5 [json_name = "fbtrace_id"];
+}

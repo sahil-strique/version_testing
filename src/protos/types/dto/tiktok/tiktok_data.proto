@@ -1,0 +1,253 @@
+syntax = "proto3";
+
+package strique.types.dto.tiktok;
+
+option java_outer_classname = "TiktokAdsProto";
+option java_package = "com.strique.types.dto.tiktok";
+
+// Next Id: 3
+// A protobuf to Tiktok Ads.
+message TiktokResponse {
+
+  enum TiktokReturnCode{
+    // Return codes for successful calls
+    SUCCESS = 0;
+    PARTIALLY_SUCCESSFUL = 20001;
+
+    // Unknown is change to this long value due to need to map 0 value to SUCCESS. 
+    // check the tiktok documentation https://business-api.tiktok.com/portal/docs?id=1737172488964097
+    TIKTOKRETURNCODE_UNKNOWN = 1234567890;
+
+
+    // General
+    PARAMETERS_ARE_INVALID = 40000;
+    NO_PERMISSSION_TO_RELATED_PROBLEM = 40001;
+    PARAMETER_ERROR = 40002;
+    API_VERSION_IS_INCOMPIBLE = 40006;
+    DOMAIN_IS_NOT_SUPPORTED_IN_CURRENT_VERSION = 40010;
+    INVALID_API_VERSION = 40051;
+    OPERATION_DOES_NOT_EXIST = 40007;
+    END_POINT_NOT_IMPLEMENTED = 40008;
+    PARAMETER_OR_METHOD_IS_NOT_SUPPORTED_IN_SENDBOX = 40009;
+    TOO_MANY_IDS = 40011;
+    SANDBOX_ACCOUNT_NOT_EXIST = 40013;
+    FUNCTIONALITY_IS_NOT_SUPPORTED_IN_SENDBOX = 40014;
+    DUPLICATED_REQUEST = 40050;
+    ACO_ALREADY_EXIST = 40052;
+    VIDEO_ID_IS_INVALID = 40053;
+
+    // Rate limit or quota related
+    RATE_LIMIT_FOR_USED_END_POINT_AT_DEV_APP_LEVEL = 40016;
+    RATE_LIMIT_FOR_END_POINT_AT_DEV_APP_LEVEL = 40100;
+    RATE_LIMIT_FOR_USED_END_POINT_AT_ADVERTISER_LEVEL = 40133;
+    MAX_AD_LIMIT = 40502;
+    TOO_MANY_REQUEST_FOR_FIELD = 40132;
+
+
+    // AUTHENTICATION
+    INVALID_AUTHORIZATION_CODE = 40110;
+    INVALID_PARAMETER_VALUE_FOR_AUTHENTICATION = 40101;
+    ACCESS_TOKEN_HAS_EXPIRED = 40102;
+    ACCESS_TOKEN_IS_EMPTY = 40104;
+    INVALID_ACCESS_TOKEN = 40105;
+    USER_INVALID = 40106;
+    REFRESH_TOKEN_HAS_EXPIRED = 40103;
+    INVALID_REFRESH_TOKEN = 40107;
+    INVALID_AUTHORIZATION_TYPE = 40108;
+    AUTH_ERROR_WHILE_CALLING_TOKEN_ENDPOINT = 40131;
+    DECIPHERING_ERROR = 40109;
+    INCORRECT_PASSWORD = 40112;
+    APP_IS_BLOCKED = 40113;
+    AUTH_TIMESTAMP_IS_EXPIRED = 40115;
+    INVALID_AUTH_SIGNATURE = 40116;
+    METHOD_CANNOT_BE_USED = 40117;
+    APP_OR_ADVERTISER_IS_NOT_ALLOWED_FOR_FEATURE = 40118;
+    DEV_AND_ADVERTISER_DO_NOT_BELONG_TO_SAME_COMPANY = 40119;
+    USER_IS_NOT_TCM = 40121;
+    TCM_IS_NOT_IN_VALID_REGIONS = 40122;
+    DEV_IS_NOT_APPROVED = 40124;
+    DEV_DOES_NOT_HAVE_PERMISSION = 40125;
+    INTERFACE_IS_OFFLINE = 41001;
+    FIELDS_ARE_NOT_IN_USE = 41002;
+
+    // Advertisers
+    ADVERTISER_DOES_NOT_EXIST = 40300;
+    ADVERTISER_CAN_NOT_MATCHED = 40301;
+
+    // Internal service error
+    INTERNAL_SERVICE_VALIDATION_ERROR = 40700;
+
+    // Blocked access
+    CLINET_IP_IS_IN_BANNED_COUNTRY_LIST = 41000;
+
+    // System related
+    SYSTEM_ERROR = 50000;
+    ERROR_PROCESSING_REQUEST = 50002;
+    SATELLITE_SERVICE_ERROR = 51305;
+
+    // Maintenance
+    SYATEM_IS_IN_MAINTENANCE = 60001;
+  }
+
+  // Tiktok resoponce code.
+  TiktokReturnCode code = 1 [json_name = "code"];
+
+  // Tiktok Ads Data.
+  TiktokData data = 2 [json_name = "data"];
+}
+
+// Next Id: 2
+message TiktokData {
+  // List of data.
+  repeated AdMetrics list = 1 [json_name = "list"];
+}
+
+// Next Id: 3
+message AdMetrics {
+  // dimesions of ad.
+  Dimensions dimensions = 1 [json_name = "dimensions"];
+
+  // metrics of ad.
+  Metrics metrics = 2 [json_name = "metrics"];
+
+  // Status of ad account.
+  optional string status = 3 [json_name = "status"];
+}
+
+// Next Id: 3
+message Dimensions {
+  // Ad id.
+  string ad_id = 1 [json_name = "ad_id"];
+
+  // stat time day.
+  string stat_time_day = 2 [json_name = "stat_time_day"];
+}
+
+// Next Id: 43
+message Metrics {
+  // Optimization goal.
+  string smart_target = 1 [json_name = "smart_target"];
+
+  // Number of destination clicks.
+  int64 clicks = 2 [json_name = "clicks"];
+
+  // Video views at 2 seconds.
+  int64 video_watched_2s = 3 [json_name = "video_watched_2s"];
+
+  // Real-time conversions.
+  int64 real_time_conversion = 4 [json_name = "real_time_conversion"];
+
+  // value of completed payments.
+  double total_complete_payment_rate = 5 [json_name = "total_complete_payment_rate"];
+
+  // Number of comments.
+  int64 comments = 6 [json_name = "comments"];
+
+  // Number of follows.
+  int64 follows = 7 [json_name = "follows"];
+
+  // Total value corresponding to initiated checkouts.
+  double total_initiate_checkout_value = 8 [json_name = "total_initiate_checkout_value"];
+
+  // Clicks (all).
+  int64 engagements = 9 [json_name = "engagements"];
+
+  // 6-second focused views.
+  int64 engaged_view = 10 [json_name = "engaged_view"];
+
+  // formate.
+  string image_mode = 11 [json_name = "image_mode"];
+
+  // Number of shares.
+  int64 shares = 12 [json_name = "shares"];
+
+  // Campaign ID.
+  string campaign_id = 13 [json_name = "campaign_id"];
+
+  // Total value corresponding to form submissions.
+  double total_form_value = 14 [json_name = "total_form_value"];
+
+  // Ad name.
+  string ad_name = 15 [json_name = "ad_name"];
+
+  // Total reach.
+  int64 reach = 16 [json_name = "reach"];
+
+  // Amount spent on advertising.
+  double spend = 17 [json_name = "spend"];
+
+  // Video views at 25% completion.
+  int64 video_views_p25 = 18 [json_name = "video_views_p25"];
+
+  // Ad group name.
+  string adgroup_name = 19 [json_name = "adgroup_name"];
+
+  // Number of total page views.
+  int64 total_pageview = 20 [json_name = "total_pageview"];
+
+  // Number of web events for add to cart.
+  int64 web_event_add_to_cart = 21 [json_name = "web_event_add_to_cart"];
+
+  // Campaign name.
+  string campaign_name = 22 [json_name = "campaign_name"];
+
+  // Total value per page view.
+  double total_value_per_pageview = 23 [json_name = "total_value_per_pageview"];
+
+  // Number of subscriptions on web.
+  int64 on_web_subscribe = 24 [json_name = "on_web_subscribe"];
+
+  // Video views.
+  int64 video_play_actions = 25 [json_name = "video_play_actions"];
+
+  // Number of total landing page views.
+  int64 total_landing_page_view = 26 [json_name = "total_landing_page_view"];
+
+  // Campaign type.
+  int64 campaign_dedicate_type = 27 [json_name = "campaign_dedicate_type"];
+
+  // Video views at 100% completion.
+  int64 video_views_p100 = 28 [json_name = "video_views_p100"];
+
+  // Total value corresponding to web subscriptions.
+  double total_on_web_subscribe_value = 29 [json_name = "total_on_web_subscribe_value"];
+
+  // Average time video was played per single video view.
+  float average_video_play = 30 [json_name = "average_video_play"];
+
+  // Total value corresponding to web event add to cart.
+  double total_web_event_add_to_cart_value = 31 [json_name = "total_web_event_add_to_cart_value"];
+
+  // No. of impressions.
+  int64 impressions = 32 [json_name = "impressions"];
+
+  // Video views at 50% completion.
+  int64 video_views_p50 = 33 [json_name = "video_views_p50"];
+
+  // Video views at 6 seconds.
+  int64 video_watched_6s = 34 [json_name = "video_watched_6s"];
+
+  // Number of form submissions.
+  int64 form = 35 [json_name = "form"];
+
+  // Ad group ID.
+  string adgroup_id = 36 [json_name = "adgroup_id"];
+
+  // Number of completed payments.
+  int64 complete_payment = 37 [json_name = "complete_payment"];
+
+  // Average time your video was played per user.
+  float average_video_play_per_user = 38 [json_name = "average_video_play_per_user"];
+
+  // Number of initiated checkouts.
+  int64 initiate_checkout = 39 [json_name = "initiate_checkout"];
+
+  // Total conversions.
+  int64 conversion = 40 [json_name = "conversion"];
+
+  // Number of likes.
+  int64 likes = 41 [json_name = "likes"];
+
+  // Video views at 75% completion.
+  int64 video_views_p75 = 42 [json_name = "video_views_p75"];
+}

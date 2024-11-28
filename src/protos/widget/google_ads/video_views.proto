@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+package strique.model.widget.google_ads;
+
+import "constants/ui/render_type.proto";
+import "constants/ui/sorting_direction.proto";
+import "options/strique_enum_options.proto";
+import "types/currency/currency.proto";
+
+option java_outer_classname = "VideoViewsProto";
+option java_package = "com.strique.model.widget.googleads";
+
+// Next Id: 5
+// Proto definition for Video Views Data.
+message VideoViewsData {
+  // Title for this widget.
+  string widget_title = 1;
+
+  // List of records for this widget.
+  repeated VideoViewsRecord records = 2;
+
+  // Total record.
+  optional VideoViewsRecord total = 3;
+
+  // Summary data for a subset of records.
+  optional VideoViewsRecord subtotal = 4;
+}
+
+// Next Id: 10
+// Proto definition for a single record of Video Views.
+message VideoViewsRecord {
+  // Video name or identifier.
+  string video_name = 1 [json_name = "videoName"];
+
+  // Cost incurred for the video views.
+  types.Currency cost = 2 [json_name = "cost"];
+
+  // Number of views.
+  uint64 views = 3 [json_name = "views"];
+
+  // Average cost per view (CPV).
+  types.Currency average_cost_per_view = 4 [json_name = "averageCostPerView"];
+
+  // Video view rate.
+  // Percentage of impressions that resulted in a view.
+  double video_view_rate = 5 [json_name = "videoViewRate"];
+
+  // Percentage of the video played up to 25%.
+  double video_played_25 = 6 [json_name = "videoPlayed25"];
+
+  // Percentage of the video played up to 50%.
+  double video_played_50 = 7 [json_name = "videoPlayed50"];
+
+  // Percentage of the video played up to 75%.
+  double video_played_75 = 8 [json_name = "videoPlayed75"];
+
+  // Percentage of the video played up to 100%.
+  double video_played_100 = 9 [json_name = "videoPlayed100"];
+}
+
+// Next Id: 3
+// Proto definition for Video Views Configuration.
+message VideoViewsConfig {
+  // Next Id: 10
+  // Enumeration of possible columns in the Video Views table.
+  enum Column {
+    COLUMN_UNKNOWN = 0 [
+      (options.label) = 'Unknown',
+      (options.accessor_key) = '',
+      (options.is_sortable) = false
+    ];
+    COLUMN_VIDEO_NAME = 1 [
+      (options.label) = 'Video name',
+      (options.accessor_key) = 'videoName',
+      (options.is_sortable) = false
+    ];
+    COLUMN_COST = 2 [
+      (options.label) = 'Cost',
+      (options.accessor_key) = 'cost',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIEWS = 3 [
+      (options.label) = 'Views',
+      (options.accessor_key) = 'views',
+      (options.is_sortable) = true
+    ];
+    COLUMN_AVERAGE_COST_PER_VIEW = 4 [
+      (options.label) = 'Avg. Cost per view',
+      (options.accessor_key) = 'averageCostPerView',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIDEO_VIEW_RATE = 5 [
+      (options.label) = 'Video view rate',
+      (options.accessor_key) = 'videoViewRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIDEO_PLAYED_25 = 6 [
+      (options.label) = 'Video played (25%)',
+      (options.accessor_key) = 'videoPlayed25',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIDEO_PLAYED_50 = 7 [
+      (options.label) = 'Video played (50%)',
+      (options.accessor_key) = 'videoPlayed50',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIDEO_PLAYED_75 = 8 [
+      (options.label) = 'Video played (75%)',
+      (options.accessor_key) = 'videoPlayed75',
+      (options.is_sortable) = true
+    ];
+    COLUMN_VIDEO_PLAYED_100 = 9 [
+      (options.label) = 'Video played (100%)',
+      (options.accessor_key) = 'videoPlayed100',
+      (options.is_sortable) = true
+    ];
+  }
+
+  // Next Id: 7
+  // Configuration for the table displayed in the Video Views.
+  message TableConfig {
+    // Specifies the order of columns in the table.
+    repeated Column column_order = 1;
+
+    // Specifies columns to be hidden in the table.
+    repeated Column column_hidden = 2;
+
+    // Specifies the default column used for sorting.
+    Column default_sorted_column = 3;
+
+    // Specifies the sorting direction.
+    constants.ui.SortingDirection sorting_direction = 4;
+
+    // Indicates whether to display the total row in the table.
+    bool show_total = 5;
+
+    // Indicates whether to display the subtotal row in the table.
+    bool show_subtotal = 6;
+  }
+
+  // Specifies the type of rendering for the widget.
+  constants.ui.RenderType render_type = 1;
+
+  // Configuration for the table displayed in the widget.
+  TableConfig table_config = 2;
+}

@@ -1,0 +1,27 @@
+{
+    "name": "@digistrique-solutions/strique-proto-schema",
+    "version": "18.3.6",
+    "description": "API contracts and Data Transfer Objects(DTO) in the form of Protocol Buffers for Strique binaries.",
+    "dependencies": {
+        "@bufbuild/buf": "^1.34.0",
+        "@bufbuild/protobuf": "^1.10.0",
+        "@bufbuild/protoc-gen-es": "^1.10.0"
+    },
+    "devDependencies": {
+        "mkdirp": "^3.0.1",
+        "rimraf": "^5.0.5"
+    },
+    "scripts": {
+        "prebuild": "rimraf gen/js-ts && mkdirp gen/js-ts",
+        "build": "./src/resources/tools/gen-js-ts.sh",
+        "postbuild": "./src/resources/tools/cleanup-npm.sh",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DigiStrique-Solutions/strique-proto-schema.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}

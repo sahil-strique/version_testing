@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "TopSellingProductCategoryProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of TopSellingProductCategory List.
+message TopSellingProductCategoryList {
+  repeated TopSellingProductCategory topSellingProductCategoryResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store top selling product and its category data object.
+message TopSellingProductCategory {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Top selling product name on  a day.
+  string item_name = 2;
+
+  // Top performing category name on a day.
+  string item_category = 3;
+
+  // Number of times item added to cart for a day.
+  uint64 items_added_to_cart = 4;
+
+  // Number of times item purchased for a day.
+  uint64 items_purchased = 5;
+
+  // Revenue generated  by item for a day.
+  double item_revenue = 6;
+
+  // number of sessions for a day.
+  uint64 sessions = 7;
+
+  // Number of views for iten for a day.
+  uint64 items_viewed = 8;
+
+  // image URL of the item.
+  string item_image_url = 9;
+}

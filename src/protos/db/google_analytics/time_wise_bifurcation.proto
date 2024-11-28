@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package strique.model.db.google_analytics;
+
+import "constants/datetime/hour.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "TimeWiseBifurcationProto";
+option java_package = "com.strique.model.db.googleanalytics";
+
+// Next Id: 2
+// Proto definition of TimeWiseBifurcation List.
+message TimeWiseBifurcationList {
+  repeated TimeWiseBifurcation timeWiseBifurcationResponse = 1;
+}
+
+//Next Id : 8
+// A protobuf to store time wise data object.
+message TimeWiseBifurcation {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Time in hours.
+  constants.Hour hour = 2;
+
+  // Number of session created for a day on particular hour.
+  uint64 sessions = 3;
+
+  // Number of add to cart done for a day on particular hour.
+  uint64 add_to_carts = 4;
+
+  // Number of checkouts done for a day on particular hour.
+  uint64 checkouts = 5;
+
+  // Number of purchase done for a day on particular hour.
+  uint64 ecommerce_purchases = 6;
+
+  // Total revenue generated for a day on particular hour.
+  double purchases_revenue = 7;
+}

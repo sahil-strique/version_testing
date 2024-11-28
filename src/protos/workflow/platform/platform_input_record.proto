@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strique.workflow.platform;
+
+import "db/platform/platform.proto";
+
+option java_outer_classname = "PlatformInputRecordProto";
+option java_package = "com.strique.workflow.platform";
+
+// Next Id: 4
+// A protobuf to store platform input record object.
+message PlatformInputRecord {
+  // platform
+  strique.model.db.platform.Platform platform = 1;
+
+  // start date
+  string startDate = 2;
+
+  // end date
+  string endDate = 3;
+}

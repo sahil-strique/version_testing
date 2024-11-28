@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package strique.model.db.survey;
+
+option java_outer_classname = "QuestionRepositoryProto";
+option java_package = "com.strique.model.db.survey";
+
+// Next Id: 2
+message QuestionRepositoryResponse {
+  repeated QuestionRepository questions_list = 1;
+}
+
+// Next Id: 14
+// A protobuf to store Q&A.
+message QuestionRepository {
+  string question_id = 1;
+
+  string question = 2;
+
+  enum EntityType {
+    ENTITY_UNKNOWN = 0;
+    USER = 1;
+    STORE = 2;
+    CANCELLATION = 3;
+  }
+
+  EntityType entity_type = 3;
+
+  optional string option_1 = 4;
+
+  optional string option_2 = 5;
+
+  optional string option_3 = 6;
+
+  optional string option_4 = 7;
+
+  optional string option_5 = 8;
+
+  optional string option_6 = 9;
+
+  optional string option_7 = 10;
+
+  optional string option_8 = 11;
+
+  optional string option_9 = 12;
+
+  optional string option_10 = 13;
+}

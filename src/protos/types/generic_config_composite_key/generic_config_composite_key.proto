@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strique.types;
+
+import "widget/widget_types.proto";
+
+option java_outer_classname = "GenericConfigCompositeKeyProto";
+option java_package = "com.strique.types.genericconfigcompositekey";
+
+// Next Id: 4
+// Proto definition for composite primary key for configs
+message GenericConfigCompositeKey {
+  // view config id
+  string view_config_id = 1;
+
+  // platform id
+  string platform_id = 2;
+
+  // Specifies the type of widget.
+  model.widget.WidgetType widget_type = 3;
+}

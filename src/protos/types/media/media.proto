@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package strique.types;
+
+option java_outer_classname = "MediaProto";
+option java_package = "com.strique.types.media";
+
+// Next Id: 5
+// Enumeration of possible Media types
+enum MediaType {
+  MEDIATYPE_UNKNOWN = 0;
+  IMAGE = 1;
+  VIDEO = 2;
+  ICON = 3;
+  LINK = 4;
+}
+
+// Next Id: 5
+// Proto definition for Media type
+message Media {
+  // Specifies the source of the media (icon-name, image, video, etc).
+  string source = 1;
+
+  // Specifies the caption of the media (image, video, etc).
+  optional string caption = 2;
+
+  // Specifies the type of the media (image, video, etc).
+  MediaType media_type = 3;
+
+  // Specifies the Secondary url for the media (image, video, etc).
+  string secondary_source_url = 4;
+}

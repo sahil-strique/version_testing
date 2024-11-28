@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "options/strique_enum_options.proto";
+
+option java_outer_classname = "GoogleAdsStatusProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id : 5
+// Proto enum for google ads status.
+enum GoogleAdsStatus {
+  GOOGLEADSSTATUS_UNKNOWN = 0 [
+      (options.label) = 'Unknown'
+    ];
+  GOOGLEADSSTATUS_ENABLED = 1 [
+      (options.label) = 'Enabled'
+    ];
+  GOOGLEADSSTATUS_PAUSED = 2 [
+      (options.label) = 'Paused'
+    ];
+  GOOGLEADSSTATUS_REMOVED = 3 [
+      (options.label) = 'Removed'
+    ];
+  GOOGLEADSSTATUS_UNSPECIFIED = 4 [
+      (options.label) = 'Unspecified'
+    ];
+}

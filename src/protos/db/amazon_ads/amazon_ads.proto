@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package strique.model.db.amazon_ads;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "AmazonAdsProto";
+option java_package = "com.strique.model.db.amazonads";
+
+//Next Id : 2
+// A protocol buffer message for amazonads list.
+message AmazonAdsList {
+  repeated AmazonAds amazon_ads_list = 1;
+}
+
+// Next Id : 15
+// A protocol buffer message for amazon ads.
+message AmazonAds {
+  // Composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // Name of campaign.
+  string campaign_name = 2;
+
+  // Id of campaign.
+  uint64 campaign_id = 3;
+
+  // name of ad group.
+  optional string ad_group_name = 4;
+
+  // Id of ad group
+  uint64 ad_group_id = 5;
+
+  // Search keyword
+  optional string search_term = 6;
+
+  uint64 impressions = 7;
+
+  uint64 clicks = 8;
+
+  double spends = 9;
+
+  double sales = 10;
+
+  uint64 purchases = 11;
+
+  double top_of_search_impression_share = 12;
+
+  uint64 video_view = 13;
+
+  enum RecordType {
+    RECORDTYPE_UNKNOWN = 0;
+    CAMPAIGN_SPONSOERED_PRODUCTS = 1;
+    CAMPAIGN_SPONSOERED_BRANDS = 2;
+    CAMPAIGN_SPONSOERED_DISPLAY = 3;
+    CAMPAIGN_SPONSOERED_TELEVISION = 4;
+    CAMPAIGN_AMAZON_DSP = 5;
+    SEARCH_TERM_SPONSORED_PRODUCTS = 6;
+    SEARCH_TERM_SPONSORED_BRANDs = 7;
+  }
+  RecordType record_type = 14;
+
+  // Search keyword
+  optional string keyword = 15;
+}

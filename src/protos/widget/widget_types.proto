@@ -1,0 +1,239 @@
+syntax = "proto3";
+
+package strique.model.widget;
+
+import "options/strique_enum_options.proto";
+
+option java_outer_classname = "WidgetTypeProto";
+option java_package = "com.strique.model.widget";
+
+// Next Id: 75
+// Enumeration of possible widget types.
+enum WidgetType {
+  WIDGET_TYPE_UNKNOWN = 0;
+  META_ADS_OVERVIEW = 1 [
+    (options.description) = 'A summary of the performance of all your Meta ad campaigns, including impressions, clicks, and return on ad spend (ROAS).'
+  ];
+  META_ADS_CAMPAIGNS = 2 [
+    (options.description) = 'Lists your Meta ad campaigns and their key metrics, including ROAS, spend, and impressions.'
+  ];
+  META_ADS_ADSETS = 3 [
+    (options.description) = 'Provides insights into the performance of your Meta ad sets, showing metrics such as clicks, impressions, and spend.'
+  ];
+  META_ADS_ADS = 4 [
+    (options.description) = 'This widget displays individual ad performance from Meta, with key metrics like impressions, clicks, and ROAS.'
+  ];
+  GOOGLE_ANALYTICS_TOP_PERFORMING_PRODUCTS = 5 [
+    (options.description) = 'Highlights the products that are generating the most revenue during the selected time frame.'
+  ];
+  GOOGLE_ANALYTICS_TOP_PERFORMING_CATEGORIES = 6 [
+    (options.description) = 'Lists the product categories driving the highest revenue in your store.'
+  ];
+  GOOGLE_ANALYTICS_TOP_PERFORMING_CITIES = 7 [
+    (options.description) = 'Identify the cities that are contributing the most to your sales, allowing for more focused marketing efforts.'
+  ];
+  GOOGLE_ANALYTICS_TOP_PERFORMING_REGIONS = 8 [
+    (options.description) = 'Identify the regions that are contributing the most to your sales, allowing for more focused marketing efforts.'
+  ];
+  GOOGLE_ANALYTICS_USERS_BY_SOURCE_AND_MEDIUM = 9 [
+    (options.description) = 'Provides a breakdown of users based on the source medium, such as organic search, direct, or referral.'
+  ];
+  GOOGLE_ANALYTICS_SESSIONS_BY_DEVICE_CATEGORY = 10 [
+    (options.description) = 'Breaks down the total number of sessions by device category, showing which devices are driving the most traffic.'
+  ];
+  GOOGLE_ANALYTICS_TOP_LANDING_PAGES_BY_SESSIONS = 11 [
+    (options.description) = 'Shows the landing pages that are attracting the most sessions, allowing you to understand which pages are performing best.'
+  ];
+  GOOGLE_ANALYTICS_SPEED_ANALYSIS = 12;
+  GOOGLE_ANALYTICS_TOP_BROWSERS = 13 [
+    (options.description) = 'Displays the browsers used by your visitors, helping to identify which browser environments are most popular among your customers.'
+  ];
+  GOOGLE_ANALYTICS_BEST_PERFORMING_DAYS_OF_THE_WEEK = 14 [
+    (options.description) = 'Shows the days of the week when your store receives the most traffic and revenue.'
+  ];
+  GOOGLE_ANALYTICS_TIME_WISE_BIFURCATION = 15 [
+    (options.description) = 'Displays a time-based breakdown of user activity and revenue generation.'
+  ];
+  GOOGLE_ANALYTICS_NEW_VS_RETURNING_USERS = 38 [
+    (options.description) = 'Compares the revenue generated from new customers versus returning customers.'
+  ];
+  GOOGLE_ANALYTICS_AGE_GROUP_AND_GENDER_ANALYSIS = 39 [
+    (options.description) = 'Breaks down revenue by age group and gender to help you understand your customer demographics.'
+  ];
+  GOOGLE_ANALYTICS_CONVERSION_RATE = 40 [
+    (options.description) = 'Indicates the percentage of users who completed a purchase after interacting with your ads on social media platforms.',
+    (options.formula) = '( Purchases / Total sessions ) * 100'
+  ];
+  GOOGLE_ANALYTICS_TOTAL_ADD_TO_CARTS = 69 [
+    (options.description) = 'Tracks how often users add items to their cart, indicating product interest and potential sales.'
+  ];
+  GOOGLE_ANALYTICS_TOTAL_CHECKOUTS = 70 [
+    (options.description) = 'Shows the number of users who started the checkout process, offering insights into your conversion funnel.'
+  ];
+  GOOGLE_ADS_OVERVIEW = 16 [
+    (options.description) = 'Get a detailed snapshot of your Google ad performance, covering important metrics such as click-through rates, cost per click, and impressions.'
+  ];
+  GOOGLE_ADS_SEARCH_OVERVIEW = 17 [
+    (options.description) = 'Tracks the performance of your Google Search campaigns, including metrics like impressions, clicks, and conversion rates.'
+  ];
+  GOOGLE_ADS_TOP_PERFORMING_KEYWORDS = 18 [
+    (options.description) = 'Displays the keywords driving the most clicks and conversions in your Google Search campaigns.'
+  ];
+  GOOGLE_ADS_AD_QUALITY = 19 [
+    (options.description) = 'Measures the effectiveness of your Google Search ads, including factors like relevance, click-through rates, and overall ad strength.'
+  ];
+  GOOGLE_ADS_PERFORMANCE_MAX_OVERVIEW = 20 [
+    (options.description) = 'Provides performance metrics for your Google Performance Max campaigns, helping to track overall campaign effectiveness.'
+  ];
+  GOOGLE_ADS_PERFORMANCE_MAX_LISTING_GROUP = 21 [
+    (options.description) = 'Provides insights into the performance of your listing groups within Google Performance Max campaigns.'
+  ];
+  GOOGLE_ADS_SHOPPING_OVERVIEW = 22 [
+    (options.description) = 'Offers a snapshot of your Google Shopping campaigns, including clicks, impressions, and sales generated through shopping ads.'
+  ];
+  GOOGLE_ADS_SHOPPING_LISTING_GROUP = 23 [
+    (options.description) = 'Tracks the performance of product listing groups in your Google Shopping campaigns, including metrics like clicks, impressions, and ROAS.'
+  ];
+  GOOGLE_ADS_VIDEO_OVERVIEW = 24 [
+    (options.description) = 'Provides an overview of your Google Video campaigns, showing important metrics like views, cost-per-view, and conversions.'
+  ];
+  GOOGLE_ADS_VIDEO_VIEWS = 25 [
+    (options.description) = 'Tracks the number of views your video ads have received, helping you understand audience engagement.'
+  ];
+  AMAZON_SELLER_TOP_PERFORMING_PRODUCTS = 26 [
+    (options.description) = 'Lists the products generating the highest sales in your Amazon seller account.'
+  ];
+  AMAZON_SELLER_TOP_PERFORMING_CITIES = 27 [
+    (options.description) = 'Shows the cities where your products are selling the most on Amazon.'
+  ];
+  AMAZON_SELLER_TOP_PERFORMING_REGIONS = 28 [
+    (options.description) = 'Displays the regions generating the highest sales, allowing you to target your best-performing locations.'
+  ];
+  AMAZON_SELLER_TOP_CITIES_CANCELLATIONS = 29 [
+    (options.description) = 'Tracks product cancellations across different cities, helping you identify trends and potential issues.'
+  ];
+  AMAZON_SELLER_TOP_RETURNED_PRODUCTS = 30 [
+    (options.description) = 'Shows the most returned products from your Amazon store, offering insights into product performance.'
+  ];
+  AMAZON_SELLER_TOTAL_ORDERS = 51 [
+    (options.description) = 'Displays the total number of orders placed on your Amazon store.'
+  ];
+  AMAZON_SELLER_UNITS_ORDERED = 52 [
+    (options.description) = 'Tracks the total units ordered across all products on your Amazon store.'
+  ];
+  AMAZON_SELLER_ORDERED_PRODUCT_SALES = 53 [
+    (options.description) = 'Displays the total revenue generated from product sales on your Amazon seller account.'
+  ];
+  AMAZON_SELLER_AVERAGE_UNITS_PER_ORDER_ITEM = 54 [
+    (options.description) = 'Shows the average number of units per order item, helping to measure purchase volume per transaction.'
+  ];
+  AMAZON_SELLER_AVERAGE_SALES_PER_ORDER_ITEM = 55 [
+    (options.description) = 'Displays the average sales amount per item, offering insights into product performance.'
+  ];
+  AMAZON_SELLER_CONVERSION_RATE = 61 [
+    (options.description) = 'Tracks the percentage of customers who completed a purchase after viewing your Amazon listings.'
+  ];
+  AMAZON_ADS_SPONSORED_PRODUCTS_CAMPAIGNS = 31 [
+    (options.description) = 'Tracks the performance of your Amazon Sponsored Product campaigns, including clicks, impressions, and ROAS.'
+  ];
+  AMAZON_ADS_SPONSORED_PRODUCTS_KEYWORDS = 32 [
+    (options.description) = 'Shows the performance of keywords used in your Amazon Sponsored Products campaigns, including clicks, impressions, and sales.'
+  ];
+  AMAZON_ADS_SPONSORED_BRANDS_CAMPAIGNS = 33 [
+    (options.description) = 'Provides insights into your Amazon Sponsored Brands campaigns, showing metrics such as clicks, impressions, and sales.'
+  ];
+  AMAZON_ADS_ADVERTISING_COST_OF_SALE = 56 [
+    (options.description) = 'Shows the percentage of sales revenue spent on advertising in your Amazon campaigns.'
+  ];
+  AMAZON_ADS_RETURN_ON_AD_SPEND = 57 [
+    (options.description) = 'Displays the return on ad spend (ROAS) for your Amazon advertising campaigns, indicating ad profitability.'
+  ];
+  AMAZON_ADS_CLICK_THROUGH_RATE = 58 [
+    (options.description) = 'Measures the ratio of clicks to impressions for your Amazon ads, indicating ad engagement.'
+  ];
+  AMAZON_ADS_COST_PER_CLICK = 59 [
+    (options.description) = 'Shows the average cost of each click generated by all your Amazon ads.'
+  ];
+  AMAZON_ADS_TOTAL_ADVERTISING_COST_OF_SALE = 60 [
+    (options.description) = 'Shows the total advertising cost as a percentage of your overall sales revenue.'
+  ];
+  AMAZON_ADS_CLICKS = 62 [
+    (options.description) = 'Tracks the total number of clicks generated by all your Amazon ads.'
+  ];
+  AMAZON_ADS_IMPRESSIONS = 63 [
+    (options.description) = 'Displays the total number of times your Amazon ads were shown to potential customers.'
+  ];
+  AMAZON_ADS_AD_SALES = 64 [
+    (options.description) = 'Tracks the total sales generated from your Amazon ad campaigns.'
+  ];
+  AMAZON_ADS_AD_SPEND = 65 [
+    (options.description) = 'Shows the total amount spent on advertising in your Amazon campaigns.'
+  ];
+  SHOPIFY_TOP_COUPON_CODES = 34 [
+    (options.description) = 'Track the performance of your coupon codes to see which promotions are driving the most conversions and sales.'
+  ];
+  SHOPIFY_TOP_CITIES_RETURNS_AND_CANCELLATIONS = 35 [
+    (options.description) = 'Shows the cities with the highest return and cancellation rates, which can help you understand geographic trends affecting your business.'
+  ];
+  SHOPIFY_TOP_REGIONS_RETURNS_AND_CANCELLATIONS = 36 [
+    (options.description) = 'Shows the regions with the highest return and cancellation rates, which can help you understand geographic trends affecting your business.'
+  ];
+  SHOPIFY_TOP_RETURNED_PRODUCTS = 37 [
+    (options.description) = 'This widget shows the most returned products, helping you identify trends and potential issues with certain items.'
+  ];
+  SHOPIFY_GROSS_SALES = 41 [
+    (options.description) = 'Displays the total sales amount generated over the selected time period, excluding returns and discounts.'
+  ];
+  SHOPIFY_TOTAL_NUMBER_OF_ORDERS = 42 [
+    (options.description) = 'Shows the total number of orders placed through your Shopify store over the selected time period.'
+  ];
+  SHOPIFY_AVERAGE_ORDER_VALUE = 43 [
+    (options.description) = ' Displays the average monetary value of each order placed through your store.'
+  ];
+  SHOPIFY_NET_RETURN_VALUE = 44 [
+    (options.description) = 'The net value of all product returns, helping to track the monetary impact of returns on your overall revenue.'
+  ];
+  STRIQUE_CUSTOM_BLENDED_AD_SPEND = 45 [
+    (options.description) = 'This widget aggregates the total ad spend from all connected social platforms, providing a blended view of your investment across channels.'
+  ];
+  STRIQUE_CUSTOM_COST_PER_CLICK = 46 [
+    (options.description) = 'Shows the average cost of each click generated from your ads across social media platforms.',
+    (options.formula) = 'Blended ad spend / Clicks (overall)'
+  ];
+  STRIQUE_CUSTOM_CLICK_THROUGH_RATE = 47 [
+    (options.description) = 'Indicates the ratio of users who clicked on your ads compared to the total number of impressions.',
+    (options.formula) = '{ Clicks (overall) / impressions } * 100'
+  ];
+  STRIQUE_CUSTOM_BLENDED_ROAS = 48 [
+    (options.description) = 'This metric aggregates the return on ad spend across all your connected social platforms, showing how effectively your ad spend translates into revenue.',
+    (options.formula) = 'Blended ad revenue / Blended ad spend'
+  ];
+  STRIQUE_CUSTOM_RETURN_ON_INVESTMENT = 49 [
+    (options.description) = 'A key performance indicator (KPI) that shows the return you are generating on your marketing investments across platforms.',
+    (options.formula) = 'Gross sales / Blended ad spend'
+  ];
+  STRIQUE_CUSTOM_COST_PER_PURCHASE = 50 [
+    (options.description) = 'Displays the average cost you incur to acquire a customer who completes a purchase.',
+    (options.formula) = 'Blended ad spend / Total No. of Orders'
+  ];
+  STRIQUE_CUSTOM_AVERAGE_ORDER_VALUE = 66 [
+    (options.description) = ' Displays the average monetary value of each order placed through your store.'
+  ];
+  STRIQUE_CUSTOM_BLENDED_REVENUE = 68 [
+    (options.description) = 'Combines revenue from multiple sales channels, offering a comprehensive view of your total income.'
+  ];
+  // No widget data & config exists for these widgets
+  USER_DASHBOARD = 67;
+  TIKTOK_OVERVIEW = 71 [
+    (options.description) = 'Provides a high-level summary of the overall performance of all your TikTok ads, offering insights into their effectiveness and reach.'
+  ];
+  TIKTOK_CAMPAIGNS = 72 [
+    (options.description) = 'Offers an overview of the performance of your TikTok ad campaigns, helping you understand how well your campaigns are performing overall.'
+  ];
+  TIKTOK_ADGROUPS = 73 [
+    (options.description) = 'Displays the performance of individual TikTok ad groups, allowing you to monitor and manage the effectiveness of different audience segments.'
+  ];
+  TIKTOK_ADS = 74 [
+    (options.description) = 'Shows detailed performance data for each TikTok ad, helping you assess how well each ad is resonating with your target audience.'
+  ];
+}

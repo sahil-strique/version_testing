@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+//dont remove model, its for compatibility with other protos
+package strique.model.ai.reporting;
+
+import "widget/widget.proto";
+
+option java_outer_classname = "SummaryProto";
+option java_package = "com.strique.model.ai.reporting";
+
+// Next Id: 5
+// Proto definition for the Summary Request.
+message SummaryRequest {
+  // Specifies the start date for fetching the summary.
+  // date format is yyyy-mm-dd
+  string start_date = 1;
+
+  // Specifies the end date for fetching the summary.
+  // date format is yyyy-mm-dd
+  string end_date = 2;
+
+  // List of widgets.
+  repeated widget.Widget widgets = 3;
+
+  // Store name.
+  string store_name = 4;
+}
+
+// Next Id: 2
+// A proto definition for the Summary Response.
+// This is list of individual summaries of the report.
+message SummaryResponse {
+  // The individual cards of the summary report.
+  repeated Summary summary = 1;
+}
+
+// Next Id: 4
+// A proto definition for the single summary response.
+// This will contain the individual summaries of the summary report.
+message Summary {
+  // The title of the summary.
+  string title = 1;
+
+  // The content of the summary.
+  string description = 2;
+
+  // Widget metadata for corresponding sumamries
+  widget.WidgetMetadata widgets_metadata = 3;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "DefaultStatsProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id: 2
+// Proto definition of DefaultStats List.
+message DefaultStatsList {
+  repeated DefaultStats defaultStatsResponse = 1;
+}
+
+// Next Id : 17
+// A protobuf to store DefaultStats data object.
+message DefaultStats {
+  // Store composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // The number of clicks.
+  uint64 clicks = 2;
+
+  // The number of conversions.
+  double conversions = 3;
+
+  // The value of conversions.
+  double conversions_value = 4;
+
+  // The sum of CPC and CPM costs during this period.
+  uint64 cost_micros = 5;
+
+  // No. of impressions.
+  uint64 impressions = 6;
+}

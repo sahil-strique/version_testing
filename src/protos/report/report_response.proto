@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package strique.model.report;
+
+import "widget/widget.proto";
+
+option java_outer_classname = "ReportResponseProto";
+option java_package = "com.strique.model.report";
+
+// Next Id: 2
+// Proto definition for the Reporting Response.
+message ReportResponse {
+  // List of widgets ready for rendering.
+  // NOTE: Will be consumed in the same order as recieved on the frontend (order matters).
+  repeated widget.Widget widgets = 1;
+}

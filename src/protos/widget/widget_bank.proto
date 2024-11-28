@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package strique.model.widget;
+
+import "db/platform/platform_type.proto";
+import "widget/widget.proto";
+
+//Next Id: 2
+//Definition of widget bank
+message WidgetBank {
+  repeated PlatformLevelWidget plaform_level_widgets = 1;
+}
+
+//Next Id: 4
+//Definition of platform level widgets
+message PlatformLevelWidget {
+  db.platform.PlatformType platform_type = 1;
+  //platform specific widgets
+  repeated WidgetDetails widget_details = 2;
+  //account specific widgets
+  repeated AccountLevelWidgets account_level_widgets = 3;
+}
+
+//Next Id: 3
+//Definition of account level widgets
+message AccountLevelWidgets {
+  repeated WidgetDetails widget_details = 1;
+  string account_name = 2;
+}
+
+//Next Id: 5
+//Definition of widget details
+message WidgetDetails {
+  WidgetMetadata widget_metadata = 1;
+  string display_icon = 2;
+  bool is_premium = 3;
+  string widget_title = 4;
+}

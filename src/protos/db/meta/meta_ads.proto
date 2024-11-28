@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package strique.model.db.meta;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "MetaAdsProto";
+option java_package = "com.strique.model.db.meta";
+
+// Next Id: 2
+// Proto definition of Meta Ads List.
+message MetaAdsList {
+  repeated MetaAds metaAdsList = 1;
+}
+
+// Next Id: 26
+// Proto definition for Meta Ads .
+message MetaAds {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+
+  // type of the add
+  optional string type = 2;
+
+  // Amount spent on advertising.
+  double spend = 3;
+
+  // No. of impressions.
+  uint64 impressions = 4;
+
+  // Total number of clicks on the ad.
+  uint64 clicks = 5;
+
+  // Number of clicks on links within the ad.
+  uint64 inline_link_clicks = 6;
+
+  // Number of times a product was added to the cart.
+  uint64 add_to_cart = 7;
+
+  // Number of checkouts initiated.
+  uint64 initiated_checkout = 8;
+
+  // Number of completed purchase.
+  uint64 purchase = 9;
+
+  // Total amount corresponding to the purchases.
+  double purchases_value = 10;
+
+  // Total amount corresponding to the number of ATCs.
+  double add_to_cart_value = 11;
+
+  // Total amount corresponding to the number of ICs.
+  double initiated_checkout_value = 12;
+
+  // Total reach.
+  uint64 reach = 13;
+
+  // Number of outbound clicks on the ad.
+  uint64 outbound_clicks = 14;
+
+  // Number of landing page views.
+  uint64 landing_page_views = 15;
+
+  // Number of unique outbound clicks on the ad.
+  uint64 unique_outbound_clicks = 16;
+
+  // campign name for the ad.
+  string campaign_name = 17;
+
+  // ad set name for the ad.
+  string adset_name = 18;
+
+  // ad name.
+  string ad_name = 19;
+
+  // campaign id for the ad.
+  string campaign_id = 20;
+
+  // adset id for the ad.
+  string adset_id = 21;
+
+  // ad id for the ad.
+  string ad_id = 22;
+
+  // ad copy.
+  optional string ad_copy = 23;
+
+  // image url for the ad.
+  string thumbnail_url = 24;
+
+  // extracted url for the ad.
+  optional string extracted_url = 25;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package strique.model.db.shopify;
+
+import "db/shopify/refund_line_item.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "RefundProto";
+option java_package = "com.strique.model.db.shopify";
+
+// Next Id : 8
+// A protocol buffer for storing data for order's refund details.
+message Refund {
+  uint64 refund_id = 1;
+
+  uint64 order_id = 2;
+
+  google.protobuf.Timestamp created_at = 3;
+
+  google.protobuf.Timestamp processed_at = 4;
+
+  double order_adjusment_amount = 5;
+
+  double order_adjusment_tax_amount = 6;
+
+  repeated RefundLineItem refund_line_items = 7;
+}

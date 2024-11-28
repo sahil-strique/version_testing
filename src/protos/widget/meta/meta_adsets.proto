@@ -1,0 +1,342 @@
+syntax = "proto3";
+
+package strique.model.widget.meta;
+
+import "constants/ui/render_type.proto";
+import "constants/ui/sorting_direction.proto";
+import "options/strique_enum_options.proto";
+import "types/currency/currency.proto";
+
+option java_outer_classname = "MetaAdsetsProto";
+option java_package = "com.strique.model.widget.meta";
+
+// Next Id: 5
+// Proto definition for Meta Adsets Data.
+message MetaAdsetsData {
+  // Title for this widget.
+  string widget_title = 1;
+
+  // List of records for this widget.
+  repeated MetaAdsetsRecord records = 2;
+
+  // Total record.
+  optional MetaAdsetsRecord total = 3;
+
+  // Summary data for a subset of records.
+  optional MetaAdsetsRecord subtotal = 4;
+}
+
+// Next Id: 39
+// Proto definition for a single record of Meta Adsets.
+message MetaAdsetsRecord {
+  // Adset name.
+  string adset_name = 1 [json_name = "adsetName"];
+
+  // Campaign name.
+  string campaign_name = 2 [json_name = "campaignName"];
+
+  // Spends.
+  // Amount spent on advertising.
+  types.Currency spends = 3 [json_name = "spends"];
+
+  // Frequency.
+  // Total impressions per reach.
+  float frequency = 4 [json_name = "frequency"];
+
+  // Outbound clicks.
+  // Number of outbound clicks on the ad.
+  uint64 outbound_clicks = 5 [json_name = "outboundClicks"];
+
+  // Unique outbound clicks.
+  // Number of unique outbound clicks on the ad.
+  uint64 unique_outbound_clicks = 6 [json_name = "uniqueOutboundClicks"];
+
+  // Impressions.
+  // Number of times the ad was viewed.
+  uint64 impressions = 7 [json_name = "impressions"];
+
+  // Overall clicks.
+  // Total number of clicks on the ad.
+  uint64 clicks_overall = 8 [json_name = "clicksOverall"];
+
+  // Link clicks.
+  // Number of clicks on links within the ad.
+  uint64 link_clicks = 9 [json_name = "linkClicks"];
+
+  // Add to carts.
+  // Number of times a product was added to the cart.
+  uint64 add_to_carts = 10 [json_name = "addToCarts"];
+
+  // Add to cart value.
+  // Total amount corresponding to the number of ATCs.
+  types.Currency add_to_cart_value = 11 [json_name = "addToCartValue"];
+
+  // Initiated checkouts.
+  // Number of checkouts initiated.
+  uint64 initiated_checkouts = 12 [json_name = "initiatedCheckouts"];
+
+  // Initiated checkout value.
+  // Total amount corresponding to the number of ICs.
+  types.Currency initiated_checkout_value = 13 [json_name = "initiatedCheckoutValue"];
+
+  // ATC to Purchase ratio.
+  // Percentage of ATCs that resulted in a purchase.
+  float add_to_cart_purchase_ratio = 14 [json_name = "addToCartPurchaseRatio"];
+
+  // Purchases.
+  // Number of completed purchases.
+  uint64 purchases = 15 [json_name = "purchases"];
+
+  // Checkout abandonment rate.
+  // Percentage of initiated checkouts abandoned.
+  float checkout_abandonment_rate = 16 [json_name = "checkoutAbandonmentRate"];
+
+  // Cost per purchase (CPP).
+  // Average cost for each purchase.
+  types.Currency cost_per_purchase = 17 [json_name = "costPerPurchase"];
+
+  // Cost per click (CPC).
+  // Average cost for each click on the ad.
+  types.Currency cost_per_click = 18 [json_name = "costPerClick"];
+
+  // Cost per link click.
+  // Average cost for each click on a link within the ad.
+  types.Currency cost_per_link_click = 19 [json_name = "costPerLinkClick"];
+
+  // Click-through rate (CTR).
+  // Percentage of impressions resulting in a click.
+  float click_through_rate = 20 [json_name = "clickThroughRate"];
+
+  // Link click-through rate.
+  // Percentage of link clicks relative to impressions.
+  float link_click_through_rate = 21 [json_name = "linkClickThroughRate"];
+
+  // Cost per mille (CPM).
+  // Cost of 1000 impressions.
+  types.Currency cost_per_mille = 22 [json_name = "costPerMille"];
+
+  // Revenue.
+  // Total revenue generated.
+  types.Currency revenue = 23 [json_name = "revenue"];
+
+  // Average order value (AOV).
+  // Average value of each order.
+  types.Currency average_order_value = 24 [json_name = "averageOrderValue"];
+
+  // Return on ad spend (ROAS).
+  // Revenue generated for every dollar spent on advertising.
+  string return_on_ad_spend = 25 [json_name = "returnOnAdSpend"];
+
+  // Conversion rate.
+  // Percentage of clicks on the ad that resulted in a conversion.
+  float conversion_rate = 26 [json_name = "conversionRate"];
+
+  // Outbound percent.
+  // Percentage of outbound clicks on the ad.
+  float outbound_percentage = 27 [json_name = "outboundPercentage"];
+
+  // Checkout to purchase ratio.
+  // Percentage of initiated checkouts that resulted in a purchase.
+  float checkout_to_purchase_ratio = 28 [json_name = "checkoutToPurchaseRatio"];
+
+  // Number of landing page views.
+  // Total views on the landing page.
+  uint64 landing_page_views = 29 [json_name = "landingPageViews"];
+
+  // Revenue per click.
+  // Revenue generated per click on the ad.
+  types.Currency revenue_per_click = 30 [json_name = "revenuePerClick"];
+
+}
+
+// Next Id: 3
+// Proto definition for Meta Adsets Configuration.
+message MetaAdsetsConfig {
+  // Next Id: 39
+  // Enumeration of possible columns in the Meta Adsets table.
+  enum Column {
+    COLUMN_UNKNOWN = 0 [
+      (options.label) = 'Unknown',
+      (options.accessor_key) = '',
+      (options.is_sortable) = false
+    ];
+    COLUMN_ADSET_NAME = 1 [
+      (options.label) = 'Adset name',
+      (options.accessor_key) = 'adsetName',
+      (options.is_sortable) = false
+    ];
+    COLUMN_CAMPAIGN_NAME = 2 [
+      (options.label) = 'Campaign name',
+      (options.accessor_key) = 'campaignName',
+      (options.is_sortable) = false
+    ];
+    COLUMN_SPENDS = 3 [
+      (options.label) = 'Amount spent',
+      (options.accessor_key) = 'spends',
+      (options.is_sortable) = true
+    ];
+    COLUMN_FREQUENCY = 4 [
+      (options.label) = 'Frequency',
+      (options.accessor_key) = 'frequency',
+      (options.is_sortable) = true
+    ];
+    COLUMN_OUTBOUND_CLICKS = 5 [
+      (options.label) = 'Outbound clicks',
+      (options.accessor_key) = 'outboundClicks',
+      (options.is_sortable) = true
+    ];
+    COLUMN_UNIQUE_OUTBOUND_CLICKS = 6 [
+      (options.label) = 'Unique outbound clicks',
+      (options.accessor_key) = 'uniqueOutboundClicks',
+      (options.is_sortable) = true
+    ];
+    COLUMN_IMPRESSIONS = 7 [
+      (options.label) = 'Impressions',
+      (options.accessor_key) = 'impressions',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CLICKS_OVERALL = 8 [
+      (options.label) = 'Clicks (overall)',
+      (options.accessor_key) = 'clicksOverall',
+      (options.is_sortable) = true
+    ];
+    COLUMN_LINK_CLICKS = 9 [
+      (options.label) = 'Link clicks',
+      (options.accessor_key) = 'linkClicks',
+      (options.is_sortable) = true
+    ];
+    COLUMN_ADD_TO_CARTS = 10 [
+      (options.label) = 'Adds to cart',
+      (options.accessor_key) = 'addToCarts',
+      (options.is_sortable) = true
+    ];
+    COLUMN_ADD_TO_CART_VALUE = 11 [
+      (options.label) = 'ATC Value',
+      (options.accessor_key) = 'addToCartValue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_INITIATED_CHECKOUTS = 12 [
+      (options.label) = 'Checkouts initiated',
+      (options.accessor_key) = 'initiatedCheckouts',
+      (options.is_sortable) = true
+    ];
+    COLUMN_INITIATED_CHECKOUT_VALUE = 13 [
+      (options.label) = 'CI value',
+      (options.accessor_key) = 'initiatedCheckoutValue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_ADD_TO_CART_PURCHASE_RATIO = 14 [
+      (options.label) = 'ATC purchase ratio',
+      (options.accessor_key) = 'addToCartPurchaseRatio',
+      (options.is_sortable) = true
+    ];
+    COLUMN_PURCHASES = 15 [
+      (options.label) = 'Purchases',
+      (options.accessor_key) = 'purchases',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CHECKOUT_ABANDONMENT_RATE = 16 [
+      (options.label) = 'Checkout abandonment rate',
+      (options.accessor_key) = 'checkoutAbandonmentRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_PURCHASE = 17 [
+      (options.label) = 'Cost per purchase',
+      (options.accessor_key) = 'costPerPurchase',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_CLICK = 18 [
+      (options.label) = 'Cost per click',
+      (options.accessor_key) = 'costPerClick',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_LINK_CLICK = 19 [
+      (options.label) = 'Cost per link-click',
+      (options.accessor_key) = 'costPerLinkClick',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CLICK_THROUGH_RATE = 20 [
+      (options.label) = 'Click-through rate',
+      (options.accessor_key) = 'clickThroughRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_LINK_CLICK_THROUGH_RATE = 21 [
+      (options.label) = 'Link click-through rate',
+      (options.accessor_key) = 'linkClickThroughRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_MILLE = 22 [
+      (options.label) = 'CPM',
+      (options.accessor_key) = 'costPerMille',
+      (options.is_sortable) = true
+    ];
+    COLUMN_REVENUE = 23 [
+      (options.label) = 'Revenue',
+      (options.accessor_key) = 'revenue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_AVERAGE_ORDER_VALUE = 24 [
+      (options.label) = 'AOV',
+      (options.accessor_key) = 'averageOrderValue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_RETURN_ON_AD_SPEND = 25 [
+      (options.label) = 'ROAS',
+      (options.accessor_key) = 'returnOnAdSpend',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSION_RATE = 26 [
+      (options.label) = 'Conversion rate',
+      (options.accessor_key) = 'conversionRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_OUTBOUND_PERCENTAGE = 27 [
+      (options.label) = 'Outbound percentage',
+      (options.accessor_key) = 'outboundPercentage',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CHECKOUT_TO_PURCHASE_RATIO = 28 [
+      (options.label) = 'Checkout to purchase ratio',
+      (options.accessor_key) = 'checkoutToPurchaseRatio',
+      (options.is_sortable) = true
+    ];
+    COLUMN_LANDING_PAGE_VIEWS = 29 [
+      (options.label) = 'Landing page views',
+      (options.accessor_key) = 'landingPageViews',
+      (options.is_sortable) = true
+    ];
+    COLUMN_REVENUE_PER_CLICK = 30 [
+      (options.label) = 'Revenue per click',
+      (options.accessor_key) = 'revenuePerClick',
+      (options.is_sortable) = true
+    ];
+  }
+
+  // Next Id: 7
+  // Configuration for the table displayed in the Meta Adsets.
+  message TableConfig {
+    // Specifies the order of columns in the table.
+    repeated Column column_order = 1;
+
+    // Specifies columns to be hidden in the table.
+    repeated Column column_hidden = 2;
+
+    // Specifies the default column used for sorting.
+    Column default_sorted_column = 3;
+
+    // Specifies the sorting direction.
+    constants.ui.SortingDirection sorting_direction = 4;
+
+    // Indicates whether to display the total row in the table.
+    bool show_total = 5;
+
+    // Indicates whether to display the subtotal row in the table.
+    bool show_subtotal = 6;
+  }
+
+  // Specifies the type of rendering for the widget.
+  constants.ui.RenderType render_type = 1;
+
+  // Configuration for the table displayed in the widget.
+  TableConfig table_config = 2;
+}

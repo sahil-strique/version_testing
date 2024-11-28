@@ -1,0 +1,169 @@
+syntax = "proto3";
+
+package strique.model.widget.user_dashboard;
+
+import "constants/ui/render_type.proto";
+import "constants/ui/sorting_direction.proto";
+import "db/store/store.proto";
+import "options/strique_enum_options.proto";
+import "types/currency/currency.proto";
+import "types/media/media.proto";
+
+option java_outer_classname = "StoreListProto";
+option java_package = "com.strique.model.widget.userdashboard";
+
+// Next Id: 3
+// Proto definition for Store List Data.
+message StoreListData {
+  // List of records for this widget.
+  repeated StoreListRecord records = 1;
+
+  // Config for this widget.
+  StoreListConfig config = 2;
+}
+
+// Next Id: 13
+// Proto definition for a single record of Store List.
+message StoreListRecord {
+  // Store ID
+  string store_id = 12;
+
+  // Store details
+  types.Media store = 1 [json_name = "store"];
+
+  // Status of the store
+  db.store.Store.StoreStatus status = 2 [json_name = "status"];
+
+  // Blended spend of the store
+  // calculated from STRIQUE_CUSTOM_BLENDED_AD_SPEND
+  optional types.Currency blended_spend = 3 [json_name = "blendedSpend"];
+
+  // Blended revenue of the store
+  // calculated from STRIQUE_CUSTOM_BLENDED_REVENUE
+  optional types.Currency blended_revenue = 4 [json_name = "blendedRevenue"];
+
+  // Ecom revenue of the store
+  // calculated from SHOPIFY_GROSS_SALES
+  optional types.Currency ecom_revenue = 5 [json_name = "ecomRevenue"];
+
+  // Blended return on ad spend of the store
+  // calculated from STRIQUE_CUSTOM_BLENDED_ROAS
+  optional string blended_return_on_ad_spend = 6 [json_name = "blendedReturnOnAdSpend"];
+
+  // Number of purchases of the store
+  // calculated from SHOPIFY_TOTAL_NUMBER_OF_ORDERS
+  optional uint64 purchases = 7 [json_name = "purchases"];
+
+  // Cost per purchase of the store
+  // calculated from STRIQUE_CUSTOM_COST_PER_PURCHASE
+  optional types.Currency cost_per_purchase = 8 [json_name = "costPerPurchase"];
+
+  // Conversion rate of the store
+  // calculated from GOOGLE_ANALYTICS_CONVERSION_RATE
+  optional string conversion_rate = 9 [json_name = "conversionRate"];
+
+  // Total add to carts of the store
+  // calculated from GOOGLE_ANALYTICS_TOTAL_ADD_TO_CARTS
+  optional uint64 total_add_to_carts = 10 [json_name = "totalAddToCarts"];
+
+  // Total checkouts of the store
+  // calculated from GOOGLE_ANALYTICS_TOTAL_CHECKOUTS
+  optional uint64 total_checkouts = 11 [json_name = "totalCheckouts"];
+}
+
+// Next Id: 3
+// Proto definition for Store List Configuration.
+message StoreListConfig {
+  // Next Id: 12
+  // Enumeration of possible columns in the Store List table.
+  enum Column {
+    COLUMN_UNKNOWN = 0 [
+      (options.label) = 'Unknown',
+      (options.accessor_key) = '',
+      (options.is_sortable) = false
+    ];
+    COLUMN_STORE = 1 [
+      (options.label) = 'Store',
+      (options.accessor_key) = 'store',
+      (options.is_sortable) = false
+    ];
+    COLUMN_STATUS = 2 [
+      (options.label) = 'Status',
+      (options.accessor_key) = 'status',
+      (options.is_sortable) = false
+    ];
+    COLUMN_BLENDED_SPEND = 3 [
+      (options.label) = 'Blended ad spend',
+      (options.accessor_key) = 'blendedSpend',
+      (options.is_sortable) = true
+    ];
+    COLUMN_BLENDED_REVENUE = 4 [
+      (options.label) = 'Blended ad revenue',
+      (options.accessor_key) = 'blendedRevenue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_ECOM_REVENUE = 5 [
+      (options.label) = 'E-Commerce revenue',
+      (options.accessor_key) = 'ecomRevenue',
+      (options.is_sortable) = true
+    ];
+    COLUMN_BLENDED_RETURN_ON_AD_SPEND = 6 [
+      (options.label) = 'Blended ROAS',
+      (options.accessor_key) = 'blendedReturnOnAdSpend',
+      (options.is_sortable) = true
+    ];
+    COLUMN_PURCHASES = 7 [
+      (options.label) = 'Purchases',
+      (options.accessor_key) = 'purchases',
+      (options.is_sortable) = true
+    ];
+    COLUMN_COST_PER_PURCHASE = 8 [
+      (options.label) = 'Cost per purchase',
+      (options.accessor_key) = 'costPerPurchase',
+      (options.is_sortable) = true
+    ];
+    COLUMN_CONVERSION_RATE = 9 [
+      (options.label) = 'Conversion rate',
+      (options.accessor_key) = 'conversionRate',
+      (options.is_sortable) = true
+    ];
+    COLUMN_TOTAL_ADD_TO_CARTS = 10 [
+      (options.label) = 'ATC',
+      (options.accessor_key) = 'totalAddToCarts',
+      (options.is_sortable) = true
+    ];
+    COLUMN_TOTAL_CHECKOUTS = 11 [
+      (options.label) = 'Checkouts',
+      (options.accessor_key) = 'totalCheckouts',
+      (options.is_sortable) = true
+    ];
+  }
+
+  // Next Id: 7
+  // Configuration for the table displayed in the Store List.
+  message TableConfig {
+    // Specifies the order of columns in the table.
+    repeated Column column_order = 1;
+
+    // Specifies columns to be hidden in the table.
+    repeated Column column_hidden = 2;
+
+    // Specifies the default column used for sorting.
+    Column default_sorted_column = 3;
+
+    // Specifies the sorting direction.
+    constants.ui.SortingDirection sorting_direction = 4;
+
+    // Indicates whether to display the total row in the table.
+    bool show_total = 5;
+
+    // Indicates whether to display the subtotal row in the table.
+    bool show_subtotal = 6;
+  }
+
+  // Specifies the type of rendering for the widget.
+  constants.ui.RenderType render_type = 1;
+
+  // Configuration for the table displayed in the widget.
+  TableConfig table_config = 2;
+}

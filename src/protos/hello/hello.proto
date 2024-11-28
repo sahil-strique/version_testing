@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package strique.model.hello;
+
+option java_outer_classname = "HelloProto";
+option java_package = "com.strique.model.hello";
+
+// A Hello protobuf
+message Hello {
+  // A hello proto message.
+  string message = 1;
+  int32 num = 2;
+}

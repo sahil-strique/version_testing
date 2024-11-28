@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package strique.model.db.platform;
+
+option java_outer_classname = "PlatformTypeProto";
+option java_package = "com.strique.model.db.platform";
+
+// Next Id: 9
+// Enumeration for possible platform types
+enum PlatformType {
+  // Keep it alphabetically sorted
+  PLATFORM_UNKNOWN = 0;
+  AMAZON_ADS = 1;
+  AMAZON_SELLER = 2;
+  GOOGLE_ADS = 3;
+  GOOGLE_ANALYTICS = 4;
+  META_ADS = 5;
+  SHOPIFY = 6;
+  STRIQUE_CUSTOM = 8; // for this platfrom type value 7 will be stored in DB.
+  TIKTOK = 7; // for this platfrom type value 8 will be stored in DB.
+}

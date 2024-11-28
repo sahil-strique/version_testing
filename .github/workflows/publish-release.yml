@@ -1,0 +1,73 @@
+name: Publish release to GitHub Packages
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish-release:
+    if: contains(github.ref, '-rc.') != true
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: write
+      packages: write 
+      id-token: write
+    steps:
+      - name: Checkout release branch from GitHub 
+        uses: actions/checkout@v4
+      
+      - name: Provide script permissions
+        run: chmod -R +x ./src/resources/tools
+      
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v3
+        with:
+          version: "25.3"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "21"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Build and Publish maven release package
+        run: |       
+          # Generate binary_pb for java
+          ./src/resources/tools/gen-binary-pb.sh
+          mvn clean --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      
+      - name: Build and Publish npm release package
+        run: |
+          npm install
+          npm run build
+          cd ./gen/js-ts
+          npm publish --access public
+          cd ../../
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Build pypi release package
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel build
+          python -m build --sdist
+
+      - name: Publish pypi release package
+        uses: pypa/gh-action-pypi-publish@v1.8.10
+        with:
+          skip-existing: true
+
+# Add publishing at the bottom of this file.

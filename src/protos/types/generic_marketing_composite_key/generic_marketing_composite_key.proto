@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package strique.types;
+
+import "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "GenericMarketingCompositeKeyProto";
+option java_package = "com.strique.types.genericmarketingcompositekey";
+
+// Next Id: 4
+// Proto definition for composite primary key
+message GenericMarketingCompositeKey {
+  // platform id
+  string platform_id = 1;
+
+  // date value in epoch
+  google.protobuf.Timestamp date = 2;
+
+  uint64 row_id = 3;
+}

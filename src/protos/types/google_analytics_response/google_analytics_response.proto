@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package strique.types;
+
+import "db/platform/platform_response.proto";
+
+option java_outer_classname = "GoogleAnalyticsResponseProto";
+option java_package = "com.strique.types.googleanalyticsresponseproto";
+
+// Next Id: 2
+message GoogleAnalyticsResponse {
+  repeated GoogleAnalyticsAccountDetails googleAnalyticsAccountDetails = 1;
+}
+
+// Next ID: 4
+message GoogleAnalyticsAccountDetails {
+  model.db.platform.PlatformResponse webProperties = 1;
+
+  string gaAccountId = 2;
+
+  string gaAccountName = 3;
+}

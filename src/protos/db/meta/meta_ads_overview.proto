@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package strique.model.db.meta;
+
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+
+option java_outer_classname = "MetaAdsOverviewProto";
+option java_package = "com.strique.model.db.meta";
+
+// Next Id: 2
+// Proto definition of Meta Ads Overview List.
+message MetaAdsOverviewList {
+  repeated MetaAdsOverview metaAdsOverviewResponse = 1;
+}
+
+// Next Id: 17
+// Proto definition for Meta Ads Overview.
+message MetaAdsOverview {
+  // Store composite primary key.
+  types.GenericMarketingCompositeKey id = 1;
+  enum PublisherPlatform {
+    PUBLISHERPLATFORM_UNKNOWN = 0;
+    FACEBOOK = 1;
+    INSTAGRAM = 2;
+    OTHERS = 3;
+  }
+  // Type of the meta platform.
+  PublisherPlatform publisher_platform = 2;
+
+  // Amount spent on advertising.
+  double spend = 3;
+
+  // No. of impressions.
+  uint64 impressions = 4;
+
+  // Total number of clicks on the ad.
+  uint64 clicks = 5;
+
+  // Number of clicks on links within the ad.
+  uint64 inline_link_clicks = 6;
+
+  // Number of times a product was added to the cart.
+  uint64 add_to_cart = 7;
+
+  // Number of checkouts initiated.
+  uint64 initiated_checkout = 8;
+
+  // Number of completed purchase.
+  uint64 purchase = 9;
+
+  // Total amount corresponding to the purchases.
+  double purchases_value = 10;
+
+  // Total amount corresponding to the number of ATCs.
+  double add_to_cart_value = 11;
+
+  // Total amount corresponding to the number of ICs.
+  double initiated_checkout_value = 12;
+
+  // Total reach.
+  uint64 reach = 13;
+
+  // Number of outbound clicks on the ad.
+  uint64 outbound_clicks = 14;
+
+  // Number of landing page views.
+  uint64 landing_page_views = 15;
+
+  // Number of unique outbound clicks on the ad.
+  uint64 unique_outbound_clicks = 16;
+}

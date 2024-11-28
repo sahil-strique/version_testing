@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package strique.model.db.google_ads;
+
+import "db/google_ads/google_ads_status.proto";
+import "types/generic_marketing_composite_key/generic_marketing_composite_key.proto";
+import "options/strique_enum_options.proto";
+
+option java_outer_classname = "TopPerformingKeywordsProto";
+option java_package = "com.strique.model.db.googleads";
+
+// Next Id: 2
+// Proto definition of TopPerformingKeywords List.
+message TopPerformingKeywordsList {
+  repeated TopPerformingKeywords topPerformingKeywordsResponse = 1;
+}
+
+// Next Id : 11
+// A protobuf to store TopPerformingKeywords data object.
+message TopPerformingKeywords {
+  // Store composite primary key
+  types.GenericMarketingCompositeKey id = 1;
+
+  // The resource names of labels attached to this ad group criterion.
+  string ad_group_criterion_keyword_text = 2;
+
+  enum KeyWordMatchType {
+    KEYWORDMATCHTYPE_UNKNOWN = 0 [
+      (options.label) = 'Unknown'
+    ];
+    BROAD = 1 [
+      (options.label) = 'Broad'
+    ];
+    EXACT = 2 [
+      (options.label) = 'Exact'
+    ];
+    PHRASE = 3 [
+      (options.label) = 'Phrase'
+    ];
+    UNSPECIFIED = 4 [
+      (options.label) = 'Unspecified'
+    ];
+  }
+  // The match type of the keyword.
+  KeyWordMatchType ad_group_criterion_keyword_match_type = 3;
+
+  // The status of the ad group.
+  GoogleAdsStatus ad_group_status = 4;
+
+  // The value of conversions.
+  double conversions_value = 5;
+
+  // The number of clicks.
+  uint64 clicks = 6;
+
+  // No. of impressions.
+  uint64 impressions = 7;
+
+  // Conversions from interactions divided by the number of ad interactions.
+  double conversions_from_interactions_rate = 8;
+
+  // The number of conversions.
+  double conversions = 9;
+
+  // The sum of CPC and CPM costs during this period.
+  uint64 cost_micros = 10;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "OneDriveResponseProto";
+option java_package = "com.strique.types.dto.onedrive";
+
+// Next Id: 5
+// A protobuf to store report request.
+message OneDriveResponse {
+  repeated DriveIds drive = 1 [json_name = "value"];
+  string file_id = 2 [json_name = "id"];
+  string download_url = 3 [json_name = "@microsoft.graph.downloadUrl"];
+  ShareLink share_url = 4 [json_name = "link"];
+  string last_modified_date = 5 [json_name = "lastModifiedDateTime"];
+}
+
+
+message DriveIds {
+  string ids = 1 [json_name = "id"];
+}
+
+message ShareLink {
+  string web_url = 1 [json_name = "webUrl"];
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package strique.constants;
+
+import "constants/countries/country.proto";
+import "constants/countries/country_short_code.proto";
+
+option java_outer_classname = "CountriesProto";
+option java_package = "com.strique.constants.countries";
+
+// Next Id: 2
+// A Countries protobuf.
+message Countries {
+  // Mapping of the country code to country details
+  map<string, CountryDetails> country_to_country_details = 1;
+}
+
+// Next Id: 3
+// A protobuf to store country details
+message CountryDetails {
+  // Name of the country
+  Country country = 1;
+
+  // short code of the country
+  CountryShortCodes short_code = 2;
+
+  // phone code prefix of the country
+  uint32 phone_code_prefix = 3;
+}

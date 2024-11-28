@@ -1,0 +1,84 @@
+# proto-file: src/protos/authz/store_policy.proto
+# proto-message: Policies
+
+
+plan_to_policy_details {
+	key: "FREE"
+	value {
+        store_max_members: 1
+        create_report: 1
+        report_watermark: true
+        ai_summary: false
+        widgets: BASIC_WIDGETS
+        live_dashboard_data: true
+        max_date_range: 3
+        customer_support: BASIC_SUPPORT
+        whatsapp_schedule: false
+        email_schedule: false
+        sms_schedule: false
+        slack_schedule: false
+        shopify_integration: true 
+        max_meta_ads_accounts: 1
+        max_google_ads_accounts: 1
+        google_analytics_integration: false
+        amazon_ads_integration: false
+        amazon_seller_integration: false
+        max_whatsapp_schedule: 0
+        max_email_schedule: 0
+        max_sms_schedule: 0
+	}
+}
+
+plan_to_policy_details {
+	key: "GROWTH"
+	value {
+        store_max_members: 25
+        create_report: 50
+        report_watermark: false
+        ai_summary: true
+        widgets: ALL_WIDGETS
+        live_dashboard_data: true
+        max_date_range: 1000
+        customer_support: PRO_SUPPORT
+        whatsapp_schedule: true
+        email_schedule: true
+        sms_schedule: true
+        slack_schedule: true
+        shopify_integration: true 
+        max_meta_ads_accounts: 10
+        max_google_ads_accounts: 10
+        google_analytics_integration: true
+        amazon_ads_integration: true
+        amazon_seller_integration: true
+        max_whatsapp_schedule: 10
+        max_email_schedule: 25
+        max_sms_schedule: 10
+	}
+}
+
+plan_to_policy_details {
+	key: "ENTERPRISE"
+	value {
+		store_max_members: 2147483647
+        create_report: 2147483647
+        report_watermark: false
+        ai_summary: true
+        widgets: CUSTOM_WIDGETS
+        live_dashboard_data: true
+        max_date_range: 2147483647
+        customer_support: ADVANCED_SUPPORT
+        whatsapp_schedule: true
+        email_schedule: true
+        sms_schedule: true
+        slack_schedule: true
+        shopify_integration: true 
+        max_meta_ads_accounts: 2147483647
+        max_google_ads_accounts: 2147483647
+        google_analytics_integration: true
+        amazon_ads_integration: true
+        amazon_seller_integration: true
+        max_whatsapp_schedule: 200
+        max_email_schedule: 300
+        max_sms_schedule: 100
+	}
+}

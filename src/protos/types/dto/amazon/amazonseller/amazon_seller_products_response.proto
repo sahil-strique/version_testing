@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "AmazonSellerProductResponseProto";
+option java_package = "com.strique.types.dto.amazon";
+
+// Next Id: 2
+message ReportSpecification {
+  string data_start_time = 1 [json_name = "dataStartTime"];
+}
+
+// Next Id: 2
+message Amount {
+  double amount = 1 [json_name = "amount"];
+}
+
+// Next Id: 3
+message SalesByAsin {
+  uint64 units_ordered = 1 [json_name = "unitsOrdered"];
+  Amount ordered_product_sales = 2 [json_name = "orderedProductSales"];
+}
+
+// Next Id: 5
+message TrafficByAsin {
+  uint64 sessions = 1 [json_name = "sessions"];
+  uint64 page_views = 2 [json_name = "pageViews"];
+  float buy_box_percentage = 4 [json_name = "buyBoxPercentage"];
+}
+
+// Next Id: 5
+message SalesAndTrafficByAsin {
+  string parent_asin = 1 [json_name = "parentAsin"];
+  string child_asin = 2 [json_name = "childAsin"];
+  SalesByAsin sales_by_asin = 3 [json_name = "salesByAsin"];
+  TrafficByAsin traffic_by_asin = 4 [json_name = "trafficByAsin"];
+}
+
+// Next Id: 7
+message SalesByDate {
+  Amount ordered_product_sales = 1 [json_name = "orderedProductSales"];
+  Amount ordered_product_sales_b2b = 2 [json_name = "orderedProductSalesB2B"];
+  uint64 units_ordered = 3 [json_name = "unitsOrdered"];
+  uint64 units_ordered_b2b = 4 [json_name = "unitsOrderedB2B"];
+  uint64 total_order_items = 5 [json_name = "totalOrderItems"];
+  uint64 total_order_items_b2b = 6 [json_name = "totalOrderItemsB2B"];
+}
+
+// Next Id: 3
+message TrafficByDate {
+  uint64 sessions = 1 [json_name = "sessions"];
+  uint64 sessions_b2b = 2 [json_name = "sessionsB2B"];
+}
+
+// Next Id: 4
+message SalesAndTrafficByDate {
+  string date = 1 [json_name = "date"];
+  SalesByDate sales_by_date = 2 [json_name = "salesByDate"];
+  TrafficByDate traffic_by_date = 3 [json_name = "trafficByDate"];
+}
+
+// Next Id: 4
+message AmazonProductReportResponse {
+  ReportSpecification report_specification = 1 [json_name = "reportSpecification"];
+  repeated SalesAndTrafficByAsin sales_and_traffic_by_asin = 2 [json_name = "salesAndTrafficByAsin"];
+  repeated SalesAndTrafficByDate sales_and_traffic_by_date = 3 [json_name = "salesAndTrafficByDate"];
+}
+
+// Next Id: 2
+message AsinItemSummary {
+  string item_name = 1 [json_name = "itemName"];
+}
+
+// Next Id: 3
+message AsinItem {
+  string asin = 1 [json_name = "asin"];
+  repeated AsinItemSummary summaries = 2 [json_name = "itemSummary"];
+}
+
+// Next Id: 2
+message AsinItems {
+  repeated AsinItem items = 1 [json_name = "items"];
+}

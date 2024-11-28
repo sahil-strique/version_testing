@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package strique.types.dto.amazon;
+
+option java_outer_classname = "AmazonProto";
+option java_package = "com.strique.types.dto.amazon";
+
+// Next Id: 2
+// A protobuf to store auth details.
+message AmazonAuthToken {
+  string access_token = 1 [json_name = "access_token"];
+}

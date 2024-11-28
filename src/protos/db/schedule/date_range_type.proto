@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package strique.model.db.schedule;
+
+option java_outer_classname = "DateRangeProto";
+option java_package = "com.strique.model.db.schedule";
+
+// Next Id: 8
+// Enumeration for date range types
+enum DateRange {
+  DATERANGE_UNKNOWN = 0;
+  YESTERDAY = 1;
+  LAST_7_DAYS = 2;
+  MONTH_TO_DATE = 3;
+  LAST_30_DAYS = 4;
+  LAST_60_DAYS = 5;
+  LAST_90_DAYS = 6;
+  LAST_MONTH = 7;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package strique.workflow.platform;
+
+import "workflow/platform/platform_input_record.proto";
+
+option java_outer_classname = "PlatformInputProto";
+option java_package = "com.strique.workflow.platform";
+
+// Next Id: 3
+// A protobuf to store platform input object.
+message PlatformInput {
+  // List of platformInputRecord
+  repeated PlatformInputRecord platformInputRecords = 1;
+
+  // Maximum days fetch constraint for the platform
+  int32 platformMaxDaysFetchConstraint = 2;
+}

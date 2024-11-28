@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package strique.model.db.shopify;
+
+option java_outer_classname = "RefundLineItemProto";
+option java_package = "com.strique.model.db.shopify";
+
+// Next Id : 7
+// A protocol buffer for storing refun line item of order.
+message RefundLineItem {
+  uint64 refund_line_item_id = 1;
+
+  uint64 refund_id = 2;
+
+  uint64 line_item_id = 3;
+
+  string refund_line_item_name = 4;
+
+  uint64 quantity = 5;
+
+  double sub_total = 6;
+
+  double total_tax = 7;
+}

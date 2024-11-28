@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "grpcio==1.62.0", "grpcio-tools==1.62.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strique-proto-schema"
+version = "18.3.6"
+readme = "README.md"
+description = "API contracts and Data Transfer Objects (DTO) in the form of Protocol Buffers for Strique binaries."
+requires-python = ">=3.7"
+dependencies = [
+    "requests",
+    "grpcio",
+    "grpcio-tools",
+]
+
+[tool.setuptools]
+packages = ["strique_proto_schema"]
+
+[tool.setuptools.package-data]
+strique_proto_schema = ["**/*.py", "**/*.binary_pb"]
+
+[tool.setuptools.cmdclass]
+build_py = "__init__.StriqueBuildCommand"
+egg_info = "__init__.StriqueEggInfoCommand"
+install = "__init__.StriqueInstallCommand"

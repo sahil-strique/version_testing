@@ -115,22 +115,25 @@ function ValidatePom() {
 
 function ValidatePackageJson() {
   local cur_version=$1
-  # Get version from package.json file
-  local js_version=`npm pkg get version`
-
-  # assert
+  # Get version from package.json file and strip double quotes
+  local js_version=$(npm pkg get version | tr -d '"')
+  # Assert
   if [[ "$cur_version" != "$js_version" ]]; then
-    ExitWithMessage "Incorrect package.json version. Now: $js_version Expected: $cur_version!! Revert all version related changes and regenerate version."
+    ExitWithMessage "Incorrect package.json version. Now: $js_version Expected: $cur_version!! Revert all version-related changes and regenerate version."
   fi
 }
 
 function ValidatePyprojectToml() {
   local cur_version=$1
-  local pyproject_version=$(grep -oP 'version\s*=\s*"\K[^"]+' pyproject.toml) #getting version from pyproject.toml
-
-  #assert
+  # Get the version from pyproject.toml, strip 'version = "..."' and quotes
+  local pyproject_version=$(grep -oP '^\s*version\s*=\s*"\K[^"]+' pyproject.toml)
+  # Check if pyproject_version is empty
+  if [[ -z "$pyproject_version" ]]; then
+    ExitWithMessage "Failed to retrieve version from pyproject.toml. Please ensure the version is defined correctly."
+  fi
+  # Assert
   if [[ "$cur_version" != "$pyproject_version" ]]; then
-      ExitWithMessage "Incorrect package.json version. Now: $pyproject_version Expected: $cur_version!! Revert all version related changes and regenerate version."
+    ExitWithMessage "Incorrect pyproject.toml version. Now: $pyproject_version Expected: $cur_version!! Revert all version-related changes and regenerate version."
   fi
 }
 

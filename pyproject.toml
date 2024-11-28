@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "strique-proto-schema"
-version = "18.3.6"
+version = "18.3.7"
 readme = "README.md"
 description = "API contracts and Data Transfer Objects (DTO) in the form of Protocol Buffers for Strique binaries."
 requires-python = ">=3.7"

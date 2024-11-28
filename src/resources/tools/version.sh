@@ -119,7 +119,7 @@ function ValidatePackageJson() {
   local js_version=`npm pkg get version`
 
   # assert
-  if [[ "$cur_version" != "$js_version" ]]; then
+  if [[ "$cur_version" != $js_version ]]; then
     ExitWithMessage "Incorrect package.json version. Now: $js_version Expected: $cur_version!! Revert all version related changes and regenerate version."
   fi
 }

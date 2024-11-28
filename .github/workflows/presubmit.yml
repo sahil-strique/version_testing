@@ -11,11 +11,16 @@ jobs:
       contents: read
       packages: write 
     steps:
-      - name: Checkout main branch from GitHub 
+      - name: Checkout base branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.base_ref }}
           fetch-depth: 0
+
+      - name: Fetch head branch
+        run: |
+          git fetch origin ${{ github.head_ref }}:${{ github.head_ref }}
+          git checkout ${{ github.head_ref }}
         
       - name: Provide script permissions
         run: chmod -R +x ./src/resources/tools

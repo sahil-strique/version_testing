@@ -1,6 +1,6 @@
 {
     "name": "@digistrique-solutions/strique-proto-schema",
-    "version": "18.3.7",
+    "version": "18.3.8",
     "description": "API contracts and Data Transfer Objects(DTO) in the form of Protocol Buffers for Strique binaries.",
     "dependencies": {
         "@bufbuild/buf": "^1.34.0",
